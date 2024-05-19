@@ -1,0 +1,133 @@
+﻿@{
+    Layout = "_LayoutTemplate";
+    ViewData["Title"] = "Projects";
+}
+<!-- Source CSS -->
+<link href="~/css/courses.css" rel="stylesheet" />
+<link href="~/css/courses_responsive.css" rel="stylesheet" />
+
+<!-- Home -->
+
+<div class="home">
+	<div class="breadcrumbs_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="breadcrumbs">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li>Projects</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Courses -->
+
+<div class="courses">
+	<div class="container">
+		<div class="row">
+
+			<!-- Courses Main Content -->
+			<div class="col-lg-8">
+				
+				<div class="courses_container">
+					<div class="row courses_row" id="listProjects">
+						<!-- Course -->
+					</div>
+					<div class="row pagination_row">
+						<div class="col">
+							<div class="pagination_container d-flex flex-row align-items-center justify-content-start">
+								<ul class="pagination_list" id="paginationList">
+									<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Courses Sidebar -->
+			<div class="col-lg-4">
+				<div class="sidebar">
+
+					<!-- Categories -->
+					<div class="sidebar_section">
+						<div class="sidebar_section_title">Categories</div>
+						<div class="sidebar_categories">
+							<ul id="typeList">
+							</ul>
+						</div>
+					</div>
+
+					<!-- Gallery -->
+					<div class="sidebar_section">
+						<div class="sidebar_section_title">Instagram</div>
+						<div class="sidebar_gallery">
+							<ul class="gallery_items d-flex flex-row align-items-start justify-content-between flex-wrap">
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_1_large.jpg">
+										<img src="images/gallery_1.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_2_large.jpg">
+										<img src="images/gallery_2.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_3_large.jpg">
+										<img src="images/gallery_3.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_4_large.jpg">
+										<img src="images/gallery_4.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_5_large.jpg">
+										<img src="images/gallery_5.jpg" alt="">
+									</a>
+								</li>
+								<li class="gallery_item">
+									<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
+									<a class="colorbox" href="images/gallery_6_large.jpg">
+										<img src="images/gallery_6.jpg" alt="">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Tags -->
+					<div class="sidebar_section">
+						<div class="sidebar_section_title">Tags</div>
+						<div class="sidebar_tags">
+							<ul class="tags_list">
+								<li><a href="#">creative</a></li>
+								<li><a href="#">unique</a></li>
+								<li><a href="#">photography</a></li>
+								<li><a href="#">ideas</a></li>
+								<li><a href="#">wordpress</a></li>
+								<li><a href="#">startup</a></li>
+							</ul>
+						</div>
+					</div>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="~/js/projects.js"></script>

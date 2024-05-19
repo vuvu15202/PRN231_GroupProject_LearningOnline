@@ -1,0 +1,265 @@
+﻿@{
+    Layout = "_LayoutTemplate";
+    ViewData["Title"] = "Home";
+}
+<link href="~/css/responsive.css" rel="stylesheet" />
+<link href="~/css/main_styles.css" rel="stylesheet" />
+<!-- Home -->
+
+<div class="home">
+    <div class="home_slider_container">
+
+        <!-- Home Slider -->
+        <div class="owl-carousel owl-theme home_slider">
+
+            <!-- Home Slider Item -->
+            <div class="owl-item" style="margin-top: 75px">
+                <div class="home_slider_background" style="background-image:url(images/home_slider_new_1.jpg)"></div>
+                <div class="home_slider_content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="home_slider_title" style="color: white">Làm điều gì đó đáng kinh ngạc ngay hôm nay</div>
+                                <div class="home_slider_subtitle" style="color: lightgray">Gây quỹ trực tuyến cho những người và tổ chức từ thiện mà bạn yêu thích.</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Slider Item -->
+            <div class="owl-item" style="margin-top: 75px">
+                <div class="home_slider_background" style="background-image:url(images/home_slider_new_2.jpg)"></div>
+                <div class="home_slider_content">
+                    <div class="container">
+                        <div class="row">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Home Slider Nav -->
+
+    <div class="home_slider_nav home_slider_prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+    <div class="home_slider_nav home_slider_next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+</div>
+
+<!-- Features -->
+
+<div class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">Ý tưởng để giúp bạn bắt đầu</h2>
+                    <div class="section_subtitle"><p style="font-size: 17px">Có rất nhiều cách để làm cho những điều tốt đẹp xảy ra</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="row features_row">
+
+            <!-- Features Item -->
+            <div class="col-lg-3 feature_col">
+                <div class="feature text-center trans_400">
+                    <div class="feature_icon"><img src="images/icon_1.png" alt=""></div>
+                    <h3 class="feature_title">Giúp đỡ những người gặp khó khăn</h3>
+                    <div class="feature_text"><p style="font-size: 17px">Cung cấp hỗ trợ trực tiếp cho một cá nhân, gia đình hoặc cộng đồng bằng cách thanh toán chi phí y tế hoặc cung cấp hỗ trợ tài chính</p></div>
+                </div>
+            </div>
+
+            <!-- Features Item -->
+            <div class="col-lg-3 feature_col">
+                <div class="feature text-center trans_400">
+                    <div class="feature_icon"><img src="images/icon_2.png" alt=""></div>
+                    <h3 class="feature_title">Hành động trong trường hợp khẩn cấp</h3>
+                    <div class="feature_text"><p style="font-size: 17px">Gây quỹ để ứng phó với thiên tai hoặc khủng hoảng nhân đạo. Tạo sự khác biệt trong vài phút</p></div>
+                </div>
+            </div>
+
+            <!-- Features Item -->
+            <div class="col-lg-3 feature_col">
+                <div class="feature text-center trans_400">
+                    <div class="feature_icon"><img src="images/icon_3.png" alt=""></div>
+                    <h3 class="feature_title">Tham gia một sự kiện từ thiện</h3>
+                    <div class="feature_text"><p style="font-size: 17px">Chọn từ hàng trăm sự kiện chính thức bao gồm marathon, đạp xe, Dryathlons và nướng bánh ...</p></div>
+                </div>
+            </div>
+
+            <!-- Features Item -->
+            <div class="col-lg-3 feature_col">
+                <div class="feature text-center trans_400">
+                    <div class="feature_icon"><img src="images/icon_4.png" alt=""></div>
+                    <h3 class="feature_title">Tổ chức một sự kiện</h3>
+                    <div class="feature_text"><p style="font-size: 17px">Đánh dấu một sự kiện đặc biệt như sinh nhật, đám cưới hoặc kỳ thi cuối kỳ bằng cách kêu gọi bạn bè quyên góp thay vì quà tặng</p></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Counter -->
+
+<div class="counter">
+    <div class="counter_background" style="background-image:url(images/counter_background.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="counter_content">
+                    <h2 class="counter_title">Câu chuyện của bạn bắt đầu từ đây</h2>
+                    <div class="counter_text">
+                        <p style="font-size: 17px">Tìm một nguyên nhân mà bạn tin tưởng và làm cho những điều tốt đẹp xảy ra. Tham gia các tổ chức từ thiện, tổ chức và trường học của chúng tôi trên JustGiving.</p>
+                    </div>
+                    <form action="/projects">
+                        <button type="submit" class="counter_form_button" href="/projects">Bắt đầu gây quỹ</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Popular Project -->
+
+<div class="courses">
+    <div class="section_background parallax-window" data-parallax="scroll" data-image-src="images/courses_background.jpg" data-speed="0.8"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">Tạo sự khác biệt ngay hôm nay</h2>
+                    <div class="section_subtitle">
+                        <p style="font-size: 17px">
+                            Chung tay quyên góp giúp đỡ hoàn cảnh khó khăn trên cả nước.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row courses_row" id="listProjects">
+
+            
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="courses_button trans_200"><a href="/projects">Xem thêm</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@* <!-- Events -->
+
+<div class="events">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">Tin tức cộng đồng</h2>
+                    <div class="section_subtitle">
+                        <p style="font-size: 17px">
+                            Cập nhật thông tin các hoạt động quyên góp mới nhất
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row events_row">
+
+            <!-- Event -->
+            <div class="col-lg-4 event_col">
+                <div class="event event_left">
+                    <div class="event_image"><img src="images/event_1.jpg" alt=""></div>
+                    <div class="event_body d-flex flex-row align-items-start justify-content-start">
+                        <div class="event_date">
+                            <div class="d-flex flex-column align-items-center justify-content-center trans_200">
+                                <div class="event_day trans_200">21</div>
+                                <div class="event_month trans_200">Aug</div>
+                            </div>
+                        </div>
+                        <div class="event_content">
+                            <div class="event_title"><a href="#">Which Country Handles Student Debt?</a></div>
+                            <div class="event_info_container">
+                                <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>15.00 - 19.30</span></div>
+                                <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span></div>
+                                <div class="event_text">
+                                    <p>Policy analysts generally agree on a need for reform, but not on which path...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event -->
+            <div class="col-lg-4 event_col">
+                <div class="event event_mid">
+                    <div class="event_image"><img src="images/event_2.jpg" alt=""></div>
+                    <div class="event_body d-flex flex-row align-items-start justify-content-start">
+                        <div class="event_date">
+                            <div class="d-flex flex-column align-items-center justify-content-center trans_200">
+                                <div class="event_day trans_200">27</div>
+                                <div class="event_month trans_200">Aug</div>
+                            </div>
+                        </div>
+                        <div class="event_content">
+                            <div class="event_title"><a href="#">Repaying your student loans (Winter 2017-2018)</a></div>
+                            <div class="event_info_container">
+                                <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>09.00 - 17.30</span></div>
+                                <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 Brooklyn City</span></div>
+                                <div class="event_text">
+                                    <p>This Consumer Action News issue covers topics now being debated before...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event -->
+            <div class="col-lg-4 event_col">
+                <div class="event event_right">
+                    <div class="event_image"><img src="images/event_3.jpg" alt=""></div>
+                    <div class="event_body d-flex flex-row align-items-start justify-content-start">
+                        <div class="event_date">
+                            <div class="d-flex flex-column align-items-center justify-content-center trans_200">
+                                <div class="event_day trans_200">01</div>
+                                <div class="event_month trans_200">Sep</div>
+                            </div>
+                        </div>
+                        <div class="event_content">
+                            <div class="event_title"><a href="#">Alternative data and financial inclusion</a></div>
+                            <div class="event_info_container">
+                                <div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>13.00 - 18.30</span></div>
+                                <div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span></div>
+                                <div class="event_text">
+                                    <p>Policy analysts generally agree on a need for reform, but not on which path...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="courses_button trans_200"><a href="/news">Xem thêm</a></div>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+
+<script src="~/js/home.js"></script>                

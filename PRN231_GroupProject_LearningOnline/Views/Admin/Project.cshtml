@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Quản Lý Dự Án";
+    Layout = "~/Views/Shared/Layouts/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header pb-0 d-flex justify-content-between">
+                <h6>@ViewData["Title"]</h6>
+                <div class="d-flex">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li class="page-item" ">
+                                <a class="page-link" id="previousBtn" href="#">&lt;</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" id="nextBtn" href="#">&gt;</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mb-2 ms-1">
+                        <div class="input-group">
+                            <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                            <input type="text" id="inputForm" class="form-control" placeholder="Search by title">
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive" style="height: 700px">                   
+                    <table class="table align-items-center mb-0" style="height: 100px" id="projectRecord" ">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tiêu đề</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Loại</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chỉ tiêu</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hiện tại</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ngày bắt đầu</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ngày kết thúc</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>           
+        </div>       
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var urlBase = "@Url.Action("getProjects", "Admin")"
+        var urlUpdate = "@Url.Action("updateProject", "Admin")"
+    </script>
+    <script src="~/assets/js/project-admin.js"></script>
+}

@@ -1,0 +1,290 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "/Views/_LayoutAdmin.cshtml";
+}
+<!--
+=========================================================
+* Quỹ Nhân Ái - v2.0.4
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>
+        Quỹ Nhân Ái by PRN231
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+</head>
+
+<body class="">
+    <div class="container position-sticky z-index-sticky top-0">
+        <div class="row">
+            <div class="col-12">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
+                    <div class="container">
+                        <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="/Home">
+                            JustGiving
+                        </a>
+                        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon mt-2">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navigation">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center me-2 text-dark  active" aria-current="page" href="/admin/dashboard">
+                                        <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-2 text-dark " href="javascript:;">
+                                        <i class="fa fa-user opacity-6 me-1 text-dark "></i>
+                                        Profile
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-2 text-dark " href="/auth/register">
+                                        <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
+                                        Sign Up
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-2 text-dark " href="/auth/login">
+                                        <i class="fas fa-key opacity-6 text-dark me-1"></i>
+                                        Sign In
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav d-lg-block d-none">
+                                <li class="nav-item">
+                                    <a href="/Home" class="btn btn-sm mb-0 me-1 bg-gradient-light">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+            </div>
+        </div>
+    </div>
+    <main class="main-content  mt-0">
+        <section>
+            <div class="page-header min-vh-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+                            <div class="card card-plain">
+                                <div class="card-header pb-0 text-start">
+                                    <h4 class="font-weight-bolder">Sign In</h4>
+                                    <p class="mb-0">Enter your email and password to sign in</p>
+                                </div>
+                                <div class="card-body">
+                                    <form role="form">
+                                        @*<div class="mb-3">
+                                            <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="email" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
+                                        </div>*@
+                                        <div class="mb-3">
+                                            <input type='text' id="username" name='username' value=''
+                                                   placeholder="Username" class="form-control form-control-lg"/>
+                                            <div id="errorMessageUsername" style="color: red;"></div                            >
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type='password' id="password" name='password'
+                                                   placeholder="Password" class="form-control form-control-lg"/>
+                                            <div id="errorMessagePassword" style="color: red;"></div>
+                                            <div id="errorMessageAccount" style="color: red;"></d iv>
+                                        </div>
+
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                                        </div>
+                                        <div class="text-center">
+                                            <button id="btnLogin" type="button" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                                    <p class="mb-4 text-sm mx-auto">
+                                        Don't have an account?
+                                        <a href="/auth/register" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
+                            <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+          background-size: cover;">
+                                <span class="mask bg-gradient-primary opacity-6"></span>
+                                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Attention is the new currency"</h4>
+                                <p class="text-white position-relative">The more effortless the writing looks, the more effort the writer actually put into the process.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="~/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+
+    @*jquery*@
+    @*<script src="../lib/jquery/jquery.js"></script>*@
+    <a href="~/lib/jquery/dist/jquery.min.map"></a>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            var token = getCookie("token"); console.log(token);
+            if (token != null) document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+            $("#btnLogin").click(function (e) {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                if (username != '' && password != '') {
+                    document.getElementById('errorMessageAccount').textContent = ''
+                    document.getElementById('errorMessagePassword').textContent = ''
+                    document.getElementById('errorMessageUsername').textContent = ''
+                    const data = {
+                        userName: username,
+                        password: password
+                    }
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    };
+
+                    fetch('https://localhost:5000/api/auth/Authenticate', requestOptions)
+                        .then(function (response) {
+                            if (response.ok) {
+                                return response.json(); // Parse the response as JSON
+                            } else {
+                                document.getElementById('errorMessageAccount').textContent = 'Not found User'
+                                throw new Error('Request failed with status: ' + response.status);
+                            }
+                        })
+                        .then(function (data) {
+                            //set cookies
+                            var token = data.jwtToken; // Access the token property
+                            console.log(token); // Display the token in the console or use it as needed
+                            var date = new Date();
+                            date.setTime(date.getTime() + (12 * 60 * 60 * 1000)); // Set expiration time in milliseconds
+                            var expires = "expires=" + date.toUTCString();
+                            // document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+                            document.cookie = "token=" + encodeURIComponent(token) + ";" + expires + "; path=/";
+
+                            // Check if a redirect URL is provided in the response
+                            if (data.redirectUrl) {
+                                window.location.href = data.redirectUrl;
+                            } else {
+                                // Default redirect if no specific role-based URL is provided
+                                //window.location.href = '/home'; 
+                                alert("dang nhap thanh cong");
+                            }
+                        })
+                        .catch(function (error) {
+                            // Handle any errors
+                        });
+
+                } else {
+                    document.getElementById('errorMessageAccount').textContent = ''
+                    if (username === '' && password != '') {
+                        document.getElementById('errorMessagePassword').textContent = ''
+                        document.getElementById('errorMessageUsername').textContent = 'Please enter user name'
+                    }
+                    if (password === '' && username != '') {
+                        document.getElementById('errorMessageUsername').textContent = ''
+                        document.getElementById('errorMessagePassword').textContent = 'Please enter password'
+                    }
+                    if (username === '' && password === '') {
+                        document.getElementById('errorMessageUsername').textContent = 'Please enter user name'
+                        document.getElementById('errorMessagePassword').textContent = 'Please enter password'
+                    }
+
+                }
+
+            });
+        });
+        function logout() {
+            document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            window.location.href = '/auth/login';
+        }
+
+        function getCookie(name) {
+          // Split cookies by semicolon
+          var cookies = document.cookie.split(';');
+      
+          // Loop through each cookie
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = cookies[i];
+              // Trim leading and trailing spaces
+              cookie = cookie.trim();
+              // Check if this cookie is the one we're looking for
+              if (cookie.startsWith(name + '=')) {
+                  // Return the cookie value
+                  return cookie.substring(name.length + 1);
+              }
+          }
+          // Return null if cookie not found
+          return null;
+        }
+    </script>
+</body>
+
+</html>
+ @* function logout(){
+        document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/hcr/;';
+        window.location.href = '/hcr/login';
+    }*@
