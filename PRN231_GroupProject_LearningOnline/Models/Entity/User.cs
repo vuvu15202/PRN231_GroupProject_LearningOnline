@@ -1,4 +1,5 @@
 ﻿
+using PRN231_GroupProject_LearningOnline.temp;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -10,6 +11,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         public User()
         {
             UserRoles = new HashSet<UserRole>();
+            Reviews = new HashSet<Review>();
+            Courses = new HashSet<Course>();
         }
 
         public int UserId { get; set; }
@@ -23,5 +26,9 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
 
         [JsonIgnore]
         public virtual ICollection<UserRole> UserRoles { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Review> Reviews { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }

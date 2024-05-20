@@ -11,7 +11,7 @@ tool -> command line
 
 1. tao appsettings.json
 2. tao dbcontext
-dotnet ef dbcontext scaffold "server=(local); database=PE_PRN_Fall2023B1;trustservercertificate=true; integrated security=true" microsoft.entityframeworkcore.sqlserver --output-dir Models -t Products -t categories -t Orders -t "Orders Details" -t Employees -f
+dotnet ef dbcontext scaffold "server=(local); database='Unicat Online Learning2';trustservercertificate=true; integrated security=true" microsoft.entityframeworkcore.sqlserver --output-dir Models -t Products -t categories -t Orders -t "Orders Details" -t Employees -f
 (-f ghi đè)
 3. update connectionstring trong appsettings
 ,"ConnectionStrings":{
