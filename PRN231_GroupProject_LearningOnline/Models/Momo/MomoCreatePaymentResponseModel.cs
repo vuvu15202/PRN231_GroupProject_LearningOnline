@@ -1,5 +1,5 @@
-namespace PRN231_GroupProject_LearningOnline.Models.Momo;
-
+﻿namespace PRN231_GroupProject_LearningOnline.Models.Momo;
+//momo xác minh xong trả về chứa url QR
 public class MomoCreatePaymentResponseModel
 {
     public string RequestId { get; set; }

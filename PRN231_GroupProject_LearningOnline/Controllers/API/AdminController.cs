@@ -1,106 +1,79 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using PRN231_GroupProject_LearningOnline.Models.DTO;
+using PRN231_GroupProject_LearningOnline.Models.Entity;
+using PRN231_GroupProject_LearningOnline.Models.SearchModels;
+using PRN231_GroupProject_LearningOnline.Models;
 using PRN231_GroupProject_LearningOnline.Authorization;
 using PRN231_GroupProject_LearningOnline.Models;
+using PRN231_GroupProject_LearningOnline.Models.DTO;
+using PRN231_GroupProject_LearningOnline.Models.Entity;
+using PRN231_GroupProject_LearningOnline.Models.SearchModels;
+using X.PagedList;
 
-namespace PRN231_GroupProject_LearningOnline.Controllers.Admin
+namespace PRN231_GroupProject_LearningOnline.Controllers.APIs
 {
-    [Authorize]
-    [Route("[controller]")]
-    public class AdminController : Controller
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class AdminController : ControllerBase
     {
-        [Authorize(RoleEnum.Admin)]
-        // GET: AdminController
-        [HttpGet("billings")]
-        public ActionResult Billing()
+        private readonly DonationWebApp_v2Context _context;
+        private readonly IMapper _mapper;
+
+        public AdminController(DonationWebApp_v2Context context, IMapper mapper)
         {
-            return View();
+            _context = context;
+            _mapper = mapper;
         }
 
-
-
-
-        //// GET: AdminController/Details/5
-        //[HttpGet]
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
-
-        //// GET: AdminController/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //// POST: AdminController/Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: AdminController/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: AdminController/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: AdminController/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: AdminController/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-        [HttpGet("projects")]
         [Authorize(RoleEnum.Admin)]
-        public ActionResult ListProjectAdmin()
+        [HttpGet]
+        public IActionResult getProjects([FromQuery] SearchProject searchProject)
         {
-            return View("Project");
+            var list = _context.FundraisingProjects.Include(x => x.Orders).AsQueryable();
+            Console.WriteLine(searchProject.PageSize);
+            Console.WriteLine(searchProject.Page);
+            if (!string.IsNullOrWhiteSpace(searchProject.Keyword))
+            {
+                list = list.Where(l => l.Title.ToLower().Contains(searchProject.Keyword.ToLower()));
+            }
+            var listResult = (PagedList<FundraisingProject>)list.ToPagedList(searchProject.Page, searchProject.PageSize);
+            var listView = _mapper.Map<List<ProjectDTO>>(listResult);
+            var result = new
+            {
+                listView,
+                listResult.PageCount,
+                listResult.PageNumber,
+                listResult.IsFirstPage,
+                listResult.IsLastPage,
+            };
+            return Ok(result);
         }
 
-        [HttpGet("dashboard")]
         [Authorize(RoleEnum.Admin)]
-        public ActionResult Dashboard()
+        [HttpPost]
+        public IActionResult updateProject([FromBody] ChangeStatus changeStatus)
         {
-            return View("Dashboard");
+            var project = _context.FundraisingProjects.SingleOrDefault(x => x.ProjectId == changeStatus.Id);
+            Console.WriteLine(changeStatus.Id);
+            if (project == null)
+            {
+                return Ok("No project found");
+            }
+            if (changeStatus.Status == (int)ProjectStatusEnum.Continuing)
+            {
+                project.Discontinued = true;
+            }
+            else
+            {
+                project.Discontinued = false;
+            }
+            _context.FundraisingProjects.Update(project);
+            _context.SaveChanges();
+            var result = "Updated";
+            return Ok(result);
         }
     }
 }

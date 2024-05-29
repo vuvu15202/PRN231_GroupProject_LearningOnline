@@ -17,13 +17,15 @@ builder.Services.AddScoped<DonationWebApp_v2Context>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+// configure strongly typed settings object
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.Configure<MomoOptionModel>(builder.Configuration.GetSection("MomoAPI"));
-builder.Services.AddScoped<IMomoService, MomoService>();
+
 // configure DI for application services
 builder.Services.AddScoped<IJwtUtils, JwtUtils>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
+builder.Services.AddScoped<IMomoService, MomoService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
@@ -38,8 +40,7 @@ builder.Services.AddCors(options =>
         });
 });
 
-// configure strongly typed settings object
-builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -63,6 +64,7 @@ app.UseRouting();
 
 // custom jwt auth middleware
 app.UseMiddleware<JwtMiddleware>();
+
 app.UseAuthorization();
 app.UseCors();
 

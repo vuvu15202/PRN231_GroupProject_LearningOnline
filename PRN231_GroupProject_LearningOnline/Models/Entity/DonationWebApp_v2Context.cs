@@ -150,6 +150,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.Property(e => e.Phone).HasMaxLength(255);
 
                 entity.Property(e => e.UserName).HasMaxLength(255);
+                entity.Property(e => e.Active).HasDefaultValue(true);
             });
 
             modelBuilder.Entity<UserRole>(entity =>

@@ -1,5 +1,6 @@
-namespace PRN231_GroupProject_LearningOnline.Models.Momo;
+﻿namespace PRN231_GroupProject_LearningOnline.Models.Momo;
 
+//thanh tóan xong momo trả về callback model này
 public class MomoExecuteResponseModel
 {
     public string OrderId { get; set; }

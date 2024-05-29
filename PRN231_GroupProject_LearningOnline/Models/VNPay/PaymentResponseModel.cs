@@ -1,5 +1,6 @@
 ﻿namespace PRN231_GroupProject_LearningOnline.Models.VNPay
 {
+    //thanh toán xong VNPAY trả về cho callback model này 
     public class PaymentResponseModel
     {
         public string OrderDescription { get; set; }

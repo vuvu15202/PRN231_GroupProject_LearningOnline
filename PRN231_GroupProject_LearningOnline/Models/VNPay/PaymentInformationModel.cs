@@ -1,5 +1,6 @@
 ﻿namespace PRN231_GroupProject_LearningOnline.Models.VNPay
 {
+    //người dùng gửi tới server thông tin thanh toán
     public class PaymentInformationModel
     {
         public string OrderType { get; set; }

@@ -63,7 +63,9 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
             {
                 case 1: rolesEnum.Add(RoleEnum.Admin); break;
                 case 2: rolesEnum.Add(RoleEnum.Staff); break;
-                default: rolesEnum.Add(RoleEnum.Orginization); break;
+                case 3: rolesEnum.Add(RoleEnum.Lecturer); break;
+                case 5: rolesEnum.Add(RoleEnum.Student); break;
+                default: rolesEnum.Add(RoleEnum.Student); break;
             }
         }
         userDTO.Roles = rolesEnum;

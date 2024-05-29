@@ -1,5 +1,5 @@
-namespace PRN231_GroupProject_LearningOnline.Models.Momo;
-
+﻿namespace PRN231_GroupProject_LearningOnline.Models.Momo;
+//người dùng gửi tới server thông tin thanh toán
 public class OrderInfoModel
 {
     public string FullName { get; set; }

@@ -1,5 +1,6 @@
-namespace PRN231_GroupProject_LearningOnline.Models.Momo;
+﻿namespace PRN231_GroupProject_LearningOnline.Models.Momo;
 
+//binding data từ appsetting vào model này
 public class MomoOptionModel
 {
     public string MomoApiUrl { get; set; }
