@@ -12,14 +12,14 @@ using PRN231_GroupProject_LearningOnline.Models.Entity;
 namespace PRN231_GroupProject_LearningOnline.Migrations
 {
     [DbContext(typeof(DonationWebApp_v2Context))]
-    [Migration("20240519161901_ver1")]
-    partial class ver1
+    [Migration("20240609074815_dbcontextver6")]
+    partial class dbcontextver6
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("ProductVersion", "6.0.29")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -194,6 +194,11 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
 
+                    b.Property<bool>("Active")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
                     b.Property<string>("Address")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
@@ -264,6 +269,10 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
 
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -286,10 +295,6 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                         .HasColumnType("int")
                         .HasColumnName("CategoryID");
 
-                    b.Property<string>("CourseInfo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -310,15 +315,9 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                     b.Property<long?>("Price")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
-                        .HasColumnName("UserID");
-
                     b.HasKey("CourseId");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Course", (string)null);
                 });
@@ -391,12 +390,11 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PreviousLessioNum")
+                        .HasColumnType("int");
+
                     b.Property<string>("Quiz")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("VideoUrl")
                         .HasMaxLength(4000)
@@ -489,15 +487,7 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_Course_CategoryID");
 
-                    b.HasOne("PRN231_GroupProject_LearningOnline.Models.Entity.User", "User")
-                        .WithMany("Courses")
-                        .HasForeignKey("UserId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Course_UserID");
-
                     b.Navigation("Category");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.temp.CourseEnroll", b =>
@@ -527,15 +517,7 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_Lesson_CourseID");
 
-                    b.HasOne("PRN231_GroupProject_LearningOnline.temp.Lesson", "PreviousLession")
-                        .WithOne("SubsequenceLession")
-                        .HasForeignKey("PRN231_GroupProject_LearningOnline.temp.Lesson", "LessonId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Course");
-
-                    b.Navigation("PreviousLession");
                 });
 
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.temp.Review", b =>
@@ -569,8 +551,6 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
 
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.Models.Entity.User", b =>
                 {
-                    b.Navigation("Courses");
-
                     b.Navigation("Reviews");
 
                     b.Navigation("UserRoles");
@@ -591,11 +571,6 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.temp.CourseEnroll", b =>
                 {
                     b.Navigation("StudentFee");
-                });
-
-            modelBuilder.Entity("PRN231_GroupProject_LearningOnline.temp.Lesson", b =>
-                {
-                    b.Navigation("SubsequenceLession");
                 });
 #pragma warning restore 612, 618
         }

@@ -45,7 +45,7 @@ async function pushDataOnLoad() {
         const [amountData] = await Promise.all([getTotalAmountProject(projectId)]);
         let html = `<div class="course_container">
                     <div class="course_title">${project.project.title}</div>
-                    <div class="course_image"><img src="${project.project.image}" alt=""></div>
+                    <iframe  width="700" height="400" src="https://www.youtube.com/embed/Y-FH4Y-KYLw?si=2LJocp1LEFAdmMBO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="course_tabs_container">
                         <div class="tabs d-flex flex-row align-items-center justify-content-start">
                             <div class="tab active">Hoàn cảnh</div>
@@ -58,25 +58,9 @@ async function pushDataOnLoad() {
                     </div>
                 `;
         let featureHtml = `<div class="feature d-flex flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Start:</span></div>
-                                    <div class="feature_text ml-auto">${new Date(project.project.startDate).toLocaleDateString("en-US", options)}</div>
-                                </div>
-                                <div class="feature d-flex flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-clock-o" aria-hidden="true"></i><span>End:</span></div>
-                                    <div class="feature_text ml-auto">${new Date(project.project.endDate).toLocaleDateString("en-US", options)}</div>
-                                </div>
-                                <div class="feature d-flex flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>Status:</span></div>
-                                    <div class="feature_text ml-auto">${project.project.discontinued == 1 ? "Continue" : "Ended"}</div>
-                                </div>
-                                <div class="feature d-flex flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>Total:</span></div>
-                                    <div class="feature_text ml-auto">${amountData.totalAmount.toLocaleString('vi', { style: 'currency', currency: 'VND' }) }</div>
-                                </div>
-                                <div class="feature d-flex flex-row align-items-center justify-content-start">
-                                    <div class="feature_title"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>Target:</span></div>
-                                    <div class="feature_text ml-auto">${project.project.targetAmount.toLocaleString('vi', { style: 'currency', currency: 'VND' }) }</div>
-                                </div>`;
+                                <div class="feature_title"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>Target:</span></div>
+                                <div class="feature_text ml-auto">${project.project.targetAmount.toLocaleString('vi', { style: 'currency', currency: 'VND' }) }</div>
+                            </div>`;
         container.innerHTML += html;
         listFeatureContainer.innerHTML += featureHtml;
     })

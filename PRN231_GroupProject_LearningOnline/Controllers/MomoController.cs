@@ -4,6 +4,7 @@ using PRN231_GroupProject_LearningOnline.Models;
 using PRN231_GroupProject_LearningOnline.Models.Entity;
 using PRN231_GroupProject_LearningOnline.Models.Momo;
 using PRN231_GroupProject_LearningOnline.Services;
+using PRN231_GroupProject_LearningOnline.temp;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers;
 
@@ -24,6 +25,8 @@ public class MomoController : Controller
     [HttpPost]
     public async Task<IActionResult> CreatePaymentUrl(OrderInfoModel model)
     {
+        var user = (User)HttpContext.Items["User"];
+        model.UserId = user.UserId;
         var response = await _momoService.CreatePaymentAsync(model);
         return Redirect(response.PayUrl);
     }
@@ -39,27 +42,37 @@ public class MomoController : Controller
         {
             if (response.ErrorCode == 0)
             {
-                Order order = new Order()
+                StudentFee studentFee = new StudentFee()
                 {
-                    ProjectId = response.ProjectId,
-                    OrderId = response.OrderId,
+                    //CourseEnrollId = response.CourseId,
+                    StudentFeeId = response.OrderId,
                     PaymentMethod = "MomoQR",
                     Amount = response.Amount,
                     OrderInfo = response.OrderInfo,
                     ErrorCode = response.ErrorCode.ToString(),
                     LocalMessage = response.LocalMessage,
-                    DateOfDonation = DateTime.Now,
+                    DateOfPaid = DateTime.Now,
                 };
-                _context.Orders.Add(order);
+                _context.StudentFees.Add(studentFee);
                 _context.SaveChanges();
-                
+                CourseEnroll courseEnroll = new CourseEnroll()
+                {
+                    UserId = response.UserId,
+                    CourseId = response.CourseId,
+                    EnrollDate = DateTime.Now,
+                    LessonCurrent = 1,
+                    CourseStatus = 1,
+                    StudentFeeId = studentFee.StudentFeeId,
+                };
+                _context.CourseEnrolls.Add(courseEnroll);
+                _context.SaveChanges();
             }
             
         }
         catch(Exception ex)
         {
-            return Redirect("https://localhost:5000/project?id=" + response.ProjectId + "&statuscode=2");
+            return Redirect("https://localhost:5000/courses/payment?courseId=" + response.CourseId + "&statuscode=2");
         }
-        return Redirect("https://localhost:5000/project?id=" +response.ProjectId + "&statuscode=1");
+        return Redirect("https://localhost:5000/courses/payment?courseId=" + response.CourseId + "&statuscode=1");
     }
 }

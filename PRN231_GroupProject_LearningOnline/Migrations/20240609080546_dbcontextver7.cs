@@ -4,7 +4,7 @@
 
 namespace PRN231_GroupProject_LearningOnline.Migrations
 {
-    public partial class versin3 : Migration
+    public partial class dbcontextver7 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

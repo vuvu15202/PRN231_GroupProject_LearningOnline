@@ -14,6 +14,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         public string LocalMessage { get; set; } = null!;
         public DateTime? DateOfPaid { get; set; }
         public int? CourseEnrollId { get; set; }
+        [JsonIgnore]
         public virtual CourseEnroll? CourseEnroll { get; set; } = null!;
 
 

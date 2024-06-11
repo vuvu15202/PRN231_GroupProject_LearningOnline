@@ -10,6 +10,16 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.Error
         {
             return View();
         }
+        public ActionResult Error404()
+        {
+            return View();
+        }
+
+
+
+
+
+
 
 
         // GET: ErrorController/Details/5

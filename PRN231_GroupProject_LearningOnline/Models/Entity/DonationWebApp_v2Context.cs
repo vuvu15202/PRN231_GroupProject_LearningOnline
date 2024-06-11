@@ -10,8 +10,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
     //        Cài đặt công cụ dotnet ef
     //dotnet tool update --global dotnet-ef 
     //        Cập nhật công cụ dotnet ef
-    //dotnet ef migrations add NameMigration  
-    //        Tạo một Migration có tên NameMigration
+    //dotnet ef migrations add dbcontextver  
+    //        Tạo một Migration có tên dbcontextver
     //dotnet ef migrations list   
     //        Danh sách các Migration
     //dotnet ef database update   
@@ -155,6 +155,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
 
             modelBuilder.Entity<UserRole>(entity =>
             {
+                entity.HasKey(e => e.UserRoleId);
                 entity.ToTable("UserRole");
 
                 entity.HasOne(d => d.Role)
@@ -183,10 +184,11 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.ToTable("Course");
 
                 entity.Property(e => e.CourseId).HasColumnName("CourseID");
+                entity.Property(e => e.Description).HasColumnType("nvarchar(max)");
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
 
-                entity.Property(e => e.UserId).HasColumnName("UserID");
+                //entity.Property(e => e.UserId).HasColumnName("UserID");
                 entity.Property(e => e.IsPrivate).HasDefaultValue(true);
 
                 entity.HasOne(d => d.Category)
@@ -195,11 +197,11 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Course_CategoryID");
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Courses)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Course_UserID");
+                //entity.HasOne(d => d.User)
+                //    .WithMany(p => p.Courses)
+                //    .HasForeignKey(d => d.UserId)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Course_UserID");
             });
 
             modelBuilder.Entity<CourseEnroll>(entity =>
@@ -254,8 +256,6 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
 
                 entity.Property(e => e.Description).HasMaxLength(4000);
 
-                entity.Property(e => e.Title).HasMaxLength(250);
-
                 entity.Property(e => e.VideoUrl).HasMaxLength(4000);
 
                 entity.Property(e => e.Quiz).HasColumnType("nvarchar(max)");
@@ -272,10 +272,10 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                    .OnDelete(DeleteBehavior.ClientSetNull)
                    .HasConstraintName("FK_Lesson_CourseID");
 
-                entity.HasOne(e => e.PreviousLession)
-                    .WithOne()
-                    .HasForeignKey<Lesson>(e => e.PreviousLessionId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                //entity.HasOne(e => e.PreviousLession)
+                //    .WithOne()
+                //    .HasForeignKey<Lesson>(e => e.PreviousLessionId)
+                //    .OnDelete(DeleteBehavior.Restrict);
 
                 //.OnDelete(DeleteBehavior.Cascade); // or .OnDelete(DeleteBehavior.Restrict)
             });

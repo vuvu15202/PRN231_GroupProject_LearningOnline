@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PRN231_GroupProject_LearningOnline.Authorization;
 using PRN231_GroupProject_LearningOnline.Helpers;
 using PRN231_GroupProject_LearningOnline.Models;
@@ -73,4 +73,43 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 //app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    try
+    {
+        var context = services.GetRequiredService<DonationWebApp_v2Context>();
+        SeedDatabase(context);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred seeding the DB.");
+    }
+}
+
 app.Run();
+
+void SeedDatabase(DonationWebApp_v2Context context)
+{
+    var sqlFilePath = Path.Combine(AppContext.BaseDirectory, "seed-data.sql");
+
+    if (File.Exists(sqlFilePath))
+    {
+        ClearDatabase(context);
+        var sql = File.ReadAllText(sqlFilePath);
+        context.Database.ExecuteSqlRaw(sql);
+    }
+    else
+    {
+        throw new FileNotFoundException("The seed-data.sql file was not found.", sqlFilePath);
+    }
+}
+
+void ClearDatabase(DonationWebApp_v2Context context)
+{
+    //context.Database.ExecuteSqlRaw("DELETE FROM Category");
+
+    //context.SaveChanges();
+}

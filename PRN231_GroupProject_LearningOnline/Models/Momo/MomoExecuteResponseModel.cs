@@ -8,5 +8,7 @@ public class MomoExecuteResponseModel
     public string OrderInfo { get; set; }
     public int ErrorCode { get; set; }
     public string LocalMessage { get; set; }
-    public int ProjectId { get; set; }
+    public int CourseId { get; set; }
+    public int UserId { get; set; }
+
 }

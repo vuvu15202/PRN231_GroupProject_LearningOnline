@@ -6,5 +6,7 @@ public class OrderInfoModel
     public string OrderId { get; set; }
     public string OrderInfo { get; set; }
     public double Amount { get; set; }
-    public int ProjectId { get; set; }
+    public int CourseId { get; set; }
+    public int UserId { get; set; }
+
 }

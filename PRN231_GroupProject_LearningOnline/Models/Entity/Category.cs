@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PRN231_GroupProject_LearningOnline.temp
 {
@@ -12,7 +13,9 @@ namespace PRN231_GroupProject_LearningOnline.temp
 
         public int CategoryId { get; set; }
         public string Name { get; set; } = null!;
+        public string Image { get; set; } = null!;
 
-        public virtual ICollection<Course> Courses { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Course>? Courses { get; set; }
     }
 }

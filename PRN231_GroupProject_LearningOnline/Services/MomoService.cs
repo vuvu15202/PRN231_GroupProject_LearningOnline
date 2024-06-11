@@ -19,7 +19,7 @@ public class MomoService : IMomoService
     public async Task<MomoCreatePaymentResponseModel> CreatePaymentAsync(OrderInfoModel model)
     {
         model.OrderId = DateTime.UtcNow.Ticks.ToString();
-        model.OrderInfo = model.FullName + model.OrderInfo+";"+model.ProjectId.ToString();
+        model.OrderInfo = model.FullName + model.OrderInfo+";"+model.UserId.ToString() + ";" + model.CourseId.ToString();
         var rawData =
             $"partnerCode={_options.Value.PartnerCode}&accessKey={_options.Value.AccessKey}&requestId={model.OrderId}&amount={model.Amount}&orderId={model.OrderId}&orderInfo={model.OrderInfo}&returnUrl={_options.Value.ReturnUrl}&notifyUrl={_options.Value.NotifyUrl}&extraData=";
 
@@ -64,7 +64,8 @@ public class MomoService : IMomoService
             Amount = amount,
             OrderId = orderId,
             OrderInfo = orderInfo.ToString().Split(";")[0],
-            ProjectId= int.Parse(orderInfo.ToString().Split(";")[1]),
+            CourseId = int.Parse(orderInfo.ToString().Split(";")[2]),
+            UserId = int.Parse(orderInfo.ToString().Split(";")[1]),
             ErrorCode = errorCode,
             LocalMessage = localMessage
         };

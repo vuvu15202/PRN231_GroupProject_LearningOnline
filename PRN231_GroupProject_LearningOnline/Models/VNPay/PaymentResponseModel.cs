@@ -13,6 +13,7 @@
         public string VnPayResponseCode { get; set; }
         public string Vnp_Amount { get; set; }
         public string Vnp_BankCode {get; set;}
-        public int ProjectId {  get; set; }
+        public int CourseId {  get; set; }
+        public int UserId { get; set; }
     }
 }

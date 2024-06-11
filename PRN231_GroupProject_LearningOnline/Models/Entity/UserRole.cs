@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace PRN231_GroupProject_LearningOnline.Models.Entity
 {
@@ -8,8 +9,9 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         public int UserRoleId { get; set; }
         public int UserId { get; set; }
         public int RoleId { get; set; }
-
+        [JsonIgnore]
         public virtual Role Role { get; set; } = null!;
+        [JsonIgnore]
         public virtual User User { get; set; } = null!;
     }
 }

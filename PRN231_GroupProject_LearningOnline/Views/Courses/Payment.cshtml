@@ -1,0 +1,312 @@
+﻿@* <!DOCTYPE html>
+<html>
+<head>
+    <title>Đồng hồ đếm ngược</title>
+</head>
+<body>
+    <h1>Đồng hồ đếm ngược</h1>
+    <div id="countdown">5m 0s</div>
+    <button id="startButton">Bắt đầu đếm ngược</button>
+
+    <script>
+        // Biến lưu trữ setInterval
+        var x;
+
+        // Hàm bắt đầu đếm ngược
+        function startCountdown() {
+            // Thiết lập thời gian kết thúc (ví dụ: 5 phút từ khi bấm nút)
+            var countDownDate = new Date().getTime() + 60 * 1000;
+
+            // Cập nhật đếm ngược mỗi giây
+            x = setInterval(function () {
+                // Lấy thời gian hiện tại
+                var now = new Date().getTime();
+
+                // Tính toán khoảng cách thời gian giữa bây giờ và thời gian kết thúc
+                var distance = countDownDate - now;
+
+                // Tính toán thời gian cho phút và giây
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Hiển thị kết quả trong phần tử có id="countdown"
+                document.getElementById("countdown").innerHTML = minutes + "m " + seconds + "s ";
+
+                // Nếu đếm ngược kết thúc, hiển thị văn bản và thực hiện hành động
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "Hết giờ";
+                    // Thực hiện hành động khi thời gian kết thúc
+                    alert("Thời gian đã hết!");
+                }
+            }, 1000);
+        }
+
+        // Thêm sự kiện bấm nút để bắt đầu đếm ngược
+        document.getElementById("startButton").addEventListener("click", function () {
+            // Xóa bỏ bất kỳ bộ đếm ngược nào đang chạy
+            clearInterval(x);
+            // Bắt đầu đếm ngược
+            startCountdown();
+        });
+    </script>
+</body>
+</html>
+ *@
+
+
+@{
+    Layout = "_LayoutTemplate";
+    ViewData["Title"] = "Project Details";
+}
+
+<!-- Source CSS -->
+<link href="~/css/course.css" rel="stylesheet" />
+<link href="~/css/course_responsive.css" rel="stylesheet" />
+<!-- Home -->
+
+<div class="home">
+    <div class="breadcrumbs_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/projects">Projects</a></li>
+                            <li>Project Details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Course -->
+
+<div class="course">
+    <div class="container">
+        <div class="row">
+
+            <!-- Course -->
+            <div class="col-lg-8" id="projectContainer">
+            </div>
+
+            <!-- Course Sidebar -->
+            <div class="col-lg-4">
+                <div class="sidebar">
+
+                    <!-- Feature ----------------------------------------------------------->
+                    <div class="sidebar_section">
+                        <div class="sidebar_section_title">Information</div>
+                        <div class="sidebar_feature">
+
+                            <div class="text-danger text-bold h1" id="course-price"></div>
+                            <!--Button----------------------------------->
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Momo Payment
+                            </button>
+
+                            <!-- Modal MOMO-->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Momo Payment</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <form action="/Momo/CreatePaymentUrl" id="frmCreateOrder" method="POST">
+                                            <div class="modal-body">
+
+
+                                                <div class="container">
+
+                                                    <input name="courseId" id="courseIdMomo" type="hidden">
+
+
+                                                    <div class="form-group">
+                                                        <label for="FullName">Tên khách hàng</label>
+                                                        <input class="form-control"
+                                                               id="FullName"
+                                                               name="FullName"
+                                                               type="text"
+                                                               value="">
+                                                    </div>
+                                                    <br />
+                                                    <div class="form-group">
+                                                        <label for="Amount">Số tiền</label>
+                                                        <input class="form-control"
+                                                               id="Amount"
+                                                               name="Amount"
+                                                               type="text"
+                                                               value="">
+                                                    </div>
+                                                    <br />
+                                                    <div class="form-group">
+                                                        <label for="OrderInfo">Nội dung thanh toán</label>
+                                                        <textarea class="form-control"
+                                                                  cols="20"
+                                                                  id="OrderInfo"
+                                                                  name="OrderInfo"
+                                                                  rows="2"></textarea>
+                                                    </div>
+                                                    <br />
+
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="text-center btn btn-primary">Thanh Toán</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--VN Pay -->
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalVnPay">
+                                VnPay Payment
+                            </button>
+
+
+                            <!-- Modal VNPAY-->
+                            <div class="modal fade" id="exampleModalVnPay" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">VnPay Payment</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <form action="/VNPay/CreatePaymentUrl" id="frmCreateOrder" method="POST">
+                                            <div class="modal-body">
+
+                                                <div class="form-group" hidden>
+                                                    <label for="ordertype">Loại hàng hóa </label>
+                                                    <select name="OrderType" id="ordertype" class="form-control">
+                                                        <option value="electric">Quỹ</option>
+
+                                                    </select>
+                                                </div>
+                                                <input name="courseId" id="courseIdVnPay" type="hidden">
+
+
+                                                <br />
+                                                <div class="form-group">
+                                                    <label for="Name">Tên khách hàng</label>
+                                                    <input class="form-control"
+                                                           id="Name"
+                                                           name="Name"
+                                                           type="text">
+                                                </div>
+                                                <br />
+                                                <div class="form-group">
+                                                    <label for="Amount">Số tiền</label>
+                                                    <input class="form-control"
+                                                           id="Amount"
+                                                           name="Amount"
+                                                           type="text">
+                                                </div>
+                                                <br />
+                                                <div class="form-group">
+                                                    <label for="OrderDescription">Nội dung thanh toán</label>
+                                                    <textarea class="form-control"
+                                                              cols="20"
+                                                              id="OrderDescription"
+                                                              name="OrderDescription"
+                                                              rows="2"></textarea>
+                                                </div>
+                                                <br />
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Thanh Toán</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!----------------------------------->
+                            <!-- Features -->
+                            <div class="feature_list" id="listFeature">
+
+
+                                @* <div class="feature d-flex flex-row align-items-center justify-content-start">
+                                <div class="feature_title"><i class="fa fa-users" aria-hidden="true"></i><span>Lectures:</span></div>
+                                <div class="feature_text ml-auto">35</div>
+                                </div> *@
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature ---------------------------------------------------------------->
+                    <div class="sidebar_section">
+                        <div class="sidebar_section_title">Organization</div>
+                        <div class="sidebar_teacher">
+                            <div class="teacher_title_container d-flex flex-row align-items-center justify-content-start">
+                                <div class="teacher_image"><img src="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/952/cached.offlinehbpl.hbpl.co.uk/news/NST/JustGiving-20160212030359583.jpg" alt=""></div>
+                                <div class="teacher_title" style="margin-bottom: 40px">
+                                    <div class="teacher_name"><a href="#">Just Giving</a></div>
+                                    <div class="teacher_position">Charitable organization</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="teacher_info" style="margin-bottom: 50px">
+                            <p>The 2024 GoCardless JustGiving Awards celebrate people who fill us with inspiration, pride and hope. Nominate someone who deserves to win an award before 11th April 2024.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Course -->
+                <div class="sidebar_section" style="margin-left:40px">
+                    <div class="sidebar_section_title">Leading philanthropist</div>
+                    <div class="sidebar_latest" id="topDonate">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/fetchdata/payment.js"></script>
+
+@*notify*@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/toastr.min.js"></script>
+<link href="~/css/toastr.min.css" rel="stylesheet" />
+
+<script>
+    // Lấy URL hiện tại
+    var currentUrl = window.location.href;
+    // Tạo một đối tượng URLSearchParams từ URL
+    var searchParams = new URLSearchParams(new URL(currentUrl).search);
+    var statuscode = searchParams.get('statuscode'); 
+    if (statuscode) {
+        switch (statuscode) {
+            case "1":
+                toastr.success("Chúc mừng bạn đã đăng ký thành công. Bắt đầu ngay!", 'Notification', { timeOut: 3000 });
+                break;
+            case "2":
+                toastr.error("Lỗi trong quá trình thực hiện giao dịch, vui lòng kiểm tra lại!", 'Notification', { timeOut: 3000 });
+                break;
+            case "3":
+                toastr.warning("Khóa học này có tính phí! Vui lòng thanh toán học phí để đăng ký khóa học!", 'Notification', { timeOut: 3000 });
+                break;
+            case "4":
+                toastr.error("Không tìm thấy khóa học!", 'Notification', { timeOut: 3000 });
+                break;
+            default:
+        }
+    }
+</script>

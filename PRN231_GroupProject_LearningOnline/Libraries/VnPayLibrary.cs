@@ -46,14 +46,16 @@ namespace PRN231_GroupProject_LearningOnline.Libraries
             {
                 Success = true,
                 PaymentMethod = "VnPay",
-                OrderDescription = orderInfo,
+                OrderDescription = orderInfo.Split(';')[0],
                 OrderId = orderId.ToString(),
                 PaymentId = vnPayTranId.ToString(),
                 TransactionId = vnPayTranId.ToString(),
                 Token = vnpSecureHash,
                 VnPayResponseCode = vnpResponseCode,
                 Vnp_Amount= vnp_Amount,
-                Vnp_BankCode= vnp_BankCode
+                Vnp_BankCode= vnp_BankCode,
+                UserId = Int32.Parse(orderInfo.Split(';')[1]),
+                CourseId = Int32.Parse(orderInfo.Split(';')[2])
             };
         }
         public string GetIpAddress(HttpContext context)

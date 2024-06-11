@@ -12,7 +12,6 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         {
             UserRoles = new HashSet<UserRole>();
             Reviews = new HashSet<Review>();
-            Courses = new HashSet<Course>();
         }
 
         public int UserId { get; set; }
@@ -26,10 +25,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         public bool Active { get; set; }
 
         [JsonIgnore]
-        public virtual ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<UserRole>? UserRoles { get; set; }
         [JsonIgnore]
-        public virtual ICollection<Review> Reviews { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<Course> Courses { get; set; }
+        public virtual ICollection<Review>? Reviews { get; set; }
     }
 }
