@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
 using PRN231_GroupProject_LearningOnline.Models.Entity;
 using PRN231_GroupProject_LearningOnline.Models.VNPay;
 using PRN231_GroupProject_LearningOnline.Services;
@@ -9,10 +10,12 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
     public class VNPayController : Controller
     {
         private readonly IVnPayService _vnPayService;
+        private readonly IEmailSender _emailSender;
 
-        public VNPayController(IVnPayService vnPayService)
+        public VNPayController(IVnPayService vnPayService, IEmailSender emailSender)
         {
             _vnPayService = vnPayService;
+            _emailSender = emailSender;
         }
 
         public IActionResult Index()
@@ -29,45 +32,43 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
             return Redirect(url);
         }
 
-        public IActionResult PaymentCallback()
+        public async Task<IActionResult> PaymentCallback()
         {
             var response = _vnPayService.PaymentExecute(Request.Query);
 
             DonationWebApp_v2Context _context = new DonationWebApp_v2Context();
 
             try
-            {
-                if (response.VnPayResponseCode.Equals("00"))
+            { 
+                StudentFee studentFee = new StudentFee()
                 {
-                    
-                    StudentFee studentFee = new StudentFee()
-                    {
-                        //CourseEnrollId = int.Parse(response.OrderDescription.Split(";")[1]),
-                        StudentFeeId = response.OrderId,
-                        PaymentMethod = response.PaymentMethod,
-                        BankCode = response.Vnp_BankCode,
-                        Amount = response.Vnp_Amount,
-                        OrderInfo = response.OrderDescription,
-                        ErrorCode = response.VnPayResponseCode,
-                        LocalMessage = "Thành Công",
-                        DateOfPaid = DateTime.Now,
-                    };
-                    _context.StudentFees.Add(studentFee);
-                    _context.SaveChanges();
+                    //CourseEnrollId = int.Parse(response.OrderDescription.Split(";")[1]),
+                    StudentFeeId = response.OrderId,
+                    PaymentMethod = response.PaymentMethod,
+                    BankCode = response.Vnp_BankCode,
+                    Amount = response.Vnp_Amount,
+                    OrderInfo = response.OrderDescription,
+                    ErrorCode = response.VnPayResponseCode,
+                    LocalMessage = response.VnPayResponseCode.Equals("00") ?  "Thành Công": "Đang xử lí",
+                    DateOfPaid = DateTime.Now,
+                };
+                _context.StudentFees.Add(studentFee);
+                _context.SaveChanges();
 
-                    CourseEnroll courseEnroll = new CourseEnroll()
-                    {
-                        UserId = response.UserId,
-                        CourseId = response.CourseId,
-                        EnrollDate = DateTime.Now,
-                        LessonCurrent = 1,
-                        CourseStatus = 1,
-                        StudentFeeId = studentFee.StudentFeeId,
-                    };
-                    _context.CourseEnrolls.Add(courseEnroll);
-                    _context.SaveChanges();
-                }
+                CourseEnroll courseEnroll = new CourseEnroll()
+                {
+                    UserId = response.UserId,
+                    CourseId = response.CourseId,
+                    EnrollDate = DateTime.Now,
+                    LessonCurrent = 1,
+                    CourseStatus = 1,
+                    StudentFeeId = studentFee.StudentFeeId,
+                };
+                _context.CourseEnrolls.Add(courseEnroll);
+                _context.SaveChanges();
 
+                var user = (User)HttpContext.Items["User"];
+                await _emailSender.SendEmailAsync(user.Email, "Notification",$"Ban vua dang ky khoa hoc thanh cong");
             }
             catch (Exception ex)
             {

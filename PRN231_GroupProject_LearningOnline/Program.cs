@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.EntityFrameworkCore;
 using PRN231_GroupProject_LearningOnline.Authorization;
 using PRN231_GroupProject_LearningOnline.Helpers;
 using PRN231_GroupProject_LearningOnline.Models;
@@ -39,6 +40,14 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader();
         });
 });
+
+
+//send mail
+builder.Services.AddOptions();                                        // Kích hoạt Options
+var mailsettings = builder.Configuration.GetSection("MailSettings");  // đọc config
+builder.Services.Configure<MailSettings>(mailsettings);               // đăng ký để Inject
+builder.Services.AddTransient<IEmailSender, MailService>();        // Đăng ký dịch vụ Mail
+//send mail
 
 
 

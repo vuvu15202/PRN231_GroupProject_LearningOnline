@@ -17,5 +17,6 @@ namespace PRN231_GroupProject_LearningOnline.Models.DTO
         public string? StudentFeeId { get; set; }
         public virtual CourseDTO Course { get; set; } = null!;
         public virtual UserDTO User { get; set; } = null!;
+
     }
 }

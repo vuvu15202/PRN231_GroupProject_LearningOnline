@@ -1,9 +1,9 @@
-﻿using PRN231_GroupProject_LearningOnline.temp;
-using System.Text.Json.Serialization;
+﻿using PRN231_GroupProject_LearningOnline.Entities.DTO;
+using PRN231_GroupProject_LearningOnline.temp;
 
-namespace PRN231_GroupProject_LearningOnline.Models.Entity
+namespace PRN231_GroupProject_LearningOnline.Models.DTO
 {
-    public partial class StudentFee
+    public class StudentFeeDTO
     {
         public string StudentFeeId { get; set; } = null!;
         public string PaymentMethod { get; set; } = null!;
@@ -12,13 +12,9 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         public string OrderInfo { get; set; } = null!;
         public string ErrorCode { get; set; } = null!;
         public string LocalMessage { get; set; } = null!;
-        public DateTime? DateOfPaid { get; set; }
-        public int? CourseEnrollId { get; set; }
-        [JsonIgnore]
-        public virtual CourseEnroll? CourseEnroll { get; set; } = null!;
+        public string? DateOfPaid { get; set; }
 
+        public virtual CourseDTO Course { get; set; } = null!;
 
     }
-
-  
 }
