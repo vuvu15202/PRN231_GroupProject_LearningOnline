@@ -111,7 +111,11 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         //    }
         //}
 
-
-
+        [HttpGet("usermanagement")]
+        //[Authorize(RoleEnum.Admin)]
+        public IActionResult UserManagement()
+        {
+            return View("UserManagement");
+        }
     }
 }
