@@ -75,5 +75,105 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.APIs
             var result = "Updated";
             return Ok(result);
         }
+
+        [HttpGet]
+        public IActionResult GetAllUsers()
+        {
+            var users = _context.Users.Include(u => u.UserRoles).ThenInclude(ur => ur.Role).ToListAsync();
+
+            var userDtos = users.Result.Select(user => new UserListDTO
+            {
+                UserId = user.UserId,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Phone = user.Phone,
+                Address = user.Address,
+                Active = user.Active,
+                Role = user.UserRoles.Where(ur => ur.UserId == user.UserId).Select(
+                    ur => new RoleDTO
+                    {
+                        RoleId = ur.RoleId,
+                        RoleName = ur.Role.RoleName
+                    }
+                ).FirstOrDefault(),
+            }).ToList();
+
+            return Ok(userDtos);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateUser([FromBody] UserEditDTO userEditDTO)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.UserId == userEditDTO.UserId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.FirstName = userEditDTO.FirstName;
+            user.LastName = userEditDTO.LastName;
+            user.Email = userEditDTO.Email;
+            user.Phone = userEditDTO.Phone;
+            user.Address = userEditDTO.Address;
+            user.Active = userEditDTO.Active;
+
+            var userRole = _context.UserRoles.FirstOrDefault(ur => ur.UserId == userEditDTO.UserId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            userRole.RoleId = userEditDTO.RoleId;
+
+            var result = _context.Users.Update(user);
+            var result2 = _context.UserRoles.Update(userRole);
+            _context.SaveChanges();
+            return Ok(userEditDTO);
+        }
+
+        [HttpGet]
+        public IActionResult GetAllRole()
+        {
+            var roles = _context.Roles.ToListAsync();
+            var roleDTOs = roles.Result.Select(
+                    r => new RoleDTO
+                    {
+                        RoleId = r.RoleId,
+                        RoleName = r.RoleName,
+                    }
+                ).ToList();
+            return Ok(roleDTOs);
+        }
+
+        public class UserListDTO
+        {
+            public int UserId { get; set; }
+            public string FirstName { get; set; } = null!;
+            public string LastName { get; set; } = null!;
+            public string Email { get; set; } = null!;
+            public string? Phone { get; set; }
+            public string? Address { get; set; }
+            public bool Active { get; set; }
+            public RoleDTO Role { get; set; }
+        }
+
+        public class UserEditDTO
+        {
+            public int UserId { get; set; }
+            public string FirstName { get; set; } = null!;
+            public string LastName { get; set; } = null!;
+            public string Email { get; set; } = null!;
+            public string? Phone { get; set; }
+            public string? Address { get; set; }
+            public bool Active { get; set; }
+            public int RoleId { get; set; }
+        }
+
+        public class RoleDTO
+        {
+            public int RoleId { get; set; }
+            public string? RoleName { get; set; }
+        }
     }
 }

@@ -158,5 +158,66 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         {
             return (_context.Courses?.Any(e => e.CourseId == id)).GetValueOrDefault();
         }
+
+        [HttpGet("search")]
+        public async Task<ActionResult<IEnumerable<Course>>> SearchCourses(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return BadRequest("Name parameter is required.");
+            }
+
+            var courses = await _context.Courses
+                                        .Where(c => c.Name.Contains(name))
+                                        .ToListAsync();
+
+            if (!courses.Any())
+            {
+                return NotFound("No courses found.");
+            }
+
+            return Ok(courses);
+        }
+
+        [HttpGet("filterByCategory")]
+        public async Task<ActionResult<IEnumerable<Course>>> FilterCoursesByCategory(int categoryId)
+        {
+            var courses = await _context.Courses
+                                        .Include(c => c.Category)
+                                        .Where(c => c.CategoryId == categoryId)
+                                        .ToListAsync();
+
+            if (!courses.Any())
+            {
+                return NotFound("No courses found in this category.");
+            }
+
+            return Ok(courses);
+        }
+
+        [HttpGet("filter")]
+        public async Task<ActionResult<IEnumerable<Course>>> FilterCourses(int? categoryId, string name)
+        {
+            IQueryable<Course> query = _context.Courses.Include(c => c.Category);
+
+            if (categoryId != null && categoryId > 0)
+            {
+                query = query.Where(c => c.CategoryId == categoryId);
+            }
+
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                query = query.Where(c => c.Name.Contains(name));
+            }
+
+            var courses = await query.ToListAsync();
+
+            if (courses == null || courses.Count == 0)
+            {
+                return NotFound("No courses found with the specified filters.");
+            }
+
+            return Ok(courses);
+        }
     }
 }
