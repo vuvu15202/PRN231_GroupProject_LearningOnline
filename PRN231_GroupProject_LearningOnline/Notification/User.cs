@@ -1,11 +1,11 @@
 ﻿namespace PRN231_GroupProject_LearningOnline.Notification
 {
-    public class User
+    public class UserNoti
     {
         public string UserName { get; set; }
         public string ConnectionId { get; set; }
 
-        public User(string userName, string connectionId)
+        public UserNoti(string userName, string connectionId)
         {
             UserName = userName;
             ConnectionId = connectionId;
@@ -14,19 +14,19 @@
 
     public class UserList
     {
-        public static List<User> Users = new List<User>();
+        public static List<UserNoti> Users = new List<UserNoti>();
 
-        public static void AddUser(User user)
+        public static void AddUser(UserNoti user)
         {
             Users.Add(user);
         }
 
-        public static User GetUser(string userName)
+        public static UserNoti GetUser(string userName)
         {
             return Users.FirstOrDefault(x => x.UserName.Equals(userName));
         }
 
-        public static User GetUserByConnectionId(string connectionId)
+        public static UserNoti GetUserByConnectionId(string connectionId)
         {
             return Users.FirstOrDefault(x => x.ConnectionId.Equals(connectionId));
         }

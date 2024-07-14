@@ -224,6 +224,7 @@
                             var expires = "expires=" + date.toUTCString();
                             // document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
                             document.cookie = "token=" + encodeURIComponent(token) + ";" + expires + "; path=/";
+                            document.cookie = "userId=" + data.id + ";" + expires + "; path=/";
 
                             // Check if a redirect URL is provided in the response
                             if (data.redirectUrl) {
