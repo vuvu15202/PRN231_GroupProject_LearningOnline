@@ -18,7 +18,28 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         }
 
 
+        [HttpGet("projects")]
+        [Authorize(RoleEnum.Admin)]
+        public ActionResult ListProjectAdmin()
+        {
+            return View("Project");
+        }
 
+
+
+        [HttpGet("dashboard")]
+        [Authorize(RoleEnum.Admin)]
+        public ActionResult Dashboard()
+        {
+            return View("Dashboard");
+        }
+
+        [HttpGet("studentfee")]
+        [Authorize(RoleEnum.Admin)]
+        public ActionResult StudentFee()
+        {
+            return View("StudentFee");
+        }
 
         //// GET: AdminController/Details/5
         //[HttpGet]
@@ -91,18 +112,6 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         //}
 
 
-        [HttpGet("projects")]
-        [Authorize(RoleEnum.Admin)]
-        public ActionResult ListProjectAdmin()
-        {
-            return View("Project");
-        }
 
-        [HttpGet("dashboard")]
-        [Authorize(RoleEnum.Admin)]
-        public ActionResult Dashboard()
-        {
-            return View("Dashboard");
-        }
     }
 }

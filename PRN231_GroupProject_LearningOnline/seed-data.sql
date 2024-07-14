@@ -9,8 +9,6 @@ delete from [Category]
 delete from [Review]
 delete from [Role]
 delete from [User]
-
-GO
 SET IDENTITY_INSERT [dbo].[Category] ON 
 
 INSERT [dbo].[Category] ([CategoryID], [Name], [Image]) VALUES (1, N'Làm quen với Cơ Sở Dữ Liệu', N'')

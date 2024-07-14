@@ -16,5 +16,13 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public bool IsPrivate { get; set; }
         public long? Price { get; set; } = null!;
         public List<LessonDTO>? Lessons { get; set; }
+
+
+        //addition
+        public int? TotalStudent { get; set; } = null!;
+        public int? TotalStudentFee { get; set; } = null!;
+        public virtual List<StudentFee>? StudentFees { get; set; } = null!;
+
+
     }
 }

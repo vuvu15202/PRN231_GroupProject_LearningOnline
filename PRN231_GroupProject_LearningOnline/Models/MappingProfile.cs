@@ -21,10 +21,15 @@ namespace PRN231_GroupProject_LearningOnline.Models
                 .ForMember(p => p.Total, opt => opt.MapFrom(src => src.Orders.Sum(x => Int32.Parse(x.Amount)))) 
                 .ForMember(p => p.Status, opt => opt.MapFrom(src => Enum.GetName(typeof(ProjectStatusEnum), src.Discontinued)));
 
+            CreateMap<StudentFee, StudentFeeDTO>()
+                .ForMember(p => p.DateOfPaid, opt => opt.MapFrom(src => src.DateOfPaid!.Value.ToString("dd MMMM yyyy, 'at' hh:mm:ss tt")));
+
             CreateMap<PagedList<FundraisingProject>, PagedList<ProjectDTO>>();
             CreateMap<CourseEnroll, CourseEnrollDTO>();
             CreateMap<User, UserDTO>();
-            CreateMap<Course, CourseDTO>().ForMember(dest => dest.Lessons, opt => opt.MapFrom(src => src.Lessons));
+            CreateMap<Course, CourseDTO>();
+
+
             CreateMap<Lesson, LessonDTO>().ForMember(dest => dest.Quiz, opt => opt.MapFrom(src => src.Quiz));
             // Thêm các mappings khác nếu cần
         }

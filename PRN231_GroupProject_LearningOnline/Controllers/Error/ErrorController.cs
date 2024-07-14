@@ -22,6 +22,11 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.Error
 
 
 
+
+
+        //----------------------------------    template   ----------------------
+
+
         // GET: ErrorController/Details/5
         public ActionResult Details(int id)
         {
