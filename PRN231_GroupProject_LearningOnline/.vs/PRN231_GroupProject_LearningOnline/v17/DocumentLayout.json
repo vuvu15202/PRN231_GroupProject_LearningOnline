@@ -221,8 +221,7 @@
               "RelativeToolTip": "Models\\DTO\\QuizDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T15:05:10.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T15:05:10.545Z"
             },
             {
               "$type": "Document",
@@ -234,8 +233,7 @@
               "RelativeToolTip": "Notification\\User.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAD4vxkAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T15:52:17.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:52:17.754Z"
             },
             {
               "$type": "Document",
@@ -247,8 +245,7 @@
               "RelativeToolTip": "Notification\\NotiHub.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T15:30:55.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:30:55.995Z"
             },
             {
               "$type": "Document",
@@ -260,8 +257,7 @@
               "RelativeToolTip": "wwwroot\\js\\notification.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-07T15:35:47.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:35:47.273Z"
             },
             {
               "$type": "Document",
@@ -273,8 +269,7 @@
               "RelativeToolTip": "Views\\Shared\\Partials\\Footer.cshtml",
               "ViewState": "AQIAAAYAAAAAAAAAAAAuwCIAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T10:32:27.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T10:32:27.325Z"
             },
             {
               "$type": "Document",
@@ -286,8 +281,7 @@
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAP0AAAAAAAAAAAAAAAoBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-07T15:36:12.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:36:12.353Z"
             },
             {
               "$type": "Document",
@@ -299,8 +293,7 @@
               "RelativeToolTip": "Controllers\\CoursesController.cs",
               "ViewState": "AQIAADkAAAAAAAAAAAAYwFIAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T09:23:29.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T09:23:29.87Z"
             },
             {
               "$type": "Document",
@@ -310,7 +303,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAAAGcAAAAAAAAA",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAAHMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-06T09:36:04.302Z",
               "EditorCaption": ""
@@ -325,8 +318,7 @@
               "RelativeToolTip": "Services\\MyBackgroundService.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAUwCYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T11:25:08.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T11:25:08.466Z"
             },
             {
               "$type": "Document",
@@ -338,8 +330,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACoAAABuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-06T09:37:57.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-06T09:37:57.888Z"
             },
             {
               "$type": "Document",
@@ -351,8 +342,7 @@
               "RelativeToolTip": "Views\\Courses\\lesson.cshtml",
               "ViewState": "AQIAAFkAAAAAAAAAAAAUwGQAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T09:20:57.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T09:20:57.695Z"
             },
             {
               "$type": "Document",
@@ -364,8 +354,7 @@
               "RelativeToolTip": "Controllers\\AdminController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T09:23:25.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T09:23:25.613Z"
             },
             {
               "$type": "Document",
@@ -377,8 +366,7 @@
               "RelativeToolTip": "Controllers\\API\\AdminController.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T15:06:11.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-06T15:06:11.345Z"
             },
             {
               "$type": "Document",
@@ -390,8 +378,7 @@
               "RelativeToolTip": "Controllers\\Authentication\\AuthController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T10:03:58.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T10:03:58.817Z"
             },
             {
               "$type": "Document",
@@ -403,8 +390,7 @@
               "RelativeToolTip": "Authorization\\JwtUtils.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T10:48:35.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T10:48:35.803Z"
             },
             {
               "$type": "Document",
@@ -416,8 +402,7 @@
               "RelativeToolTip": "Authorization\\JwtMiddleware.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAQwCYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T10:48:36.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T10:48:36.372Z"
             },
             {
               "$type": "Document",
@@ -429,8 +414,7 @@
               "RelativeToolTip": "Views\\Home\\Notification.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAB0AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-07T15:36:26.118Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:36:26.118Z"
             },
             {
               "$type": "Document",
@@ -442,8 +426,7 @@
               "RelativeToolTip": "Services\\MomoService.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T07:31:15.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T07:31:15.429Z"
             },
             {
               "$type": "Document",
@@ -455,8 +438,7 @@
               "RelativeToolTip": "Views\\Auth\\Login.cshtml",
               "ViewState": "AQIAAAABAAAAAAAAAAAAABEBAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T10:07:50.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T10:07:50.023Z"
             },
             {
               "$type": "Document",
@@ -468,8 +450,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAAAAcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T15:38:13.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T15:38:13.354Z"
             },
             {
               "$type": "Document",
@@ -481,8 +462,7 @@
               "RelativeToolTip": "Models\\Entity\\StudentFee.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T08:59:29.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T08:59:29.903Z"
             },
             {
               "$type": "Document",
@@ -494,8 +474,7 @@
               "RelativeToolTip": "Controllers\\MomoController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T08:47:20.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T08:47:20.233Z"
             },
             {
               "$type": "Document",
@@ -507,8 +486,7 @@
               "RelativeToolTip": "Controllers\\API\\CourseEnrollsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T08:47:30.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T08:47:30.79Z"
             },
             {
               "$type": "Document",
@@ -520,8 +498,7 @@
               "RelativeToolTip": "wwwroot\\fetchdata\\lesson.js",
               "ViewState": "AQIAAKkAAAAAAAAAAAAcwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-11T05:24:20.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T05:24:20.438Z"
             },
             {
               "$type": "Document",
