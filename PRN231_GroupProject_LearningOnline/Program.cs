@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.UI.Services;
+﻿using DinkToPdf.Contracts;
+using DinkToPdf;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using PRN231_GroupProject_LearningOnline.Authorization;
 using PRN231_GroupProject_LearningOnline.Helpers;
@@ -6,6 +9,7 @@ using PRN231_GroupProject_LearningOnline.Models;
 using PRN231_GroupProject_LearningOnline.Models.Entity;
 using PRN231_GroupProject_LearningOnline.Models.Momo;
 using PRN231_GroupProject_LearningOnline.Services;
+using PRN231_GroupProject_LearningOnline.Notification;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DonationWebApp_v2Context>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("MyDB")));
 builder.Services.AddScoped<DonationWebApp_v2Context>();
-
+builder.Services.AddSignalR();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 // configure strongly typed settings object
@@ -26,10 +30,15 @@ builder.Services.Configure<MomoOptionModel>(builder.Configuration.GetSection("Mo
 builder.Services.AddScoped<IJwtUtils, JwtUtils>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
+builder.Services.AddScoped<IExportHTMLtoPDF, ExportHTMLtoPDF>();
 builder.Services.AddScoped<IMomoService, MomoService>();
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+// Đăng ký BackgroundService
+builder.Services.AddHostedService<MyBackgroundService>();
 
 
+//CORS
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
@@ -68,7 +77,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-
+app.MapHub<NotiHub>("/notiHub");
 app.UseRouting();
 
 // custom jwt auth middleware
@@ -108,7 +117,7 @@ void SeedDatabase(DonationWebApp_v2Context context)
     {
         ClearDatabase(context);
         var sql = File.ReadAllText(sqlFilePath);
-        context.Database.ExecuteSqlRaw(sql);
+        context.Database.ExecuteSqlRaw(sql); 
     }
     else
     {

@@ -1,4 +1,4 @@
-
+﻿
 
 $(document).ready(function () {
     var projectbills;
@@ -114,6 +114,52 @@ $(document).ready(function () {
 
     $(document).on('click', '#btnFilderDate', function(){ 
         showListOfBills();
+    })
+
+    $(document).on('click', '#btnExport', function () {
+        var fromDate;
+        var todate;
+        if ($("#fromDate").val() == false && $("#toDate").val() == false) {
+            fromDate = new Date(2010, 2, 27, 12, 30);
+            todate = new Date(2025, 2, 27, 12, 30);
+        } else {
+            fromDate = $("#fromDate").val();
+            todate = $("#toDate").val();
+        }
+        let requestData = {
+            fromDate: fromDate,
+            todate: todate
+        };
+        $.ajax({
+            url: "https://localhost:5000/api/StudentFees/export",
+            type: "post",
+            headers: {
+                "Authorization": "Bearer " + token,
+            },
+            data: JSON.stringify(requestData),
+            contentType: "application/json",
+            xhrFields: {
+                responseType: 'blob' // Đặt kiểu phản hồi là blob
+            },
+            success: function (blob, status, xhr) {
+                // Tạo URL từ Blob
+                var downloadUrl = URL.createObjectURL(blob);
+
+                // Tạo một thẻ a để tải về file
+                var a = document.createElement("a");
+                a.href = downloadUrl;
+                a.download = "StudentFees.xlsx"; // Tên file bạn muốn tải về
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+                // Giải phóng bộ nhớ
+                URL.revokeObjectURL(downloadUrl);
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr)
+            }
+        });
     })
 
     function showListOfBills(){

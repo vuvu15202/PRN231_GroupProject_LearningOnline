@@ -8,5 +8,10 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         {
             return View();
         }
+
+        public IActionResult Notification()
+        {
+            return View();
+        }
     }
 }

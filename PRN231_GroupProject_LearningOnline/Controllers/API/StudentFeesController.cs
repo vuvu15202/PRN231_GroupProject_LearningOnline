@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2013.Word;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -43,6 +46,11 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
 
             return Ok(new ReportStudentFee() { TotalAmount = totalamount, AmountOfMonth = amountofmonth });
         }
+
+
+
+        
+
 
         [Authorize(RoleEnum.Admin)]
         [HttpGet("CoursesStudentFees")]
@@ -127,6 +135,84 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             }
             return Ok(studentfeeDTOs);
         }
+
+
+        [Authorize(RoleEnum.Admin)]
+        [HttpPost("export")]
+        public IActionResult GetExport([FromBody] filterDateOfDonation filterDate)
+        {
+            List<StudentFee> studentfees;
+            if (filterDate.fromDate == null && filterDate.toDate == null)
+            {
+                studentfees = _context.StudentFees.OrderByDescending(o => o.DateOfPaid).ToList();
+
+            }
+            else
+            {
+                studentfees = _context.StudentFees
+                .Where(o => o.DateOfPaid >= filterDate.fromDate && o.DateOfPaid <= filterDate.toDate
+                                    || o.DateOfPaid >= filterDate.fromDate && o.DateOfPaid == null
+                                    || o.DateOfPaid == null && o.DateOfPaid <= filterDate.toDate)
+                .OrderByDescending(o => o.DateOfPaid).ToList();
+            }
+            var studentfeeDTOs = _mapper.Map<List<StudentFeeDTO>>(studentfees);
+            foreach (var studentfeeDTO in studentfeeDTOs)
+            {
+                var ce = _context.CourseEnrolls.SingleOrDefault(c => c.StudentFeeId == studentfeeDTO.StudentFeeId);
+                if (ce != null)
+                {
+                    var course = _context.Courses.SingleOrDefault(c => c.CourseId == ce.CourseId);
+                    studentfeeDTO.Course = _mapper.Map<CourseDTO>(course);
+                }
+
+            }
+            var fileName = "StudentFees.xlsx";
+            return GenerateExcel(fileName, studentfeeDTOs);
+        }
+
+        private FileResult GenerateExcel(string fileName, IEnumerable<StudentFeeDTO> studentfees)
+        {
+            DataTable dataTable = new DataTable("StudentFees");
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("StudentFeeId"),
+                new DataColumn("PaymentMethod"),
+                new DataColumn("BankCode"),
+                new DataColumn("Amount"),
+                new DataColumn("OrderInfo"),
+                new DataColumn("ErrorCode"),
+                new DataColumn("LocalMessage"),
+                new DataColumn("DateOfPaid")
+
+            });
+
+            foreach (var studentfee in studentfees)
+            {
+                dataTable.Rows.Add(studentfee.StudentFeeId,
+                    studentfee.PaymentMethod,
+                    studentfee.BankCode,
+                    studentfee.Amount,
+                    studentfee.OrderInfo,
+                    studentfee.ErrorCode,
+                    studentfee.LocalMessage,
+                    studentfee.DateOfPaid);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable);
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        fileName);
+                }
+            }
+
+        }
+
     }
     public class filterDateOfPayment
     {
