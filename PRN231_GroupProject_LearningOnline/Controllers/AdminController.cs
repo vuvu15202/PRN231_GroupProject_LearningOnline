@@ -93,16 +93,23 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
 
         [HttpGet("projects")]
         [Authorize(RoleEnum.Admin)]
-        public ActionResult ListProjectAdmin()
+        public IActionResult ListProjectAdmin()
         {
             return View("Project");
         }
 
         [HttpGet("dashboard")]
         [Authorize(RoleEnum.Admin)]
-        public ActionResult Dashboard()
+        public IActionResult Dashboard()
         {
             return View("Dashboard");
+        }
+
+        [HttpGet("usermanagement")]
+        //[Authorize(RoleEnum.Admin)]
+        public IActionResult UserManagement()
+        {
+            return View("UserManagement");
         }
     }
 }

@@ -1,0 +1,275 @@
+﻿<!--
+=========================================================
+* Argon Dashboard 2 - v2.0.4
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>
+        Argon Dashboard 2 by Creative Tim
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+    <main class="main-content position-relative border-radius-lg ">
+        <!-- Main page here -->
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <h6>User table</h6>
+                        </div>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0 vh-100">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">First Name</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phone</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Active</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role</th>
+                                            <th class="text-secondary opacity-7"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="userTableBody">
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+   
+    <!-- Edit User Modal -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editUserForm">
+                        <input type="hidden" id="editUserId">
+                        <div class="mb-3">
+                            <label for="editFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="editFirstName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="editLastName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPhone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="editPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editActive" class="form-label">Active</label>
+                            <select class="form-control" id="editActive">
+                                <option value="true">True</option>
+                                <option value="false">False</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editRole" class="form-label">Role</label>
+                            <select class="form-control" id="editRole">
+                                <!-- Roles will be populated here -->
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveEditUserBtn">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('https://localhost:5000/api/Admin/GetAllUsers')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const tbody = document.getElementById('userTableBody');
+                    data.forEach(user => {
+                        const row = document.createElement('tr');
+
+                        row.innerHTML = `
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <p class="text-xs font-weight-bold mb-0">${user.firstName}</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0">${user.lastName}</p>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <span class="text-secondary text-xs font-weight-bold">${user.email}</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <span class="text-secondary text-xs font-weight-bold">${user.phone}</span>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <span class="badge badge-sm bg-gradient-${user.active ? 'success' : 'secondary'}">${user.active ? 'True' : 'False'}</span>
+                                    </td>
+                                    <td class="align-middle text-center text-sm">
+                                        <span class="text-secondary text-xs font-weight-bold">${user.role.roleName}</span>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs edit-user" data-id="${user.userId}" data-firstname="${user.firstName}" data-lastname="${user.lastName}" data-email="${user.email}" data-phone="${user.phone}" data-active="${user.active}" data-roleid="${user.role.roleId}" data-rolename="${user.role.roleName}">
+                                            Edit
+                                        </a>
+                                    </td>
+                                `;
+
+                        tbody.appendChild(row);
+                    });
+
+                    // Add event listener for edit buttons
+                    document.querySelectorAll('.edit-user').forEach(button => {
+                        button.addEventListener('click', event => {
+                            const userId = event.target.getAttribute('data-id');
+                            const firstName = event.target.getAttribute('data-firstname');
+                            const lastName = event.target.getAttribute('data-lastname');
+                            const email = event.target.getAttribute('data-email');
+                            const phone = event.target.getAttribute('data-phone');
+                            const active = event.target.getAttribute('data-active');
+                            console.log(active);
+                            const roleId = event.target.getAttribute('data-roleid');
+                            const roleName = event.target.getAttribute('data-rolename');
+
+                            document.getElementById('editUserId').value = userId;
+                            document.getElementById('editFirstName').value = firstName;
+                            document.getElementById('editLastName').value = lastName;
+                            document.getElementById('editEmail').value = email;
+                            document.getElementById('editPhone').value = phone;
+                            document.getElementById('editActive').value = active;
+
+                            // Populate the roles dropdown
+                            fetch('https://localhost:5000/api/Admin/GetAllRole')
+                                .then(response => response.json())
+                                .then(data => {
+                                    const roleSelect = document.getElementById('editRole');
+                                    roleSelect.innerHTML = ''; // Clear existing options
+                                    data.forEach(roleItem => {
+                                        const option = document.createElement('option');
+                                        option.value = roleItem.roleId;
+                                        option.text = roleItem.roleName;
+                                        roleSelect.appendChild(option);
+                                    });
+                                    roleSelect.value = roleId; // Set the selected role by roleId
+                                })
+                                .catch(error => console.error('Error fetching roles:', error));
+
+                            const editUserModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+                            editUserModal.show();
+                        });
+                    });
+                })
+                .catch(error => console.error('Error fetching users:', error));
+
+            document.getElementById('saveEditUserBtn').addEventListener('click', () => {
+                const userId = document.getElementById('editUserId').value;
+                const firstName = document.getElementById('editFirstName').value;
+                const lastName = document.getElementById('editLastName').value;
+                const email = document.getElementById('editEmail').value;
+                const phone = document.getElementById('editPhone').value;
+                const active = document.getElementById('editActive').value;
+                const roleId = document.getElementById('editRole').value;
+
+                const updatedUser = {
+                    userId: userId,
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    active: active === "true",
+                    roleId: roleId
+                };
+
+                fetch('https://localhost:5000/api/Admin/UpdateUser', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedUser)
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const row = document.querySelector(`.edit-user[data-id="${userId}"]`).closest('tr');
+                        row.querySelector('td:nth-child(1) .font-weight-bold').innerText = data.firstName;
+                        row.querySelector('td:nth-child(2) .font-weight-bold').innerText = data.lastName;
+                        row.querySelector('td:nth-child(3) .text-secondary').innerText = data.email;
+                        row.querySelector('td:nth-child(4) .text-secondary').innerText = data.phone;
+                        row.querySelector('td:nth-child(5) .badge').innerText = data.active ? 'True' : 'False';
+                        row.querySelector('td:nth-child(5) .badge').className = `badge badge-sm bg-gradient-${data.active ? 'success' : 'secondary'}`;
+
+                        const editUserModal = bootstrap.Modal.getInstance(document.getElementById('editUserModal'));
+                        window.location.href = '/Admin/UserManagement';
+                    })
+                    .catch(error => console.error('Error updating user:', error));
+            });
+        });
+    </script>
+
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+
+</html>

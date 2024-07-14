@@ -26,7 +26,7 @@ public class AuthenticateResponse
         Role = role;
         JwtToken = token;
         if (role.FirstOrDefault()!.RoleName.Equals("ADMIN")) RedirectUrl = "/admin/dashboard";
-        else RedirectUrl = "/home/index";
+        else RedirectUrl = "/account/userprofile";
     }
 
     public AuthenticateResponse(User user)

@@ -73,6 +73,17 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         {
             return View();
         }
+
+        [HttpGet("Courses/List")]
+        public IActionResult List()
+        {
+            return View("List");
+        }
+
+        [HttpGet("Courses/Detail")]
+        public IActionResult CourseDetail(int id)
+        {
+            return View("CourseDetail");
+        }
     }
-    
 }
