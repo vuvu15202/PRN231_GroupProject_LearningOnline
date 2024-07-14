@@ -1,180 +1,196 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\",
+  "WorkspaceRootPath": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\courses\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\courses\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\courses\\coursedetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\courses\\coursedetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\admin\\usermanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\admin\\usermanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\account\\userprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\account\\userprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\fetchdata\\lesson.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\fetchdata\\lesson.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\fetchdata\\studentfee.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\fetchdata\\studentfee.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\js\\courses.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\js\\courses.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\mybackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\mybackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\notification\\notihub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:notification\\notihub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\home\\notification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\home\\notification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\notification\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:notification\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\models\\dto\\quizdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:models\\dto\\quizdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\js\\notification.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\js\\notification.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\js\\toastr.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\js\\toastr.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\home\\paymentcallback.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\home\\paymentcallback.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\exportpdfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\exportpdfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\partials\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\shared\\partials\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\courses\\lesson.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\courses\\lesson.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\templateexport.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\templateexport.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\js\\notification.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\js\\notification.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\momoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\notification\\notihub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:notification\\notihub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\notification\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:notification\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\mybackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\mybackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\authorization\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:authorization\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\authorization\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:authorization\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\home\\notification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\home\\notification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\momoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\momoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\authentication\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\authentication\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\models\\entity\\studentfee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:models\\entity\\studentfee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\momocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\momocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\courseenrollscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\courseenrollscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\fetchdata\\lesson.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\fetchdata\\lesson.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\fetchdata\\studentfee.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\fetchdata\\studentfee.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\js\\courses.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\js\\courses.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\js\\toastr.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\js\\toastr.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\home\\paymentcallback.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\home\\paymentcallback.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\exportpdfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\exportpdfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\templateexport.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\templateexport.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:prn231_groupproject_learningonline.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\.nuget\\packages\\select.htmltopdf\\18.4.0\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\iexporthtmltopdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\iexporthtmltopdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\iexporthtmltopdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\imomoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\imomoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\imomoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\partials\\navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\partials\\navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\shared\\partials\\navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\partials\\asidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\partials\\asidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\shared\\partials\\asidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\layouts\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\layouts\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\shared\\layouts\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\admin\\studentfee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\admin\\studentfee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\admin\\studentfee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\studentfeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\studentfeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\studentfeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\models\\dto\\studentfeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\models\\dto\\studentfeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:models\\dto\\studentfeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\seed-data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\seed-data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:seed-data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|c:\\users\\acer\\documents\\prn231\\prn231_groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\fetchdata\\dashboard.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\fetchdata\\dashboard.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\fetchdata\\dashboard.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
@@ -185,170 +201,352 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 10,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:57:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CoursesController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\CoursesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\API\\CoursesController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\CoursesController.cs",
-              "RelativeToolTip": "Controllers\\API\\CoursesController.cs",
-              "ViewState": "AQIAAI8AAAAAAAAAAAAAwNwAAAAJAAAA",
+              "DocumentIndex": 3,
+              "Title": "QuizDTO.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\DTO\\QuizDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\QuizDTO.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\DTO\\QuizDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\QuizDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T15:13:13.734Z",
+              "WhenOpened": "2024-07-14T15:05:10.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Notification\\User.cs",
+              "RelativeDocumentMoniker": "Notification\\User.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Notification\\User.cs",
+              "RelativeToolTip": "Notification\\User.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAD4vxkAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T15:52:17.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NotiHub.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Notification\\NotiHub.cs",
+              "RelativeDocumentMoniker": "Notification\\NotiHub.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Notification\\NotiHub.cs",
+              "RelativeToolTip": "Notification\\NotiHub.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T15:30:55.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "notification.js",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\notification.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\notification.js",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\notification.js",
+              "RelativeToolTip": "wwwroot\\js\\notification.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-07T15:35:47.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Footer.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\Footer.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Partials\\Footer.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\Footer.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Partials\\Footer.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwB8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-14T10:32:27.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAP0AAAAAAAAAAAAAAAYBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-07T15:36:12.353Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "CoursesController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\CoursesController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\CoursesController.cs",
               "RelativeDocumentMoniker": "Controllers\\CoursesController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\CoursesController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\CoursesController.cs",
               "RelativeToolTip": "Controllers\\CoursesController.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAowFYAAAAJAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAYwFIAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T15:12:47.414Z",
+              "WhenOpened": "2024-07-14T09:23:29.87Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\List.cshtml",
-              "RelativeDocumentMoniker": "Views\\Courses\\List.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\List.cshtml",
-              "RelativeToolTip": "Views\\Courses\\List.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T15:12:44.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CourseDetail.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\CourseDetail.cshtml",
-              "RelativeDocumentMoniker": "Views\\Courses\\CourseDetail.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\CourseDetail.cshtml",
-              "RelativeToolTip": "Views\\Courses\\CourseDetail.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T15:12:43.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserManagement.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Admin\\UserManagement.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\UserManagement.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Admin\\UserManagement.cshtml",
-              "RelativeToolTip": "Views\\Admin\\UserManagement.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T15:12:08.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserProfile.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Account\\UserProfile.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\UserProfile.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Account\\UserProfile.cshtml",
-              "RelativeToolTip": "Views\\Account\\UserProfile.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-14T15:10:28.889Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAIwHUAAAAqAAAA",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAGQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T15:09:09.382Z",
+              "WhenOpened": "2024-07-06T09:36:04.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T15:09:04.519Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\API\\AccountController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\API\\AccountController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T15:05:57.071Z",
+              "WhenOpened": "2024-07-14T15:23:22.462Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "lesson.js",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\lesson.js",
-              "RelativeDocumentMoniker": "wwwroot\\fetchdata\\lesson.js",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\lesson.js",
-              "RelativeToolTip": "wwwroot\\fetchdata\\lesson.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-11T05:24:20.438Z",
+              "Title": "MyBackgroundService.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MyBackgroundService.cs",
+              "RelativeDocumentMoniker": "Services\\MyBackgroundService.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MyBackgroundService.cs",
+              "RelativeToolTip": "Services\\MyBackgroundService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAUwBEAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:25:08.466Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T15:38:13.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\appsettings.json",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\appsettings.json",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAC0AAAABAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACoAAABuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-06T09:37:57.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "lesson.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\lesson.cshtml",
+              "RelativeDocumentMoniker": "Views\\Courses\\lesson.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\lesson.cshtml",
+              "RelativeToolTip": "Views\\Courses\\lesson.cshtml",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAUwGQAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-14T09:20:57.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T09:23:25.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\API\\AdminController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\API\\AdminController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T15:06:11.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\Authentication\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Authentication\\AuthController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\Authentication\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\Authentication\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T10:03:58.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "JwtUtils.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Authorization\\JwtUtils.cs",
+              "RelativeDocumentMoniker": "Authorization\\JwtUtils.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Authorization\\JwtUtils.cs",
+              "RelativeToolTip": "Authorization\\JwtUtils.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T10:48:35.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "JwtMiddleware.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Authorization\\JwtMiddleware.cs",
+              "RelativeDocumentMoniker": "Authorization\\JwtMiddleware.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Authorization\\JwtMiddleware.cs",
+              "RelativeToolTip": "Authorization\\JwtMiddleware.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T10:48:36.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Notification.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\Notification.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Notification.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\Notification.cshtml",
+              "RelativeToolTip": "Views\\Home\\Notification.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB0AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-07T15:36:26.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MomoService.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MomoService.cs",
+              "RelativeDocumentMoniker": "Services\\MomoService.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MomoService.cs",
+              "RelativeToolTip": "Services\\MomoService.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T07:31:15.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Auth\\Login.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "Views\\Auth\\Login.cshtml",
+              "ViewState": "AQIAAP8AAAAAAAAAAAAAABABAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-14T10:07:50.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T15:38:13.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "StudentFee.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\Entity\\StudentFee.cs",
+              "RelativeDocumentMoniker": "Models\\Entity\\StudentFee.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\Entity\\StudentFee.cs",
+              "RelativeToolTip": "Models\\Entity\\StudentFee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T08:59:29.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 22,
+              "Title": "MomoController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\MomoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MomoController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\MomoController.cs",
+              "RelativeToolTip": "Controllers\\MomoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T08:47:20.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CourseEnrollsController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\CourseEnrollsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\API\\CourseEnrollsController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\CourseEnrollsController.cs",
+              "RelativeToolTip": "Controllers\\API\\CourseEnrollsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T08:47:30.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "lesson.js",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\lesson.js",
+              "RelativeDocumentMoniker": "wwwroot\\fetchdata\\lesson.js",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\lesson.js",
+              "RelativeToolTip": "wwwroot\\fetchdata\\lesson.js",
+              "ViewState": "AQIAAKkAAAAAAAAAAAAcwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-11T05:24:20.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "PaymentCallBack.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\PaymentCallBack.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\PaymentCallBack.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\PaymentCallBack.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\PaymentCallBack.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\PaymentCallBack.cshtml",
               "RelativeToolTip": "Views\\Home\\PaymentCallBack.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -356,144 +554,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Notification.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\Notification.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Notification.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\Notification.cshtml",
-              "RelativeToolTip": "Views\\Home\\Notification.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-07T15:36:26.118Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "notification.js",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\notification.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\notification.js",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\notification.js",
-              "RelativeToolTip": "wwwroot\\js\\notification.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-07T15:35:47.273Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "NotiHub.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Notification\\NotiHub.cs",
-              "RelativeDocumentMoniker": "Notification\\NotiHub.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Notification\\NotiHub.cs",
-              "RelativeToolTip": "Notification\\NotiHub.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T15:30:55.995Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAASwE8AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T09:36:04.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "studentfee.js",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\studentfee.js",
-              "RelativeDocumentMoniker": "wwwroot\\fetchdata\\studentfee.js",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\studentfee.js",
-              "RelativeToolTip": "wwwroot\\fetchdata\\studentfee.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAI8AAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-06T13:45:05.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "toastr.min.js",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\toastr.min.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\toastr.min.js",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\toastr.min.js",
-              "RelativeToolTip": "wwwroot\\js\\toastr.min.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-07T15:48:28.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Notification\\User.cs",
-              "RelativeDocumentMoniker": "Notification\\User.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Notification\\User.cs",
-              "RelativeToolTip": "Notification\\User.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAYwBYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T15:52:17.754Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-07T15:36:12.353Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "MomoService.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MomoService.cs",
-              "RelativeDocumentMoniker": "Services\\MomoService.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MomoService.cs",
-              "RelativeToolTip": "Services\\MomoService.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAAB4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T07:31:15.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\API\\AdminController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\API\\AdminController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJkAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T15:06:11.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MyBackgroundService.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MyBackgroundService.cs",
-              "RelativeDocumentMoniker": "Services\\MyBackgroundService.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MyBackgroundService.cs",
-              "RelativeToolTip": "Services\\MyBackgroundService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T11:25:08.466Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "courses.js",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\courses.js",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\courses.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\courses.js",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\courses.js",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\courses.js",
               "RelativeToolTip": "wwwroot\\js\\courses.js",
               "ViewState": "AQIAAAEAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -501,11 +566,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 25,
+              "Title": "studentfee.js",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\studentfee.js",
+              "RelativeDocumentMoniker": "wwwroot\\fetchdata\\studentfee.js",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\studentfee.js",
+              "RelativeToolTip": "wwwroot\\fetchdata\\studentfee.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAI8AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-06T13:45:05.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "toastr.min.js",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\toastr.min.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\toastr.min.js",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\toastr.min.js",
+              "RelativeToolTip": "wwwroot\\js\\toastr.min.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-07T15:48:28.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\DashboardController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\DashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\API\\DashboardController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\DashboardController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\DashboardController.cs",
               "RelativeToolTip": "Controllers\\API\\DashboardController.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -513,11 +602,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "PDFService.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\PDFService.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\PDFService.cs",
               "RelativeDocumentMoniker": "Services\\PDFService.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\PDFService.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\PDFService.cs",
               "RelativeToolTip": "Services\\PDFService.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAEwBoAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -525,11 +614,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "ExportPDFController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\ExportPDFController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\ExportPDFController.cs",
               "RelativeDocumentMoniker": "Controllers\\API\\ExportPDFController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\ExportPDFController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\ExportPDFController.cs",
               "RelativeToolTip": "Controllers\\API\\ExportPDFController.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAC4AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -537,11 +626,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "PRN231_GroupProject_LearningOnline.csproj",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline.csproj",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline.csproj",
               "RelativeDocumentMoniker": "PRN231_GroupProject_LearningOnline.csproj",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline.csproj",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline.csproj",
               "RelativeToolTip": "PRN231_GroupProject_LearningOnline.csproj",
               "ViewState": "AQIAACQAAAAAAAAAAAAwwDEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -549,11 +638,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "templateExport.html",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\templateExport.html",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\templateExport.html",
               "RelativeDocumentMoniker": "Services\\templateExport.html",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\templateExport.html",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\templateExport.html",
               "RelativeToolTip": "Services\\templateExport.html",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
@@ -561,23 +650,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "readme.txt",
               "DocumentMoniker": "C:\\Users\\Admin\\.nuget\\packages\\select.htmltopdf\\18.4.0\\readme.txt",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Admin\\.nuget\\packages\\select.htmltopdf\\18.4.0\\readme.txt",
               "ToolTip": "C:\\Users\\Admin\\.nuget\\packages\\select.htmltopdf\\18.4.0\\readme.txt",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Admin\\.nuget\\packages\\select.htmltopdf\\18.4.0\\readme.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-07-07T05:32:23.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "MailService.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MailService.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MailService.cs",
               "RelativeDocumentMoniker": "Services\\MailService.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MailService.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MailService.cs",
               "RelativeToolTip": "Services\\MailService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -585,11 +672,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "IVnPayService.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IVnPayService.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IVnPayService.cs",
               "RelativeDocumentMoniker": "Services\\IVnPayService.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IVnPayService.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IVnPayService.cs",
               "RelativeToolTip": "Services\\IVnPayService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -597,11 +684,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "IMomoService.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IMomoService.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IMomoService.cs",
               "RelativeDocumentMoniker": "Services\\IMomoService.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IMomoService.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IMomoService.cs",
               "RelativeToolTip": "Services\\IMomoService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -609,11 +696,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "IExportHTMLtoPDF.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IExportHTMLtoPDF.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IExportHTMLtoPDF.cs",
               "RelativeDocumentMoniker": "Services\\IExportHTMLtoPDF.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IExportHTMLtoPDF.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IExportHTMLtoPDF.cs",
               "RelativeToolTip": "Services\\IExportHTMLtoPDF.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -621,11 +708,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "Navbar.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\Navbar.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\Navbar.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Partials\\Navbar.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\Navbar.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\Navbar.cshtml",
               "RelativeToolTip": "Views\\Shared\\Partials\\Navbar.cshtml",
               "ViewState": "AQIAAAUAAAAAAAAAAAAhwBsAAABaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -633,11 +720,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "AsideBar.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\AsideBar.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\AsideBar.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Partials\\AsideBar.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\AsideBar.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Partials\\AsideBar.cshtml",
               "RelativeToolTip": "Views\\Shared\\Partials\\AsideBar.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -645,11 +732,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Layouts\\_AdminLayout.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Layouts\\_AdminLayout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Layouts\\_AdminLayout.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Layouts\\_AdminLayout.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\Layouts\\_AdminLayout.cshtml",
               "RelativeToolTip": "Views\\Shared\\Layouts\\_AdminLayout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -657,11 +744,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -669,11 +756,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "StudentFee.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Admin\\StudentFee.cshtml",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Admin\\StudentFee.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\StudentFee.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Admin\\StudentFee.cshtml",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Admin\\StudentFee.cshtml",
               "RelativeToolTip": "Views\\Admin\\StudentFee.cshtml",
               "ViewState": "AQIAAOAAAAAAAAAAAAAhwPIAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -681,11 +768,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "StudentFeesController.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\StudentFeesController.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\StudentFeesController.cs",
               "RelativeDocumentMoniker": "Controllers\\API\\StudentFeesController.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\StudentFeesController.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\StudentFeesController.cs",
               "RelativeToolTip": "Controllers\\API\\StudentFeesController.cs",
               "ViewState": "AQIAAIEAAAAAAAAAAIBJwJYAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -693,11 +780,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "StudentFeeDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\DTO\\StudentFeeDTO.cs",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\DTO\\StudentFeeDTO.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\StudentFeeDTO.cs",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\DTO\\StudentFeeDTO.cs",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\DTO\\StudentFeeDTO.cs",
               "RelativeToolTip": "Models\\DTO\\StudentFeeDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -705,22 +792,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "seed-data.sql",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\seed-data.sql",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\seed-data.sql",
               "RelativeDocumentMoniker": "seed-data.sql",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\seed-data.sql",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\seed-data.sql",
               "RelativeToolTip": "seed-data.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2024-07-06T09:38:24.393Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 47,
               "Title": "dashboard.js",
-              "DocumentMoniker": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\dashboard.js",
+              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\dashboard.js",
               "RelativeDocumentMoniker": "wwwroot\\fetchdata\\dashboard.js",
-              "ToolTip": "C:\\Users\\ACER\\Documents\\PRN231\\PRN231_GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\dashboard.js",
+              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\dashboard.js",
               "RelativeToolTip": "wwwroot\\fetchdata\\dashboard.js",
               "ViewState": "AQIAAMkAAAAAAAAAAIBZwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
