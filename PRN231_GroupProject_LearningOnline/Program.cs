@@ -36,7 +36,7 @@ builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 // Đăng ký BackgroundService
 builder.Services.AddHostedService<MyBackgroundService>();
-
+builder.Services.AddSingleton<IUserContextService, UserContextService>();
 
 //CORS
 builder.Services.AddCors(options =>
@@ -82,6 +82,9 @@ app.UseRouting();
 
 // custom jwt auth middleware
 app.UseMiddleware<JwtMiddleware>();
+app.UseMiddleware<YourMiddleware>();
+
+
 
 app.UseAuthorization();
 app.UseCors();
