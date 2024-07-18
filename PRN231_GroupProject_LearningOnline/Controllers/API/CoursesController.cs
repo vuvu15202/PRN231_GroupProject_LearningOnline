@@ -7,24 +7,35 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PRN231_GroupProject_LearningOnline.Authorization;
+using PRN231_GroupProject_LearningOnline.Models;
 using PRN231_GroupProject_LearningOnline.Models.DTO;
 using PRN231_GroupProject_LearningOnline.Models.Entity;
+using PRN231_GroupProject_LearningOnline.Models.Resourse;
+using PRN231_GroupProject_LearningOnline.Models.SearchModels;
+using PRN231_GroupProject_LearningOnline.Services;
 using PRN231_GroupProject_LearningOnline.temp;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers.API
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class CoursesController : ControllerBase
     {
         private readonly DonationWebApp_v2Context _context;
         private readonly IMapper _mapper;
+        private readonly ICourseService _services;
+        private readonly IUriService _uriService;
 
-        public CoursesController(DonationWebApp_v2Context context, IMapper mapper)
+        public CoursesController(DonationWebApp_v2Context context, IMapper mapper, ICourseService services, IUriService uriService)
         {
             _context = context;
             _mapper = mapper;
+            _services = services;
+            _uriService = uriService;
         }
+
 
 
 
@@ -37,10 +48,11 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
               return NotFound();
           }
             var courses = await _context.Courses.Include(c => c.Lessons).ToListAsync();
-            foreach (var course in courses)
+            foreach(var course in courses)
             {
-
+                course.Image = string.Concat(_uriService.GetBaseUri(), course.Image);
             }
+
             return Ok(_mapper.Map<List<CourseDTO>>(courses));
         }
 
@@ -59,7 +71,10 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 return NotFound();
             }
 
-            return Ok(_mapper.Map<CourseDTO>(course));
+			course.Image = string.Concat(_uriService.GetBaseUri(), course.Image);
+
+
+			return Ok(_mapper.Map<CourseDTO>(course));
         }
 
         // PUT: api/Courses/5
@@ -153,6 +168,65 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
 
             return NoContent();
         }
+
+        /// <summary>
+        /// lấy 3 course có số người enroll nhiều nhất
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetTop3")]
+        public async Task<IActionResult> GetTop3Course()
+        {
+            var response = await _services.GetTop3CourseAsync();
+
+            return Ok(response);
+        }
+
+
+        /// <summary>
+        /// Lấy course filter theo tên và category
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("SearchCourse")]
+        public async Task<IActionResult> SearchCourseAsync(SearchCourseModel request)
+        {
+            var response = await _services.GetListCourseAsync(request);
+            return Ok(response);
+        }
+
+
+        /// <summary>
+        /// Lấy các course đã enroll
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost("GetMyCourse")]
+        public async Task<IActionResult> GetMyCourseAsync([FromBody] QueryResource query)
+        {
+            var user = (User)HttpContext.Items["User"];
+            var response = await _services.GetListEnrolledCourseAsync(query, user.UserId);
+            return Ok(response);
+        }
+
+
+
+        /// <summary>
+        /// api: Tạo Course
+        /// </summary>
+        /// <param name="resquest"></param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost("CreateCourse")]
+        public async Task<IActionResult> CreateAsync([FromForm] CreateCourseResquest resquest)
+        {
+            var user = (User)HttpContext.Items["User"];
+            var response = await _services.CreateCourseAsync(resquest,user.UserId);
+            if(response.IsSuccess) return Ok(response.Data);
+            else return BadRequest(response.Data);
+
+        }
+
 
         private bool CourseExists(int id)
         {

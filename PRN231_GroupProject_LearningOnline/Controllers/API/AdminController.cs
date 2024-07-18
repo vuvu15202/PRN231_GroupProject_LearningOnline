@@ -60,6 +60,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.APIs
             Console.WriteLine(changeStatus.Id);
             if (project == null)
             {
+                
                 return Ok("No project found");
             }
             if (changeStatus.Status == (int)ProjectStatusEnum.Continuing)

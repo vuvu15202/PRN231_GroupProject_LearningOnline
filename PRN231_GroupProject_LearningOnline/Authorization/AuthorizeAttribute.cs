@@ -43,7 +43,7 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
         }
         catch(Exception ex)
         {
-            context.Result = new RedirectResult("/Error/Error401", false);
+            context.Result = new UnauthorizedResult();
         }
 
     }

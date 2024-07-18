@@ -98,6 +98,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
             return View("Project");
         }
 
+
         [HttpGet("dashboard")]
         [Authorize(RoleEnum.Admin)]
         public ActionResult Dashboard()

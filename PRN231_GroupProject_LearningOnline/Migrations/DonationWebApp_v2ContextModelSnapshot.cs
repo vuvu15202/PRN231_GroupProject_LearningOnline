@@ -301,6 +301,9 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsPrivate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -313,9 +316,15 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                     b.Property<long?>("Price")
                         .HasColumnType("bigint");
 
+                    b.Property<int?>("TeacherId")
+                        .HasColumnType("int")
+                        .HasColumnName("UserID");
+
                     b.HasKey("CourseId");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("Course", (string)null);
                 });
@@ -485,13 +494,19 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_Course_CategoryID");
 
+                    b.HasOne("PRN231_GroupProject_LearningOnline.Models.Entity.User", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId");
+
                     b.Navigation("Category");
+
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.temp.CourseEnroll", b =>
                 {
                     b.HasOne("PRN231_GroupProject_LearningOnline.temp.Course", "Course")
-                        .WithMany()
+                        .WithMany("EnrollCourses")
                         .HasForeignKey("CourseId")
                         .IsRequired()
                         .HasConstraintName("FK_CourseEnroll_CourseID");
@@ -561,6 +576,8 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
 
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.temp.Course", b =>
                 {
+                    b.Navigation("EnrollCourses");
+
                     b.Navigation("Lessons");
 
                     b.Navigation("Reviews");

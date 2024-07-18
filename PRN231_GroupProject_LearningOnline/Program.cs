@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using PRN231_GroupProject_LearningOnline.Authorization;
 using PRN231_GroupProject_LearningOnline.Helpers;
 using PRN231_GroupProject_LearningOnline.Models;
@@ -26,7 +28,20 @@ builder.Services.AddScoped<IJwtUtils, JwtUtils>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IMomoService, MomoService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddTransient<IFileService, FileService>();
+
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+// Get the base URL of the application (http(s)://www.api.com) from the HTTP Request and Context.
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSingleton<IUriService>(o =>
+{
+    var accessor = o.GetRequiredService<IHttpContextAccessor>();
+    var request = accessor.HttpContext?.Request;
+    var uri = string.Concat(request?.Scheme, "://", request?.Host.ToUriComponent());
+    return new UriService(uri);
+});
 
 
 builder.Services.AddCors(options =>
@@ -39,13 +54,12 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader();
         });
 });
-
+builder.Services.AddCustomizeSwagger();
+builder.Services.AddSwaggerGen();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
 
 

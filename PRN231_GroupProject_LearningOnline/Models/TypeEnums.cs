@@ -5,4 +5,10 @@
         Donation = 1,
         Contribution = 2,
     }
+
+    public enum TypePrice
+    {
+        Free = 1,
+        HasFee = 2
+    }
 }

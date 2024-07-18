@@ -1,42 +1,44 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\",
+  "WorkspaceRootPath": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\fetchdata\\lesson.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\fetchdata\\lesson.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|e:\\prn231\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|e:\\prn231\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\authentication\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\authentication\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|e:\\prn231\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|e:\\prn231\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|e:\\prn231\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\api\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\api\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|e:\\prn231\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\fetchdata\\payment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\fetchdata\\payment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|e:\\prn231\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\models\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:models\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\courses\\lesson.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\courses\\lesson.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0B63BF6A-5601-462B-8B00-EDBB93E9D23F}|..\\Project_Client\\Project_Client.csproj|e:\\prn231\\prn231_groupproject_learningonline\\project_client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\views\\courses\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:views\\courses\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|e:\\prn231\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\controllers\\vnpaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:controllers\\vnpaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\services\\momoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:services\\momoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|d:\\materials\\summer24\\prn231re\\groupproject\\prn231_groupproject_learningonline\\prn231_groupproject_learningonline\\wwwroot\\js\\course.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{AB662E7E-B094-462A-BEC8-BA04F8231011}|PRN231_GroupProject_LearningOnline.csproj|solutionrelative:wwwroot\\js\\course.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{0B63BF6A-5601-462B-8B00-EDBB93E9D23F}|..\\Project_Client\\Project_Client.csproj|e:\\prn231\\prn231_groupproject_learningonline\\project_client\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,143 +47,521 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "DockedWidth": 272,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MomoService.cs",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MomoService.cs",
-              "RelativeDocumentMoniker": "Services\\MomoService.cs",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\MomoService.cs",
-              "RelativeToolTip": "Services\\MomoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T09:46:24.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T09:46:22.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VNPayController.cs",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\VNPayController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VNPayController.cs",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\VNPayController.cs",
-              "RelativeToolTip": "Controllers\\VNPayController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBoAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T09:45:31.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CoursesController.cs",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\CoursesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CoursesController.cs",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\CoursesController.cs",
-              "RelativeToolTip": "Controllers\\CoursesController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAkwEIAAAAQAAAA",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\Authentication\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Authentication\\AuthController.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\Authentication\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\Authentication\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T09:40:15.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "course.js",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\course.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\course.js",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\js\\course.js",
-              "RelativeToolTip": "wwwroot\\js\\course.js",
-              "ViewState": "AQIAACAAAAAAAAAAAAAqwC4AAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-11T09:32:04.263Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "lesson.cshtml",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\lesson.cshtml",
-              "RelativeDocumentMoniker": "Views\\Courses\\lesson.cshtml",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\lesson.cshtml",
-              "RelativeToolTip": "Views\\Courses\\lesson.cshtml",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAAAGQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-11T09:29:57.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Payment.cshtml",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\Payment.cshtml",
-              "RelativeDocumentMoniker": "Views\\Courses\\Payment.cshtml",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Views\\Courses\\Payment.cshtml",
-              "RelativeToolTip": "Views\\Courses\\Payment.cshtml",
-              "ViewState": "AQIAAOwAAAAAAAAAAAAAAC8BAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-11T09:18:36.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "lesson.js",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\lesson.js",
-              "RelativeDocumentMoniker": "wwwroot\\fetchdata\\lesson.js",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\lesson.js",
-              "RelativeToolTip": "wwwroot\\fetchdata\\lesson.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-11T09:05:39.513Z",
+              "WhenOpened": "2024-07-18T11:52:59.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "payment.js",
-              "DocumentMoniker": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\payment.js",
-              "RelativeDocumentMoniker": "wwwroot\\fetchdata\\payment.js",
-              "ToolTip": "D:\\Materials\\SUMMER24\\PRN231re\\GroupProject\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\wwwroot\\fetchdata\\payment.js",
-              "RelativeToolTip": "wwwroot\\fetchdata\\payment.js",
-              "ViewState": "AQIAACMAAAAAAAAAAAAuwDgAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-11T08:59:50.57Z",
+              "Title": "IFileService.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IFileService.cs",
+              "RelativeDocumentMoniker": "Services\\IFileService.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\IFileService.cs",
+              "RelativeToolTip": "Services\\IFileService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T11:42:32.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\FileService.cs",
+              "RelativeDocumentMoniker": "Services\\FileService.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\FileService.cs",
+              "RelativeToolTip": "Services\\FileService.cs",
+              "ViewState": "AQIAAKcAAAAAAAAAAAAAALYAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T11:42:28.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CoursesController.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "Controllers\\CoursesController.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T11:20:26.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1377497384:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{588470cc-84f8-4a57-9ac4-86bca0625ff4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1928210406:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:350743133:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:20:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:27:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:23:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:29:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Models\\MappingProfile.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Models\\MappingProfile.cs",
+              "RelativeToolTip": "Models\\MappingProfile.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAiwCoAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T07:33:44.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ICourseService.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\ICourseService.cs",
+              "RelativeDocumentMoniker": "Services\\ICourseService.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Services\\ICourseService.cs",
+              "RelativeToolTip": "Services\\ICourseService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA8AAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T04:12:00.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\Project_Client\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Project_Client\\Program.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\Project_Client\\Program.cs",
+              "RelativeToolTip": "..\\Project_Client\\Program.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T04:03:57.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\Project_Client\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "..\\Project_Client\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\Project_Client\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "..\\Project_Client\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAAAFAAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T03:59:20.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T21:01:55.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\CoursesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\API\\CoursesController.cs",
+              "ToolTip": "E:\\PRN231\\PRN231_GroupProject_LearningOnline\\PRN231_GroupProject_LearningOnline\\Controllers\\API\\CoursesController.cs",
+              "RelativeToolTip": "Controllers\\API\\CoursesController.cs",
+              "ViewState": "AQIAAMkAAAAAAAAAAAAAwN8AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T02:40:27.625Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 200,
+          "DockedWidth": 1102,
           "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:57:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1463,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:12:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:25:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:26:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:31:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:32:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:33:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:35:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:36:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:38:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:39:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:40:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:42:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:24:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:28:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:22:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 204,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
             }
           ]
         }

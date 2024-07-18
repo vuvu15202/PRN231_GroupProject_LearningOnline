@@ -137,6 +137,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
             {
                 entity.ToTable("User");
 
+                entity.Property(e => e.UserId).UseIdentityColumn();
+
                 entity.Property(e => e.Address).HasMaxLength(255);
 
                 entity.Property(e => e.Email).HasMaxLength(255);
@@ -151,6 +153,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
 
                 entity.Property(e => e.UserName).HasMaxLength(255);
                 entity.Property(e => e.Active).HasDefaultValue(true);
+
+                entity.HasKey(e => e.UserId);
             });
 
             modelBuilder.Entity<UserRole>(entity =>
@@ -187,6 +191,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.Property(e => e.Description).HasColumnType("nvarchar(max)");
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+                entity.Property(e => e.TeacherId).HasColumnName("UserID");
 
                 //entity.Property(e => e.UserId).HasColumnName("UserID");
                 entity.Property(e => e.IsPrivate).HasDefaultValue(true);
@@ -196,6 +201,16 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                     .HasForeignKey(d => d.CategoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Course_CategoryID");
+
+                entity.HasMany(d => d.EnrollCourses)
+                      .WithOne(p => p.Course);
+
+                entity.HasOne(d => d.Teacher)
+                      .WithMany()
+                      .HasForeignKey(d => d.TeacherId);
+
+                entity.HasQueryFilter(d => d.IsDeleted == false);         
+                      
 
                 //entity.HasOne(d => d.User)
                 //    .WithMany(p => p.Courses)
@@ -225,7 +240,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.Property(e => e.AverageGrade).HasColumnName("AverageGrade");
 
                 entity.HasOne(d => d.Course)
-                    .WithMany()
+                    .WithMany(p => p.EnrollCourses)
                     .HasForeignKey(d => d.CourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CourseEnroll_CourseID");
