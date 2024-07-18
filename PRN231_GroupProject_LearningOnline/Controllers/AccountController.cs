@@ -9,7 +9,6 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
     public class AccountController : Controller
     {
         [HttpGet("userprofile")]
-        [Authorize(RoleEnum.Student)]
         public IActionResult UserProfile()
         {
             return View("UserProfile");
