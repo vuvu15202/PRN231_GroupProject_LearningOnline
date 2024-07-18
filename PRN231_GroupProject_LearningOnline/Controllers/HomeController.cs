@@ -13,5 +13,10 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         {
             return View();
         }
+
+        public IActionResult Contact()
+        {
+            return View();  
+        }
     }
 }
