@@ -549,7 +549,7 @@
 					});
 				}
 
-				coursePriceElement.textContent = courseDetail.price ? `$${course.price}` : 'Free';
+				coursePriceElement.textContent = courseDetail.price ? `$${courseDetail.price}` : 'Free';
 
 				enrollButton.addEventListener('click', async () => {
 					window.location.href = `lesson?courseId=${courseDetail.courseId}&lessonNum=1`;
