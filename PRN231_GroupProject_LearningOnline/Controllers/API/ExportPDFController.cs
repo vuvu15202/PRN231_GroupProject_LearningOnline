@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using PRN231_GroupProject_LearningOnline.Services;
 using PRN231_GroupProject_LearningOnline.Models;
 using PRN231_GroupProject_LearningOnline.Authorization;
+using PRN231_GroupProject_LearningOnline.Models.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers.API
 {
@@ -14,15 +16,25 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
     {
         private readonly PDFService _pdfService;
 
-        public ExportPDFController(IConverter converter)
+        private readonly DonationWebApp_v2Context _context;
+
+        public ExportPDFController(PDFService pdfService, DonationWebApp_v2Context context)
         {
-            _pdfService = new PDFService(converter);
+            _pdfService = pdfService;
+            _context = context;
         }
 
         [HttpGet]
-        [Route("generate")]
-        public async Task<IActionResult> GeneratePdf()
+        [Authorize(RoleEnum.Student)]
+        [Route("generate/{studentId}/{courseId}")]
+        public async Task<IActionResult> GeneratePdf(int studentId, int courseId)
         {
+            var compelteCourse = await _context.CourseEnrolls.Include(c => c.User).Include(c => c.Course).Where(c => c.UserId == studentId && c.CourseId == courseId).FirstOrDefaultAsync();
+            if (compelteCourse == null)
+            {
+                return NotFound("Student is not found or you haven't enrolled this course.");
+            }
+
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Services", "templateExport.html");
             if (!System.IO.File.Exists(filePath))
             {
@@ -36,6 +48,9 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 return BadRequest("Invalid request.");
             }
 
+            fileContent = fileContent.Replace("((name))", compelteCourse.User.FirstName + " " + compelteCourse.User.LastName)
+                .Replace("((course))", compelteCourse.Course.Name)
+                .Replace("((date))", DateTime.Now.ToString("MM/dd/yyyy"));
             var pdfBytes = _pdfService.GeneratePdf(fileContent);
 
             return File(pdfBytes, "application/pdf", "generated.pdf");

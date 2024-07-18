@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PRN231_GroupProject_LearningOnline.Authorization;
 using PRN231_GroupProject_LearningOnline.Models;
+using PRN231_GroupProject_LearningOnline.Models.Entity;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers
 {
@@ -14,6 +15,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         [HttpGet("billings")]
         public ActionResult Billing()
         {
+            var user = HttpContext.Items["User"] as User; 
+            ViewBag.User = user;
             return View();
         }
 
@@ -22,6 +25,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         [Authorize(RoleEnum.Admin)]
         public ActionResult ListProjectAdmin()
         {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
             return View("Project");
         }
 
@@ -31,6 +36,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         [Authorize(RoleEnum.Admin)]
         public ActionResult Dashboard()
         {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
             return View("Dashboard");
         }
 
@@ -38,7 +45,26 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         [Authorize(RoleEnum.Admin)]
         public ActionResult StudentFee()
         {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
             return View("StudentFee");
+        }
+
+        [HttpGet("Notification")]
+        [Authorize(RoleEnum.Admin)]
+        public ActionResult Notification()
+        {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
+            return View("Notification");
+        }
+
+        [HttpGet("Temp")]
+        public ActionResult temp()
+        {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
+            return View("Temp");
         }
 
         //// GET: AdminController/Details/5
@@ -115,6 +141,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         //[Authorize(RoleEnum.Admin)]
         public IActionResult UserManagement()
         {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
             return View("UserManagement");
         }
     }

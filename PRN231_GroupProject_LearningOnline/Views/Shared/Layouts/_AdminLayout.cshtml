@@ -22,35 +22,37 @@
     <link id="pagestyle" href="~/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show bg-gray-100">
+<body class="g-sidenav-show bg-gray-100" style="width:100%;">
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
     <div id="loading" class="loading-overlay d-none">
         <div class="spinner-border text-primary" role="status">
         </div>
         <div class="text-primary mt-2">Loading...</div>
     </div>
-    @await Html.PartialAsync("Partials/AsideBar")
+    @await Html.PartialAsync("Partials/AsideBar - Copy")
     <main class="main-content position-relative border-radius-lg ">
         <!--Navbar here-->
-        @await Html.PartialAsync("Partials/Navbar")
+        @await Html.PartialAsync("Partials/Navbar - Copy")
         <!-- Main page here -->
         <div class="container-fluid py-4">
             @RenderBody()
             <!-- footer here -->
-            @await Html.PartialAsync("Partials/Footer")
+            @await Html.PartialAsync("Partials/Footer - Copy")
         </div>
     </main>
+    @await Html.PartialAsync("Partials/SettingButton - Copy")
+
     <!--   Core JS Files   -->
     <script src="~/assets/js/core/popper.min.js"></script>
-    <script src="~/assets/js/core/bootstrap.min.js"></script>
+    @* <script src="~/assets/js/core/bootstrap.min.js"></script> *@
     <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="~/assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     @* dashboard *@
-    <a href="~/js/argon-dashboard.js.map"></a>
-    <script src="~/js/argon-dashboard.min.js"></script>
-    <script src="~/js/argon-dashboard.js"></script>
+    <a href="~/assets/js/argon-dashboard.js.map"></a>
+    <script src="~/assets/js/argon-dashboard.min.js"></script>
+    <script src="~/assets/js/argon-dashboard.js"></script>
     @* dashboard *@
     <script>
         var win = navigator.platform.indexOf('Win') > -1;

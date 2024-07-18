@@ -32,8 +32,18 @@ namespace PRN231_GroupProject_LearningOnline.Services
                     //var studentFees = _context.CourseEnrolls
                     //    .Where(s => s.StudentFeeId != null && (DateTime.Now - s.EnrollDate).Days > 30 * 3 && (DateTime.Now - s.EnrollDate).Days < (30 * 3) + 1).ToList();
                     UserNoti u = UserList.GetUser(user.UserId.ToString());
-                    await _myHub.Clients.Client(u.ConnectionId).SendAsync("ReceivedNoti", "Thông báo gia hạn khóa học", "Khóa học abc của bạn sắp hết hạn, vui lòng đăng ký thêm để tiếp tục rèn luyện!");
-                    _logger.LogInformation(u.ConnectionId);
+                    if(u != null)
+                    {
+                        //await _myHub.Clients.Client(u.ConnectionId).SendAsync("ReceivedNoti", "Thông báo gia hạn khóa học", "Khóa học abc của bạn sắp hết hạn, vui lòng đăng ký thêm để tiếp tục rèn luyện!");
+                        //_context.Notifications.Add(new Models.Entity.Notification {
+                        //  NotificationTitle = "Thông báo gia hạn khóa học",
+                        //  NotificationContent = "Khóa học abc của bạn sắp hết hạn, vui lòng đăng ký thêm để tiếp tục rèn luyện!",
+                        //  NotificationAt = DateTime.Now,
+                        //  NotificationTo = user.UserId
+                        //});
+                        //_context.SaveChanges();
+                        _logger.LogInformation(u.ConnectionId);
+                    }
                 }
 
                 await Task.Delay(5000, stoppingToken);
@@ -75,7 +85,10 @@ namespace PRN231_GroupProject_LearningOnline.Services
         {
             // Lấy thông tin người dùng từ context và đặt vào userContextService
             var user = context.Items["User"] as User;
-            userContextService.SetUser(user);
+            if (user != null)
+            {
+                userContextService.SetUser(user);
+            }
 
             await _next(context);
         }

@@ -10,7 +10,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
     //        Cài đặt công cụ dotnet ef
     //dotnet tool update --global dotnet-ef 
     //        Cập nhật công cụ dotnet ef
-    //dotnet ef migrations add dbcontextver  
+    //dotnet ef migrations add dbcontextver 
     //        Tạo một Migration có tên dbcontextver
     //dotnet ef migrations list   
     //        Danh sách các Migration
@@ -46,6 +46,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         public virtual DbSet<CourseEnroll> CourseEnrolls { get; set; } = null!;
         public virtual DbSet<Lesson> Lessons { get; set; } = null!;
         public virtual DbSet<Review> Reviews { get; set; } = null!;
+        public virtual DbSet<Notification> Notifications { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -304,6 +305,22 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Review_UserID");
+            });
+
+            modelBuilder.Entity<Notification>(entity =>
+            {
+                entity.ToTable("Notification");
+                entity.HasKey(e => e.NotificationId);
+
+                entity.Property(e => e.NotificationTitle).HasMaxLength(100);
+                entity.Property(e => e.NotificationContent).HasMaxLength(1000);
+                entity.Property(e => e.IsRead).HasColumnName("IsRead");
+
+                entity.HasOne(n => n.User)
+                .WithMany(u => u.Notifications)
+                .HasForeignKey(n => n.NotificationTo)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_Notification_User");
             });
 
             OnModelCreatingPartial(modelBuilder);
