@@ -17,7 +17,7 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.29")
+                .HasAnnotation("ProductVersion", "6.0.32")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -61,6 +61,41 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                     b.HasKey("ProjectId");
 
                     b.ToTable("FundraisingProject", (string)null);
+                });
+
+            modelBuilder.Entity("PRN231_GroupProject_LearningOnline.Models.Entity.Notification", b =>
+                {
+                    b.Property<int>("NotificationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NotificationId"), 1L, 1);
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsRead");
+
+                    b.Property<DateTime>("NotificationAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NotificationContent")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("NotificationTitle")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("NotificationTo")
+                        .HasColumnType("int");
+
+                    b.HasKey("NotificationId");
+
+                    b.HasIndex("NotificationTo");
+
+                    b.ToTable("Notification", (string)null);
                 });
 
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.Models.Entity.Order", b =>
@@ -438,6 +473,18 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                     b.ToTable("Review", (string)null);
                 });
 
+            modelBuilder.Entity("PRN231_GroupProject_LearningOnline.Models.Entity.Notification", b =>
+                {
+                    b.HasOne("PRN231_GroupProject_LearningOnline.Models.Entity.User", "User")
+                        .WithMany("Notifications")
+                        .HasForeignKey("NotificationTo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_Notification_User");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.Models.Entity.Order", b =>
                 {
                     b.HasOne("PRN231_GroupProject_LearningOnline.Models.Entity.FundraisingProject", "Project")
@@ -549,6 +596,8 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
 
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.Models.Entity.User", b =>
                 {
+                    b.Navigation("Notifications");
+
                     b.Navigation("Reviews");
 
                     b.Navigation("UserRoles");

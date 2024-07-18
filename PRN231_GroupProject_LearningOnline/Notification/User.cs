@@ -18,7 +18,15 @@
 
         public static void AddUser(UserNoti user)
         {
-            Users.Add(user);
+            if (Users.SingleOrDefault(u => u.UserName.Equals(user.UserName)) != null)
+            {
+                int index = Users.FindIndex(u => u.UserName.Equals(user.UserName));
+                Users[index].ConnectionId = user.ConnectionId;  
+            }
+            else
+            {
+                Users.Add(user);
+            }
         }
 
         public static UserNoti GetUser(string userName)
