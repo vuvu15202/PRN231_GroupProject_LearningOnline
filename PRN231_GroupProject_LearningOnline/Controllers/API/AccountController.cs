@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers.API
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -22,8 +22,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             _context = context;
         }
 
-        [HttpGet("UserProfile")]
-        public IActionResult UserProfile()
+        [HttpGet]
+        public IActionResult GetUserProfile()
         {
             var u = (User)HttpContext.Items["User"];
             var user = new
@@ -38,7 +38,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return Ok(user);
         }
 
-        [HttpPut("UpdateProfile")]
+        [HttpPut]
         public IActionResult UpdateProfile([FromBody] UserProfileDTO model)
         {
             var user = (User)HttpContext.Items["User"];
@@ -70,7 +70,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             }
         }
 
-        [HttpPut("ChangePassword")]
+        [HttpPut]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDTO model)
         {
             var user = (User)HttpContext.Items["User"];
