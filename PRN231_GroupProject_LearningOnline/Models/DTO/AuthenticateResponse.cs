@@ -25,8 +25,10 @@ public class AuthenticateResponse
         UserName = user.UserName;
         Role = role;
         JwtToken = token;
-        if (role.FirstOrDefault()!.RoleName.Equals("ADMIN")) RedirectUrl = "/admin/dashboard";
-        else RedirectUrl = "/home/index";
+        if (role.FirstOrDefault()!.RoleName.Contains("ADMIN")) RedirectUrl = "/admin/dashboard";
+        else if(role.FirstOrDefault()!.RoleName.Contains("LECTURER")) RedirectUrl = "/admin/Courses";
+        else if(role.FirstOrDefault()!.RoleName.Contains("STAFF")) RedirectUrl = "/admin/StudentFee";
+        else RedirectUrl = "/";
     }
 
     public AuthenticateResponse(User user)

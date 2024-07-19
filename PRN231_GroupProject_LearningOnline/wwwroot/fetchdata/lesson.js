@@ -5,7 +5,7 @@ let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
 
 // Init When Load pageconst initPage = () => {
 const initPage = async () => {
-    document.getElementById('projectsActive').className = 'active';
+    //document.getElementById('projectsActive').className = 'active';
     //document.getElementById("ProjectIdMomo").value = projectId;
     //document.getElementById("ProjectIdVnPay").value = projectId;
     //console.log(document.getElementById("ProjectIdVnPay").value)

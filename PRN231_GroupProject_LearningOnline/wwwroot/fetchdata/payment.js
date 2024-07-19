@@ -4,9 +4,14 @@ let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
 
 // Init When Load pageconst initPage = () => {
 const initPage = async () => {
-    document.getElementById('projectsActive').className = 'active';
+    //document.getElementById('projectsActive').className = 'active';
     document.getElementById("courseIdMomo").value = courseId;
     document.getElementById("courseIdVnPay").value = courseId;
+    document.getElementById("enroll").innerHTML = `</br><a href="lesson?courseId=${courseId}&lessonNum=1">
+                <button type="button" class="btn btn-primary">
+                    Enroll
+                </button>
+            </a>`;
     await pushDataOnLoad();
 }
 document.addEventListener("DOMContentLoaded", initPage);
