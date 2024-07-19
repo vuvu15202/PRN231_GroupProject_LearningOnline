@@ -138,7 +138,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         //}
 
         [HttpGet("usermanagement")]
-        //[Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin)]
         public IActionResult UserManagement()
         {
             var user = HttpContext.Items["User"] as User;
