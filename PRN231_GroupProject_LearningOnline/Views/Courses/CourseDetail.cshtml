@@ -63,14 +63,7 @@
 									</a>
 								</div>
 								<nav class="main_nav_contaner ml-auto">
-									<ul class="main_nav">
-										<li><a href="index.html">Home</a></li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="courses.html">Courses</a></li>
-										<li><a href="blog.html">Blog</a></li>
-										<li><a href="#">Page</a></li>
-										<li><a href="contact.html">Contact</a></li>
-									</ul>
+									@await Html.PartialAsync("Partials/studentnav")
 									<div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 
 									<!-- Hamburger -->
@@ -161,6 +154,8 @@
 
 						<div class="course_container">
 							<div class="course_title" id="course_title">Software Training</div>
+							<!-- Course Image -->
+							<div class="course_image"><img id="course_image" alt=""></div>
 							<div class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 
 								<!-- Course Info Item -->
@@ -177,8 +172,7 @@
 
 							</div>
 
-							<!-- Course Image -->
-							<div class="course_image"><img id="course_image" alt=""></div>
+							
 
 							<!-- Course Tabs -->
 							<div class="course_tabs_container">

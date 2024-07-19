@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var user = ViewBag.User as PRN231_GroupProject_LearningOnline.Models.Entity.User;
+}
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -39,12 +42,22 @@
                                         </li>
                                         <li>
                                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                            <div>justgiving@gmail.com</div>
+                                            <div>UniCat@gmail.com</div>
                                         </li>
                                     </ul>
-                                    <div class="top_bar_login ml-auto">
-                                        <div class="login_button"><a href="/Auth/login">Đăng nhập</a></div>
-                                    </div>
+                                    @if (user != null)
+                                    {
+                                        <div class="top_bar_login ml-auto">
+                                            <div class="login_button"><a href="/Auth/login">Đăng xuất</a></div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="top_bar_login ml-auto">
+                                            <div class="login_button"><a href="/Auth/login">Đăng nhập</a></div>
+                                        </div>
+                                    }
+                                    
                                 </div>
                             </div>
                         </div>
@@ -60,16 +73,11 @@
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo_container">
                                     <a href="/home">
-                                        <div class="logo_text">Just<span>Giving</span></div>
+                                        <div class="logo_text">Uni<span>Cat</span></div>
                                     </a>
                                 </div>
                                 <nav class="main_nav_contaner ml-auto">
-                                    <ul class="main_nav">
-                                        <li id="homeActive"><a href="/home">Trang chủ</a></li>
-                                        <li id="projectsActive"><a href="/projects">Các hoàn cảnh quyên góp</a></li>
-                                        @* <li id="newsActive"><a href="/news">Tin tức cộng đồng</a></li> *@
-                                    </ul>
-                                    
+                                    @await Html.PartialAsync("Partials/studentnav")
                                 </nav>
 
                             </div>
@@ -135,7 +143,7 @@
                                     <div class="footer_section footer_about">
                                         <div class="footer_logo_container">
                                             <a href="#">
-                                                <div class="footer_logo_text">Just<span>Giving</span></div>
+                                                <div class="footer_logo_text">Uni<span>Cat</span></div>
                                             </a>
                                         </div>
                                         <div class="footer_about_text">
@@ -159,7 +167,7 @@
                                         <div class="footer_title">Contact Us</div>
                                         <div class="footer_contact_info">
                                             <ul>
-                                                <li>Email: JustGiving@gmail.com</li>
+                                                <li>Email: UniCat@gmail.com</li>
                                                 <li>Phone:  +(84) 111 555 666</li>
                                                 <li>FPT University, Ha Noi Capital, Viet Nam</li>
                                             </ul>
@@ -208,7 +216,7 @@
                             <div class="cr_text">
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">JustGiving</a>
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">UniCat</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </div>
                             <div class="ml-lg-auto cr_links">

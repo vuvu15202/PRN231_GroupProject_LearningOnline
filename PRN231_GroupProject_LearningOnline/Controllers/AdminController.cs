@@ -10,7 +10,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
     [Route("[controller]")]
     public class AdminController : Controller
     {
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         // GET: AdminController
         [HttpGet("billings")]
         public ActionResult Billing()
@@ -42,7 +42,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         }
 
         [HttpGet("studentfee")]
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         public ActionResult StudentFee()
         {
             var user = HttpContext.Items["User"] as User;
@@ -51,7 +51,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         }
 
         [HttpGet("Notification")]
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         public ActionResult Notification()
         {
             var user = HttpContext.Items["User"] as User;
@@ -66,6 +66,25 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
             ViewBag.User = user;
             return View("Temp");
         }
+
+        [Authorize(RoleEnum.Lecturer)]
+        [HttpGet("Courses")]
+        public ActionResult Courses()
+        {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
+            return View("Courses");
+        }
+
+        [Authorize(RoleEnum.Lecturer)]
+        [HttpGet("Lessons")]
+        public ActionResult Lessons()
+        {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
+            return View("Lessons");
+        }
+
 
         //// GET: AdminController/Details/5
         //[HttpGet]
@@ -137,6 +156,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         //    }
         //}
 
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff, RoleEnum.Lecturer)]
         [HttpGet("usermanagement")]
         //[Authorize(RoleEnum.Admin)]
         public IActionResult UserManagement()

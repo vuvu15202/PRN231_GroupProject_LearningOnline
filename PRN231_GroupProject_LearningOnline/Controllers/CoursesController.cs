@@ -8,7 +8,6 @@ using PRN231_GroupProject_LearningOnline.temp;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers
 {
-    [Authorize]
     public class CoursesController : Controller
 	{
         DonationWebApp_v2Context _context;
@@ -66,11 +65,16 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
                 
                 
             }
+            var usesr = HttpContext.Items["User"] as User;
+            ViewBag.User = usesr;
             return View();
 		}
 
+        [Authorize(RoleEnum.Student)]
         public IActionResult Payment()
         {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
             return View();
         }
 
