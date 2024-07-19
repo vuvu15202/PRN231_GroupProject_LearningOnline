@@ -101,12 +101,19 @@ $('#courseId').on('change', function () {
                     <div class="d-flex align-items-center text-sm">
                         url: ${value.videoUrl}
                     </div>
-                    <a href="javascript:void(0)" course-id="${courseId}" lesson-num="${value.lessonNum}" class="viewprojectbills">
-                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            <i class="fas fa-file-pdf text-lg me-1"></i>
-                            Xem
+                    <div>
+                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4 viewLesson" course-id="${courseId}" lesson-num="${value.lessonNum}">
+                                    <i class="fas fa-edit" style="color: #38d100; font-size: 20px;"></i>
+                                    Sửa
                         </button>
-                    </a>
+                        <a href="javascript:void(0)" course-id="${courseId}" lesson-num="${value.lessonNum}" class="viewprojectbills">
+                            <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <i class="fas fa-file-pdf text-lg me-1"></i>
+                                Xem
+                            </button>
+                        </a>
+                    </div>
+                    
                     </li>
             `);
     });
@@ -145,7 +152,7 @@ $('#courseId').on('change', function () {
 
 $(document).ready(function () {
     $("#createCourse").click(function () {
-        //const courseId = $('#courseId').val();
+        const courseId = $('#courseId').val();
         const categoryId = $('#categoryId').val();
         const name = $('#name').val();
         const image = $('#image').val();
@@ -164,20 +171,39 @@ $(document).ready(function () {
             price: price
         };
 
-        $.ajax({
-            type: "post",
-            url: "https://localhost:5000/api/Courses",
-            data: JSON.stringify(formData),
-            contentType: "application/json",
-            success: function (result, status, xhr) {
-                if (confirm('Thêm khóa học thành công!')) {
-                    location.reload();
+        if (!courseId) {
+            $.ajax({
+                type: "post",
+                url: "https://localhost:5000/api/Courses",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (result, status, xhr) {
+                    if (confirm('Thêm bài giảng thành công!')) {
+                        location.reload();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr)
                 }
-            },
-            error: function (xhr, status, error) {
-                console.log(xhr)
-            }
-        });
+            });
+        } else {
+            formData.courseId = courseId;
+            $.ajax({
+                type: "put",
+                url: `https://localhost:5000/api/Courses/${courseId}`,
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (result, status, xhr) {
+                    if (confirm('Sửa bài giảng thành công!')) {
+                        location.reload();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr)
+                }
+            });
+        }
+        
     });
 
     $('#createLesson').click(function () {
@@ -232,6 +258,39 @@ $(document).ready(function () {
              });
 
         }
+    });
+
+
+    $('#clearLesson').click(function () {
+        
+        $('#lessonId').val('0');
+        $('#lessonNum').val('1');
+        $('#courseIdCreate option:first').prop('selected', true);
+        $('#name').val('');
+        $('#description').val('');
+        $('#videoUrl').val('');
+        $('#previousLessioNum').val('0');
+        $('#courseId').val('');
+    });
+
+
+    $(document).on('click', '.viewLesson', function () {
+        let courseId = $(this).attr('course-id');
+        let lessonNum = $(this).attr('lesson-num');
+        console.log(lesson);
+
+
+        var course = coursesGlobal.find(c => c.courseId == courseId);
+        var lesson = course.lessons.find(l => l.lessonNum == lessonNum);
+
+        $('#lessonId').val(lesson.lessonId);
+        $('#lessonNum').val(lesson.lessonNum);
+        $('#courseIdCreate').val(lesson.courseIdCreate);
+        $('#name').val(lesson.name);
+        $('#description').val(lesson.description);
+        $('#videoUrl').val(lesson.videoUrl);
+        $('#previousLessioNum').val(lesson.previousLessioNum);
+        $('#courseId').val(lesson.courseId);
     });
 
 

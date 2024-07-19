@@ -50,7 +50,7 @@
             <div class="card-header pb-0 p-3">
                 <div class="row">
                     <div class="col-6 d-flex align-items-center">
-                        <h6 class="mb-0">Thêm Bài giảng</h6>
+                        <h6 class="mb-0">Thêm/Sửa Bài giảng</h6>
                     </div>
                     <div class="col-6 text-end">
                         <!-- <button class="btn btn-outline-primary btn-sm mb-0">View All</button> -->
@@ -62,7 +62,7 @@
                 <div id="lessonForm">
                     <div class="form-group">
                         <label for="lessonId">Lesson ID</label>
-                        <input type="number" class="form-control" id="lessonId" placeholder="Enter Lesson ID" value="0">
+                        <input type="number" class="form-control" id="lessonId" placeholder="Enter Lesson ID" value="0" disabled>
                     </div>
                     <div class="form-group">
                         <label for="lessonNum">Lesson Number</label>
@@ -84,11 +84,11 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" id="description" rows="3" ></textarea>
+                        <textarea class="form-control" id="description" rows="3" placeholder="Enter DescriptionL"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="videoUrl">Video URL</label>
-                        <input type="text" class="form-control" id="videoUrl" placeholder="Enter Video URL" >
+                        <input type="text" class="form-control" id="videoUrl" placeholder="Enter Video URL">
                     </div>
                     <div class="form-group">
                         <label for="previousLessioNum">Previous Lesson Number</label>
@@ -99,6 +99,7 @@
                         <input type="file" class="form-control" id="quiz">
                     </div>
                     <button type="button" class="btn btn-primary" id="createLesson">Submit</button>
+                    <button type="button" class="btn btn-info" id="clearLesson">Clear</button>
                 </div>
             </div>
         </div>
