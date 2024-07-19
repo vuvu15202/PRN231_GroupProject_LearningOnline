@@ -186,7 +186,7 @@
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            fetch('https://localhost:5000/api/Account/UserProfile')
+            fetch('https://localhost:5000/api/Account/GetUserProfile')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('phonenumber').value = data.phonenumber;
