@@ -162,62 +162,62 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return Ok(les);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromForm] LessonModel lesson)
-        {
-            if (id != lesson.LessonId)
-            {
-                return BadRequest();
-            }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Puttin(int id, [FromForm] LessonModel lesson)
+        //{
+        //    if (id != lesson.LessonId)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            JObject fileContentJson = null;
-            var fileContent = "";
-            if (lesson.Quiz != null && lesson.Quiz.ContentType == "application/json")
-            {
-                using (var stream = new MemoryStream())
-                {
-                    await lesson.Quiz.CopyToAsync(stream);
-                    stream.Position = 0;
+        //    JObject fileContentJson = null;
+        //    var fileContent = "";
+        //    if (lesson.Quiz != null && lesson.Quiz.ContentType == "application/json")
+        //    {
+        //        using (var stream = new MemoryStream())
+        //        {
+        //            await lesson.Quiz.CopyToAsync(stream);
+        //            stream.Position = 0;
 
-                    using (var reader = new StreamReader(stream))
-                    {
-                        fileContent = await reader.ReadToEndAsync();
-                        //fileContentJson = JObject.Parse(fileContent);
+        //            using (var reader = new StreamReader(stream))
+        //            {
+        //                fileContent = await reader.ReadToEndAsync();
+        //                //fileContentJson = JObject.Parse(fileContent);
 
-                    }
-                }
-            }
-            var les = new Lesson()
-            {
-                LessonId = (int)lesson.LessonId,
-                LessonNum = lesson.LessonNum,
-                CourseId = lesson.CourseId,
-                Name = lesson.Name,
-                Description = lesson.Description,
-                VideoUrl = lesson.VideoUrl,
-                Quiz = fileContent,
-                PreviousLessioNum = lesson.PreviousLessioNum,
-            };
+        //            }
+        //        }
+        //    }
+        //    var les = new Lesson()
+        //    {
+        //        LessonId = (int)lesson.LessonId,
+        //        LessonNum = lesson.LessonNum,
+        //        CourseId = lesson.CourseId,
+        //        Name = lesson.Name,
+        //        Description = lesson.Description,
+        //        VideoUrl = lesson.VideoUrl,
+        //        Quiz = fileContent,
+        //        PreviousLessioNum = lesson.PreviousLessioNum,
+        //    };
 
-            try
-            {
-                _context.Update(les);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LessonExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        _context.Update(les);
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!LessonExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return Ok(les);
-        }
+        //    return Ok(les);
+        //}
     }
 
     public class LessonModel

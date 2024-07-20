@@ -74,8 +74,10 @@ public class MomoController : Controller
         }
         catch(Exception ex)
         {
-            return Redirect("https://localhost:5000/courses/payment?courseId=" + response.CourseId + "&statuscode=2");
-        }
-        return Redirect("https://localhost:5000/courses/payment?courseId=" + response.CourseId + "&statuscode=1");
-    }
+			//return Redirect("https://localhost:5000/courses/payment?courseId=" + response.CourseId + "&statuscode=2");
+			return Redirect($"/Courses/lesson?courseId={response.CourseId}&lessonNum=1&statuscode=2");
+
+		}
+		return Redirect($"/Courses/lesson?courseId={response.CourseId}&lessonNum=1&statuscode=1");
+	}
 }

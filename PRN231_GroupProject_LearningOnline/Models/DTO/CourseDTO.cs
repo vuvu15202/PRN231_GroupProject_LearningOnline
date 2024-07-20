@@ -24,5 +24,5 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public virtual List<StudentFee>? StudentFees { get; set; } = null!;
 
 
-    }
+	}
 }
