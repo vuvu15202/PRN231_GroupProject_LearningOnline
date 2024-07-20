@@ -198,6 +198,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Course_CategoryID");
 
+                entity.HasMany(d => d.CourseEnrolls).WithOne(p => p.Course);
+
                 //entity.HasOne(d => d.User)
                 //    .WithMany(p => p.Courses)
                 //    .HasForeignKey(d => d.UserId)
@@ -226,7 +228,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.Property(e => e.AverageGrade).HasColumnName("AverageGrade");
 
                 entity.HasOne(d => d.Course)
-                    .WithMany()
+                    .WithMany(p => p.CourseEnrolls)
                     .HasForeignKey(d => d.CourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CourseEnroll_CourseID");

@@ -26,5 +26,7 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public virtual ICollection<Lesson>? Lessons { get; set; }
         [JsonIgnore]
         public virtual ICollection<Review>? Reviews { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<CourseEnroll>? CourseEnrolls { get; set; }
     }
 }

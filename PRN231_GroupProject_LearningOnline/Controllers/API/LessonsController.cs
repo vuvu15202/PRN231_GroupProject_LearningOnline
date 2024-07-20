@@ -53,7 +53,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
 
         // PUT: api/Lessons/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("PutLesson/{id}")]
         public async Task<IActionResult> PutLesson(int id, Lesson lesson)
         {
             if (id != lesson.LessonId)
