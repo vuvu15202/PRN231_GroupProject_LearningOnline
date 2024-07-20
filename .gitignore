@@ -2,3 +2,5 @@ PRN231_GroupProject_LearningOnline/bin
 PRN231_GroupProject_LearningOnline/obj
 PRN231_GroupProject_LearningOnline/.vs
 PRN231_GroupProject_LearningOnline/Migrations
+/PRN231_GroupProject_LearningOnline/Migrations/20240720142841_init.cs
+/PRN231_GroupProject_LearningOnline/Migrations/20240720142841_init.Designer.cs
