@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PRN231_GroupProject_LearningOnline.Migrations
 {
-    public partial class dbcontextver1 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,8 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                 {
                     CategoryID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,11 +69,35 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                     Password = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
+                    Address = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Active = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.UserId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Course",
+                columns: table => new
+                {
+                    CourseID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CategoryID = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsPrivate = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    Price = table.Column<long>(type: "bigint", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Course", x => x.CourseID);
+                    table.ForeignKey(
+                        name: "FK_Course_CategoryID",
+                        column: x => x.CategoryID,
+                        principalTable: "Category",
+                        principalColumn: "CategoryID");
                 });
 
             migrationBuilder.CreateTable(
@@ -100,33 +125,26 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Course",
+                name: "Notification",
                 columns: table => new
                 {
-                    CourseID = table.Column<int>(type: "int", nullable: false)
+                    NotificationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryID = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: false),
-                    CourseInfo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublishStatus = table.Column<int>(type: "int", nullable: false),
-                    Request = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    NotificationTitle = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    NotificationContent = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    NotificationAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    NotificationTo = table.Column<int>(type: "int", nullable: false),
+                    IsRead = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Course", x => x.CourseID);
+                    table.PrimaryKey("PK_Notification", x => x.NotificationId);
                     table.ForeignKey(
-                        name: "FK_Course_CategoryID",
-                        column: x => x.CategoryID,
-                        principalTable: "Category",
-                        principalColumn: "CategoryID");
-                    table.ForeignKey(
-                        name: "FK_Course_UserID",
-                        column: x => x.UserID,
+                        name: "FK_Notification_User",
+                        column: x => x.NotificationTo,
                         principalTable: "User",
-                        principalColumn: "UserId");
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -165,10 +183,12 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                     LessonCurrent = table.Column<int>(type: "int", nullable: false),
                     CourseStatus = table.Column<int>(type: "int", nullable: false),
                     Grade = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AverageGrade = table.Column<float>(type: "real", nullable: true)
+                    AverageGrade = table.Column<float>(type: "real", nullable: true),
+                    StudentFeeId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_CourseEnroll", x => x.CourseEnrollID);
                     table.ForeignKey(
                         name: "FK_CourseEnroll_CourseID",
                         column: x => x.CourseID,
@@ -190,10 +210,10 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                     LessonNum = table.Column<int>(type: "int", nullable: true),
                     CourseID = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Title = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     Description = table.Column<string>(type: "nvarchar(4000)", maxLength: 4000, nullable: true),
                     VideoUrl = table.Column<string>(type: "nvarchar(4000)", maxLength: 4000, nullable: true),
-                    Quiz = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Quiz = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PreviousLessioNum = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -231,15 +251,34 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                         principalColumn: "UserId");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "StudentFee",
+                columns: table => new
+                {
+                    StudentFeeId = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    PaymentMethod = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    BankCode = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Amount = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    OrderInfo = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    ErrorCode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    LocalMessage = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    DateOfPaid = table.Column<DateTime>(type: "datetime", nullable: true),
+                    CourseEnrollId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StudentFee", x => x.StudentFeeId);
+                    table.ForeignKey(
+                        name: "FK_CE_SF",
+                        column: x => x.CourseEnrollId,
+                        principalTable: "CourseEnroll",
+                        principalColumn: "CourseEnrollID");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Course_CategoryID",
                 table: "Course",
                 column: "CategoryID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Course_UserID",
-                table: "Course",
-                column: "UserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CourseEnroll_CourseID",
@@ -257,6 +296,11 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                 column: "CourseID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Notification_NotificationTo",
+                table: "Notification",
+                column: "NotificationTo");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Order_ProjectId",
                 table: "Order",
                 column: "ProjectId");
@@ -272,6 +316,13 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_StudentFee_CourseEnrollId",
+                table: "StudentFee",
+                column: "CourseEnrollId",
+                unique: true,
+                filter: "[CourseEnrollId] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserRole_RoleId",
                 table: "UserRole",
                 column: "RoleId");
@@ -285,10 +336,10 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CourseEnroll");
+                name: "Lesson");
 
             migrationBuilder.DropTable(
-                name: "Lesson");
+                name: "Notification");
 
             migrationBuilder.DropTable(
                 name: "Order");
@@ -297,22 +348,28 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                 name: "Review");
 
             migrationBuilder.DropTable(
+                name: "StudentFee");
+
+            migrationBuilder.DropTable(
                 name: "UserRole");
 
             migrationBuilder.DropTable(
                 name: "FundraisingProject");
 
             migrationBuilder.DropTable(
-                name: "Course");
+                name: "CourseEnroll");
 
             migrationBuilder.DropTable(
                 name: "Role");
 
             migrationBuilder.DropTable(
-                name: "Category");
+                name: "Course");
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Category");
         }
     }
 }
