@@ -32,6 +32,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IExportHTMLtoPDF, ExportHTMLtoPDF>();
 builder.Services.AddScoped<IMomoService, MomoService>();
+builder.Services.AddTransient<IFileService, FileService>();
 builder.Services.AddScoped<PDFService>();
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 builder.Services.AddAutoMapper(typeof(MappingProfile));

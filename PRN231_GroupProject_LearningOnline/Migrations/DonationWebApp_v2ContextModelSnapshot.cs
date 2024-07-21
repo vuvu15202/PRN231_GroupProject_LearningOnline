@@ -306,6 +306,11 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -538,7 +543,7 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.temp.CourseEnroll", b =>
                 {
                     b.HasOne("PRN231_GroupProject_LearningOnline.temp.Course", "Course")
-                        .WithMany()
+                        .WithMany("CourseEnrolls")
                         .HasForeignKey("CourseId")
                         .IsRequired()
                         .HasConstraintName("FK_CourseEnroll_CourseID");
@@ -610,6 +615,8 @@ namespace PRN231_GroupProject_LearningOnline.Migrations
 
             modelBuilder.Entity("PRN231_GroupProject_LearningOnline.temp.Course", b =>
                 {
+                    b.Navigation("CourseEnrolls");
+
                     b.Navigation("Lessons");
 
                     b.Navigation("Reviews");
