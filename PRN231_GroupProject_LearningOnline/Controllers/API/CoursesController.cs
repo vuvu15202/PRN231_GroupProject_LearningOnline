@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using AutoMapper;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Linq;
 using PRN231_GroupProject_LearningOnline.Models.DTO;
 using PRN231_GroupProject_LearningOnline.Models.Entity;
 using PRN231_GroupProject_LearningOnline.temp;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers.API
 {
@@ -19,12 +24,16 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
     {
         private readonly DonationWebApp_v2Context _context;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _environment;
 
-        public CoursesController(DonationWebApp_v2Context context, IMapper mapper)
+        public CoursesController(DonationWebApp_v2Context context, IMapper mapper, IWebHostEnvironment environment)
         {
             _context = context;
             _mapper = mapper;
+            _environment = environment;
         }
+
+
 
 
 
@@ -62,51 +71,51 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return Ok(_mapper.Map<CourseDTO>(course));
         }
 
-        // PUT: api/Courses/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCourse(int id, Course course)
-        {
-            if (id != course.CourseId)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Courses/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutCourse(int id, Course course)
+        //{
+        //    if (id != course.CourseId)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(course).State = EntityState.Modified;
+        //    _context.Entry(course).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CourseExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!CourseExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/Courses
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Course>> PostCourse(Course course)
-        {
-          if (_context.Courses == null)
-          {
-              return Problem("Entity set 'DonationWebApp_v2Context.Courses'  is null.");
-          }
-            _context.Courses.Add(course);
-            await _context.SaveChangesAsync();
+        //// POST: api/Courses
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<Course>> PostCourse(Course course)
+        //{
+        //  if (_context.Courses == null)
+        //  {
+        //      return Problem("Entity set 'DonationWebApp_v2Context.Courses'  is null.");
+        //  }
+        //    _context.Courses.Add(course);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCourse", new { id = course.CourseId }, course);
-        }
+        //    return CreatedAtAction("GetCourse", new { id = course.CourseId }, course);
+        //}
 
         [HttpPost("grade")]
         public async Task<ActionResult> Grade([FromBody] List<string> answer)
@@ -158,6 +167,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         {
             return (_context.Courses?.Any(e => e.CourseId == id)).GetValueOrDefault();
         }
+
+
 
         [HttpGet("search")]
         public async Task<ActionResult<IEnumerable<Course>>> SearchCourses(string name)
@@ -219,5 +230,118 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
 
             return Ok(courses);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> PostCourse([FromForm] CourseModel course)
+        {
+            if (course.Image  == null || course.Image.Length == 0)
+                return BadRequest("No file uploaded");
+
+            var uploads = Path.Combine(_environment.WebRootPath, "uploads");
+
+            if (!Directory.Exists(uploads))
+                Directory.CreateDirectory(uploads);
+
+            var filePath = Path.Combine(uploads, course.Image.FileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await course.Image.CopyToAsync(stream);
+            }
+
+
+
+            var cour = new Course()
+            {
+                CategoryId = course.CategoryId,
+                Name = course.Name,
+                Image = "/uploads/" + course.Image.FileName,
+                Description = course.Description,
+                IsPrivate = course.IsPrivate,
+                Price = course.Price,
+            };
+            _context.Courses.Add(cour);
+            await _context.SaveChangesAsync();
+
+            // Xử lý nội dung JSON từ fileContentJson ở đây
+            // Ví dụ: bạn có thể in nội dung của JSON ra console để kiểm tra
+            System.Diagnostics.Debug.WriteLine("test upload");
+
+            return Ok(cour);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCourse(int id, [FromForm] CourseModel course)
+        {
+            if (id != course.CourseId)
+            {
+                return BadRequest();
+            }
+
+            var checkCourse = _context.Courses.FirstOrDefault(c => c.CourseId == id);
+            if (checkCourse == null)
+            {
+                return NotFound("Không tìm thấy khóa học!");
+            }
+
+            string fileName = "";
+            if (course.Image != null )
+            {
+                var uploads = Path.Combine(_environment.WebRootPath, "uploads");
+
+                if (!Directory.Exists(uploads))
+                    Directory.CreateDirectory(uploads);
+
+                var filePath = Path.Combine(uploads, course.Image.FileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await course.Image.CopyToAsync(stream);
+                    fileName = course.Image.FileName;
+                }
+            }
+
+            
+            var cour = new Course()
+            {
+                CategoryId = course.CategoryId,
+                Name = course.Name,
+                Image = String.IsNullOrEmpty(fileName) ? checkCourse.Image: "/uploads/" + fileName ,
+                Description = course.Description,
+                IsPrivate = course.IsPrivate,
+                Price = course.Price,
+            };
+
+            try
+            {
+                _context.Update(cour);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CourseExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return Ok(cour);
+        }
+    }
+
+    public class CourseModel
+    {
+        public int CourseId { get; set; }
+        public int CategoryId { get; set; }
+        public string Name { get; set; } = null!;
+        public IFormFile? Image { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public bool IsPrivate { get; set; }
+        public long? Price { get; set; } = null!;
     }
 }

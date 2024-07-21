@@ -51,36 +51,36 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return lesson;
         }
 
-        // PUT: api/Lessons/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutLesson(int id, Lesson lesson)
-        {
-            if (id != lesson.LessonId)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Lessons/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutLesson(int id, Lesson lesson)
+        //{
+        //    if (id != lesson.LessonId)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(lesson).State = EntityState.Modified;
+        //    _context.Entry(lesson).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LessonExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!LessonExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
         // POST: api/Lessons
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -142,6 +142,10 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                     }
                 }
             }
+            else
+            {
+                return BadRequest("Thiếu file đề thi.");
+            }
             var les = new Lesson()
             {
                 LessonNum = lesson.LessonNum,
@@ -162,62 +166,68 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return Ok(les);
         }
 
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> Puttin(int id, [FromForm] LessonModel lesson)
-        //{
-        //    if (id != lesson.LessonId)
-        //    {
-        //        return BadRequest();
-        //    }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Puttin(int id, [FromForm] LessonModel lesson)
+        {
+            if (id != lesson.LessonId)
+            {
+                return BadRequest();
+            }
 
-        //    JObject fileContentJson = null;
-        //    var fileContent = "";
-        //    if (lesson.Quiz != null && lesson.Quiz.ContentType == "application/json")
-        //    {
-        //        using (var stream = new MemoryStream())
-        //        {
-        //            await lesson.Quiz.CopyToAsync(stream);
-        //            stream.Position = 0;
+            var checkLesson = _context.Lessons.SingleOrDefault(l => l.LessonId == id);
+            if(checkLesson == null)
+            {
+                return NotFound("Không tìm thấy bài giảng!");
+            }
 
-        //            using (var reader = new StreamReader(stream))
-        //            {
-        //                fileContent = await reader.ReadToEndAsync();
-        //                //fileContentJson = JObject.Parse(fileContent);
+            //JObject fileContentJson = null;
+            var fileContent = "";
+            if (lesson.Quiz != null && lesson.Quiz.ContentType == "application/json")
+            {
+                using (var stream = new MemoryStream())
+                {
+                    await lesson.Quiz.CopyToAsync(stream);
+                    stream.Position = 0;
 
-        //            }
-        //        }
-        //    }
-        //    var les = new Lesson()
-        //    {
-        //        LessonId = (int)lesson.LessonId,
-        //        LessonNum = lesson.LessonNum,
-        //        CourseId = lesson.CourseId,
-        //        Name = lesson.Name,
-        //        Description = lesson.Description,
-        //        VideoUrl = lesson.VideoUrl,
-        //        Quiz = fileContent,
-        //        PreviousLessioNum = lesson.PreviousLessioNum,
-        //    };
+                    using (var reader = new StreamReader(stream))
+                    {
+                        fileContent = await reader.ReadToEndAsync();
+                        //fileContentJson = JObject.Parse(fileContent);
 
-        //    try
-        //    {
-        //        _context.Update(les);
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!LessonExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+                    }
+                }
+            }
+            var les = new Lesson()
+            {
+                LessonId = (int)lesson.LessonId,
+                LessonNum = lesson.LessonNum,
+                CourseId = lesson.CourseId,
+                Name = lesson.Name,
+                Description = lesson.Description,
+                VideoUrl = lesson.VideoUrl,
+                Quiz = String.IsNullOrEmpty(fileContent) ? fileContent : checkLesson.Quiz,
+                PreviousLessioNum = lesson.PreviousLessioNum,
+            };
 
-        //    return Ok(les);
-        //}
+            try
+            {
+                _context.Update(les);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!LessonExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return Ok(les);
+        }
     }
 
     public class LessonModel
@@ -228,7 +238,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         public string Name { get; set; }
         public string Description { get; set; }
         public string VideoUrl { get; set; }
-        public IFormFile Quiz { get; set; }
+        public IFormFile? Quiz { get; set; }
         public int PreviousLessioNum { get; set; }
     }
 

@@ -151,61 +151,7 @@ $('#courseId').on('change', function () {
 //});
 
 $(document).ready(function () {
-    $("#createCourse").click(function () {
-        const courseId = $('#courseId').val();
-        const categoryId = $('#categoryId').val();
-        const name = $('#name').val();
-        const image = $('#image').val();
-        const description = $('#description').val();
-        const isPrivate = $('#isPrivate').prop('checked');
-        const price = $('#price').val();
-
-        // Tạo một đối tượng để chứa các giá trị
-        const formData = {
-            //courseId: courseId,
-            categoryId: categoryId,
-            name: name,
-            image: image,
-            description: description,
-            isPrivate: isPrivate,
-            price: price
-        };
-
-        if (!courseId) {
-            $.ajax({
-                type: "post",
-                url: "https://localhost:5000/api/Courses",
-                data: JSON.stringify(formData),
-                contentType: "application/json",
-                success: function (result, status, xhr) {
-                    if (confirm('Thêm bài giảng thành công!')) {
-                        location.reload();
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.log(xhr)
-                }
-            });
-        } else {
-            formData.courseId = courseId;
-            $.ajax({
-                type: "put",
-                url: `https://localhost:5000/api/Courses/${courseId}`,
-                data: JSON.stringify(formData),
-                contentType: "application/json",
-                success: function (result, status, xhr) {
-                    if (confirm('Sửa bài giảng thành công!')) {
-                        location.reload();
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.log(xhr)
-                }
-            });
-        }
-        
-    });
-
+    
     $('#createLesson').click(function () {
         // Hiển thị hộp thoại xác nhận
         if (confirm('Are you sure you want to submit this form?')) {
@@ -240,22 +186,40 @@ $(document).ready(function () {
             console.log('Quiz File:', quiz ? quiz.name : 'No file selected');
             console.log('Previous Lesson Number:', previousLessioNum);
 
-            // Tạo yêu cầu AJAX để gửi formData tới máy chủ
-             $.ajax({
-                 url: 'https://localhost:5000/api/Lessons', // Thay đổi URL này thành endpoint của bạn
-                 type: 'POST',
-                 data: formData,
-                 contentType: false,
-                 processData: false,
-                 success: function(response) {
-                     console.log('Server response:', response);
-                     // Làm mới trang sau khi gửi thành công
-                     location.reload();
-                 },
-                 error: function(error) {
-                     console.log('Error:', error);
-                 }
-             });
+            if (lessonId == 0) {
+                $.ajax({
+                    url: 'https://localhost:5000/api/Lessons',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        console.log('Server response:', response);
+                        // Làm mới trang sau khi gửi thành công
+                        location.reload();
+                    },
+                    error: function (error) {
+                        console.log('Error:', error);
+                    }
+                });
+            } else {
+                $.ajax({
+                    url: `https://localhost:5000/api/Lessons/${lessonId}`,
+                    type: 'PUT',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        console.log('Server response:', response);
+                        // Làm mới trang sau khi gửi thành công
+                        location.reload();
+                    },
+                    error: function (error) {
+                        console.log('Error:', error);
+                    }
+                });
+            }
+             
 
         }
     });
@@ -285,7 +249,7 @@ $(document).ready(function () {
 
         $('#lessonId').val(lesson.lessonId);
         $('#lessonNum').val(lesson.lessonNum);
-        $('#courseIdCreate').val(lesson.courseIdCreate);
+        $('#courseIdCreate').val(lesson.courseId);
         $('#name').val(lesson.name);
         $('#description').val(lesson.description);
         $('#videoUrl').val(lesson.videoUrl);
@@ -343,38 +307,115 @@ $(document).ready(function () {
                              </li>
                              
         `);
-        $("#course-detail").append(`<table class="table table-bordered" style="" id="quizzesTable">
-            <thead>
-                <tr>
-                    <th>Question No</th>
-                    <th>Question</th>
-                    <th>Answer A</th>
-                    <th>Answer B</th>
-                    <th>Answer C</th>
-                    <th>Answer D</th>
-                    <th>Correct Answer</th>
-                </tr>
-            </thead>
-            <tbody>`);
+        $("#course-detail").append(`
+            <hr>
+            <h2>Đề kiểm tra</h2>
+            <div class="row"> <div class="col">`);
 
         lesson.quizes.forEach(quiz => {
-            const row = `
-                    <tr>
-                        <td>${quiz.questionNo}</td>
-                        <td>${quiz.question}</td>
-                        <td>${quiz.answerA}</td>
-                        <td>${quiz.answerB}</td>
-                        <td>${quiz.answerC}</td>
-                        <td>${quiz.answerD}</td>
-                        <td>${quiz.answer}</td>
-                    </tr>
-                `;
-            $("#course-detail").append(row);
+            if (quiz.correctAnswer == 'A') {
+                const row = `
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Câu hỏi ${quiz.questionNo}: ${quiz.question}?</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text answer text-success">A. ${quiz.answerA}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text answer">B. ${quiz.answerB}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text answer">C. ${quiz.answerC}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text answer">D. ${quiz.answerD}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                $("#course-detail").append(row);
+            } else if (quiz.correctAnswer == 'B') {
+                const row = `
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Câu hỏi ${quiz.questionNo}: ${quiz.question}?</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text answer">A. ${quiz.answerA}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text answer text-success">B. ${quiz.answerB}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text answer">C. ${quiz.answerC}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text answer">D. ${quiz.answerD}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                $("#course-detail").append(row);
+            } else if (quiz.correctAnswer == 'C') {
+                const row = `
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Câu hỏi ${quiz.questionNo}: ${quiz.question}?</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text">A. ${quiz.answerA}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text">B. ${quiz.answerB}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text answer text-success">C. ${quiz.answerC}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text answer">D. ${quiz.answerD}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                $("#course-detail").append(row);
+            } else {
+                const row = `
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Câu hỏi ${quiz.questionNo}: ${quiz.question}?</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text answer">A. ${quiz.answerA}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text answer">B. ${quiz.answerB}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text answer">C. ${quiz.answerC}</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="card-text answer text-success">D. ${quiz.answerD}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                $("#course-detail").append(row);
+            }
+            
         });
 
         $("#course-detail").append(`
-            </tbody>
-        </table>`)
+            </div>
+            </div>`)
 
         onYouTubeIframeAPIReady(lesson.videoUrl);
         
