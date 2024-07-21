@@ -178,6 +178,12 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.ToTable("Category");
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+
+                entity.Property(e => e.IsDelete).HasDefaultValue(false);
+
+                entity.HasQueryFilter(e => e.IsDelete == false);
+
+
             });
 
             modelBuilder.Entity<Course>(entity =>

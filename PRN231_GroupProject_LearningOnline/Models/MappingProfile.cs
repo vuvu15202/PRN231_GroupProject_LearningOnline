@@ -30,6 +30,11 @@ namespace PRN231_GroupProject_LearningOnline.Models
             CreateMap<Course, CourseDTO>()
                       .ForMember(x => x.NumberEnrolled,opt => opt.MapFrom(src => src.CourseEnrolls.Count()));
 
+            CreateMap<CreateCategory, Category>();
+            CreateMap<UpdateCategory, Category>().ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+        
+            
+
 
             CreateMap<Lesson, LessonDTO>().ForMember(dest => dest.Quiz, opt => opt.MapFrom(src => src.Quiz));
             // Thêm các mappings khác nếu cần

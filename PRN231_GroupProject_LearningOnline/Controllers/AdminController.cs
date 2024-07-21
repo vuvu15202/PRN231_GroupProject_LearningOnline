@@ -85,6 +85,15 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
             return View("Lessons");
         }
 
+        [Authorize(RoleEnum.Admin)]
+        [HttpGet("Categories")]
+        public ActionResult Categories()
+        {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
+            return View();
+        }
+
 
         //// GET: AdminController/Details/5
         //[HttpGet]

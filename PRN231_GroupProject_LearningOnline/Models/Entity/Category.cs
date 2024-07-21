@@ -14,6 +14,8 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public int CategoryId { get; set; }
         public string Name { get; set; } = null!;
         public string Image { get; set; } = null!;
+        [JsonIgnore]
+        public bool IsDelete { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<Course>? Courses { get; set; }
