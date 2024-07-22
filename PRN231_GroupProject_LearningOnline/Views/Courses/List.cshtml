@@ -383,7 +383,7 @@
 					if (!course.isPrivate) return;
 
 					const courseCol = document.createElement('div');
-					courseCol.classList.add('col-lg-6', 'course_col');
+					courseCol.classList.add('col-lg-4', 'course_col');
 
 					const courseDiv = document.createElement('div');
 					courseDiv.classList.add('course');
@@ -393,6 +393,7 @@
 					const courseImage = document.createElement('img');
 					courseImage.src = course.image || 'images/default_course.jpg';
 					courseImage.alt = course.name;
+					courseImage.style.width = '100%';
 					courseImageDiv.appendChild(courseImage);
 
 					const courseBodyDiv = document.createElement('div');

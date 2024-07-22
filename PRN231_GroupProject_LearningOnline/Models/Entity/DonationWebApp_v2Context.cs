@@ -48,6 +48,9 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         public virtual DbSet<Review> Reviews { get; set; } = null!;
         public virtual DbSet<Notification> Notifications { get; set; } = null!;
 
+        public virtual DbSet<Comment> Comments { get; set; } = null!;
+        public virtual DbSet<Reply> Replies { get; set; } = null!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -334,6 +337,33 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Notification_User");
             });
+
+            modelBuilder.Entity<Comment>(entity =>
+            {
+                entity.ToTable("Comment");
+
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Content).HasMaxLength(200);
+
+                entity.HasMany(d => d.Replies)
+                      .WithOne(p => p.Comment);
+
+            });
+            
+            
+            modelBuilder.Entity<Reply>(entity =>
+            {
+                entity.ToTable("Reply");
+
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Content).HasMaxLength(200);
+
+                entity.HasOne(d => d.Comment)
+                       .WithMany(p => p.Replies);
+            });
+
+
+
 
             OnModelCreatingPartial(modelBuilder);
         }
