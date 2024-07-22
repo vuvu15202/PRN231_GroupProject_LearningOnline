@@ -20,7 +20,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         {
             var student = (User)HttpContext.Items["User"];
             var courses = _context.CourseEnrolls.Include(ce => ce.StudentFee).Include(ce => ce.User).Include(ce => ce.Course).Where(ce => ce.UserId == student.UserId).Select(
-                    ce => new CourseEnrollDTO
+                    ce => new CourseEnrollDTOs
 					{
                         Id = ce.CourseEnrollId,
                         CourseId = ce.Course.CourseId,
@@ -41,7 +41,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         public IActionResult GetCourseEnrollById(int courseEnrollId)
         {
             var courses = _context.CourseEnrolls.Include(ce => ce.StudentFee).Include(ce => ce.User).Include(ce => ce.Course).Where(ce => ce.CourseEnrollId == courseEnrollId).Select(
-                    ce => new CourseEnrollDTO
+                    ce => new CourseEnrollDTOs
 					{
                         Id = ce.CourseEnrollId,
                         CourseId = ce.Course.CourseId,
@@ -59,7 +59,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         }
     }
 
-    public class CourseEnrollDTO
+    public class CourseEnrollDTOs
     {
         public int Id { get; set; } 
         public int CourseId { get; set; }   
