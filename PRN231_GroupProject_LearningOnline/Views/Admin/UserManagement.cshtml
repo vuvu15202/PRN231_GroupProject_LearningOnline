@@ -52,8 +52,11 @@
                     <div class="card mb-4">
                         <div class="card-header pb-0">
                             <h6>User table</h6>
-                            <div class="input-group mb-3 ms-auto w-25 align-items-center">
-                                <input type="text" id="searchInput" class="form-control form-control-sm flex-grow-1" placeholder="Search users...">
+                            <div class="d-flex flex-column align-items-end">
+                                <div class="d-flex mb-2">
+                                    <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Search users...">
+                                </div>
+                                <button id="openAddUserModalBtn" class="btn btn-primary">Add User</button>
                             </div>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
@@ -94,13 +97,15 @@
                 <div class="modal-body">
                     <form id="editUserForm">
                         <input type="hidden" id="editUserId">
-                        <div class="mb-3">
-                            <label for="editFirstName" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="editFirstName">
-                        </div>
-                        <div class="mb-3">
-                            <label for="editLastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="editLastName">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="editFirstName">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="editLastName">
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="editEmail" class="form-label">Email</label>
@@ -132,6 +137,67 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="saveEditUserBtn">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLabel">Add User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addUserForm">
+                        <div class="mb-3">
+                            <label for="addUserName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="addUserName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="addFirstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="addLastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="addEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addPhone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="addPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="addAddress" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addActive" class="form-label">Active</label>
+                            <select class="form-control" id="addActive">
+                                <option value="true">True</option>
+                                <option value="false">False</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addRole" class="form-label">Role</label>
+                            <select class="form-control" id="addRole">
+                                <!-- Roles will be populated here -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="addPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveAddUserBtn">Add User</button>
                 </div>
             </div>
         </div>
@@ -343,6 +409,77 @@
                     );
                     renderUsers(filteredUsers);
                 }
+            });
+
+            // Add User Modal functionality
+            document.getElementById('saveAddUserBtn').addEventListener('click', () => {
+                const userName = document.getElementById('addUserName').value;
+                const firstName = document.getElementById('addFirstName').value;
+                const lastName = document.getElementById('addLastName').value;
+                const email = document.getElementById('addEmail').value;
+                const phone = document.getElementById('addPhone').value;
+                const address = document.getElementById('addAddress').value;
+                const active = document.getElementById('addActive').value;
+                const roleId = document.getElementById('addRole').value;
+                const password = document.getElementById('addPassword').value;
+
+                const newUser = {
+                    userName: userName,
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    address: address,
+                    active: active === "true",
+                    roleId: parseInt(roleId, 10),
+                    password: password
+                };
+
+                fetch('https://localhost:5000/api/Admin/CreateUser', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text(); // Response is just a status code
+                    })
+                    .then(() => {
+                        // Close the modal
+                        const addUserModal = bootstrap.Modal.getInstance(document.getElementById('addUserModal'));
+                        addUserModal.hide();
+
+                        // Clear form fields
+                        document.getElementById('addUserForm').reset();
+
+                        alert('User added successfully');
+                        window.location.href = '/Admin/UserManagement';
+                    })
+                    .catch(error => {
+                        console.error('Error creating user:', error.message);
+                        alert('Error creating user: ' + error.message);
+                    });
+            });
+
+            // Function to open the Add User Modal
+            document.getElementById('openAddUserModalBtn').addEventListener('click', () => {
+                // Populate the roles dropdown
+                const roleSelect = document.getElementById('addRole');
+                roleSelect.innerHTML = ''; // Clear existing options
+                rolesData.forEach(roleItem => {
+                    const option = document.createElement('option');
+                    option.value = roleItem.roleId;
+                    option.text = roleItem.roleName;
+                    roleSelect.appendChild(option);
+                });
+
+                // Open the Add User Modal
+                const addUserModal = new bootstrap.Modal(document.getElementById('addUserModal'));
+                addUserModal.show();
             });
 
         });

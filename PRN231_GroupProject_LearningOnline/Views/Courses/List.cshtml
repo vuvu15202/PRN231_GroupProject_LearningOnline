@@ -338,7 +338,6 @@
 					return;
 				}
 				courses = await response.json();
-				courses = courses.filter(course => course.isPrivate);
 				renderCourses(currentPage);
 				createPaginationControls();
 			}
@@ -367,7 +366,6 @@
 				}
 
 				courses = await response.json();
-				courses = courses.filter(course => course.isPrivate);
 				renderCourses(currentPage);
 				createPaginationControls();
 			}
@@ -380,7 +378,6 @@
 				const coursesToDisplay = courses.slice(start, end);
 
 				coursesToDisplay.forEach(course => {
-					if (!course.isPrivate) return;
 
 					const courseCol = document.createElement('div');
 					courseCol.classList.add('col-lg-4', 'course_col');

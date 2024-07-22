@@ -3,13 +3,13 @@
 }
 <main class="main-content position-relative border-radius-lg">
     <div class="container-fluid py-4">
-        <div class="row">
-            <div id="authors-col" class="col-12">
+        <div class="row" id="container-row">
+            <div id="authors-col" class="col-12" style="transition: all 0.3s ease;">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <h6>Student Enroll Course Table</h6>
                     </div>
-                    <div class="card-body px-0 pt-0 pb-2" style="overflow-y: auto; max-height: 80vh;">
+                    <div class="card-body px-0 pt-0 pb-2" style="overflow-y: auto; height: 80vh;">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div id="projects-col" class="col-12 col-md-6" style="display: none; overflow-y: auto; max-height: 80vh;">
+            <div id="projects-col" class="col-12 col-md-6" style="display: none; transition: all 0.3s ease; overflow-y: auto; height: 80vh;">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <h6>Course Detail</h6>
@@ -119,28 +119,20 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        fetch('https://localhost:5000/api/Student/GetCourseByUserId') // Replace with your actual API endpoint
+        fetch('https://localhost:5000/api/Student/GetCourseByUserId')
             .then(response => response.json())
             .then(data => {
                 const authorsTableBody = document.getElementById('authors-table-body');
                 const projectsCardBody = document.getElementById('projects-card-body');
 
-                // Store the data by courseId
-                const courseDetails = {};
-
                 data.forEach(item => {
-                    if (!courseDetails[item.id]) {
-                        courseDetails[item.id] = [];
-                    }
-                    courseDetails[item.id].push(item);
-
                     const authorRow = document.createElement('tr');
                     authorRow.innerHTML = `
-                            <td><a href="javascript:void(0)" class="course-name" data-course-id="${item.courseId}" data-enroll-id="${item.id}">${item.courseName}</a></td>
-                            <td>${item.enrollDate}</td>
-                            <td style="color:red;">${item.endDate}</td>
-                            <td class="text-center"><span class="badge badge-sm bg-gradient-${item.courseStatus === 1 ? 'success' : 'secondary'}">${item.courseStatus === 1 ? 'Completed' : 'Not Completed'}</span></td>
-                        `;
+                        <td><a href="javascript:void(0)" class="course-name" data-course-id="${item.courseId}" data-enroll-id="${item.id}">${item.courseName}</a></td>
+                        <td>${item.enrollDate}</td>
+                        <td style="color:red;">${item.endDate}</td>
+                        <td class="text-center"><span class="badge badge-sm bg-gradient-${item.courseStatus === 1 ? 'success' : 'secondary'}">${item.courseStatus === 1 ? 'Completed' : 'Not Completed'}</span></td>
+                    `;
                     authorsTableBody.appendChild(authorRow);
                 });
 
@@ -157,33 +149,43 @@
                                 // Clear the previous content
                                 projectsCardBody.innerHTML = '';
 
-                                // Add course details for the selected course
                                 if (details.length > 0) {
-                                    const item = details[0]; // Since the array contains only one item
+                                    const item = details[0];
+
+                                    const quizScores = item.grade;
+                                    const quizScoresArray = quizScores ? quizScores.split(';') : null;
 
                                     const projectCard = document.createElement('div');
                                     projectCard.classList.add('col-12', 'mb-4');
                                     projectCard.innerHTML = `
-                                            <div class="card course-detail" data-course-id="${courseId}">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">${item.courseName}</h5>
-                                                    <p class="card-text"><strong>Enroll Date:</strong> ${item.enrollDate}</p>
-                                                    <p class="card-text"><strong>End Date:</strong> ${item.endDate}</p>
-                                                    <p class="card-text"><strong>Average Grade:</strong> ${item.averageGrade !== null ? item.averageGrade : 'N/A'}</p>
-                                                    <p class="card-text"><strong>Student Fee ID:</strong> ${item.studentFeeId !== null ? item.studentFeeId : 'N/A'}</p>
-                                                    <input type="hidden" id="studentId" value="${item.studentId}">
-                                                    <input type="hidden" id="courseId" value="${item.courseId}">
-                                                    <div class="text-center mt-3">
-                                                        <button class="btn btn-primary me-3" onclick="exportData(${item.courseId})">Export</button>
-                                                        <a href="javascript:void(0)" class="btn btn-info" onclick="redirectToCourseDetails(${item.courseId})">Redirect to Course Details</a>
-                                                    </div>
+                                        <div class="card course-detail" data-course-id="${courseId}">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${item.courseName}</h5>
+                                                <p class="card-text"><strong>Enroll Date:</strong> ${item.enrollDate}</p>
+                                                <p class="card-text"><strong>End Date:</strong> ${item.endDate}</p>
+                                                <p class="card-text"><strong>Average Grade:</strong> ${item.averageGrade !== null ? item.averageGrade : 'N/A'}</p>
+                                                <p class="card-text"><strong>Student Fee ID:</strong> ${item.studentFeeId !== null ? item.studentFeeId : 'N/A'}</p>
+                                                <p class="card-text"><strong>Quiz Scores:</strong></p>
+                                                <ul>
+                                                    ${quizScoresArray ? quizScoresArray.map((score, index) => `<li>Quiz ${index + 1}: ${score}</li>`).join('') : '<li>Quiz scores: N/A</li>'}
+                                                </ul>
+                                                <input type="hidden" id="studentId" value="${item.studentId}">
+                                                <input type="hidden" id="courseId" value="${item.courseId}">
+                                                <div class="text-center mt-3">
+                                                    ${item.courseStatus === 1 ? `<button class="btn btn-primary me-3" onclick="exportData(${item.courseId})">Export</button>` : ''}
+                                                    <a href="javascript:void(0)" class="btn btn-info" onclick="redirectToCourseDetails(${item.courseId})">Redirect to Course Details</a>
                                                 </div>
                                             </div>
-                                        `;
+                                        </div>
+                                    `;
                                     projectsCardBody.appendChild(projectCard);
                                 }
 
-                                // Show the course details column
+                                document.getElementById('authors-col').style.width = '65%'; 
+                                document.getElementById('projects-col').style.width = '35%'; 
+                                document.getElementById('authors-col').style.float = 'left';
+                                document.getElementById('projects-col').style.float = 'right';
+
                                 document.getElementById('projects-col').style.display = 'block';
                             })
                             .catch(error => console.error('Error fetching course details:', error));
@@ -196,7 +198,6 @@
     function exportData(courseId) {
         var studentId = document.getElementById(`studentId`).value;
         console.log('Export button clicked. Student ID:', studentId);
-        // Implement your export logic here
     }
 
     // Function to handle redirect button click
