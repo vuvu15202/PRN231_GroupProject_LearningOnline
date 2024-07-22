@@ -25,6 +25,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
         public string? Address { get; set; }
         public bool Active { get; set; }
 
+
         [JsonIgnore]
         public virtual ICollection<UserRole>? UserRoles { get; set; }
         [JsonIgnore]

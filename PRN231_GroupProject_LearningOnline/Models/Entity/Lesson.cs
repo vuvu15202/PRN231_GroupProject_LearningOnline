@@ -15,7 +15,8 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public string? VideoUrl { get; set; }
         public string? Quiz { get; set; }
         public int? PreviousLessioNum { get; set; }
-        public bool IsDelete { get; set; }  
+        public bool IsDelete { get; set; }
+
 
         //[JsonIgnore]
         //public virtual Lesson? PreviousLession { get; set; }

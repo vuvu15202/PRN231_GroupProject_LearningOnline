@@ -9,7 +9,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
     [Route("[controller]")]
     public class AccountController : Controller
     {
-        [Authorize(RoleEnum.Admin, RoleEnum.Staff, RoleEnum.Lecturer)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff, RoleEnum.Lecturer, RoleEnum.Student)]
         [HttpGet("userprofile")]
         public IActionResult UserProfile()
         {

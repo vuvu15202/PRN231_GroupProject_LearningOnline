@@ -80,6 +80,14 @@
             else if (user.UserName.Contains("lecturer"))
             {
                 <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Categories", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-list fa-lg text-sm" style="color: #9d00d6; width:60px;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý Danh Mục</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link " href="@Url.Action("Courses", "Admin")">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="fas fa-graduation-cap fa-lg text-sm" style="color: #2bc700;"></i>
@@ -99,19 +107,11 @@
             else
             {
                 <li class="nav-item">
-                    <a class="nav-link " href="@Url.Action("Studentfee", "Admin")">
+                    <a class="nav-link " href="@Url.Action("Enroll", "Student")">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fas fa-receipt fa-lg text-info text-sm opacity-10" style="color: #9875ff;"></i>
+                            <i class="fas fa-graduation-cap fa-lg text-sm" style="color: #2bc700;"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Biên lai</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="@Url.Action("Notification", "Admin")">
-                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fas fa-bell fa-lg text-sm" style="color: #00ccff;"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Quản lý thông báo</span>
+                        <span class="nav-link-text ms-1">Khóa học của tôi</span>
                     </a>
                 </li>
             }

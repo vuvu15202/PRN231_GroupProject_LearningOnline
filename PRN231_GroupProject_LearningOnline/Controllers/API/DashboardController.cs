@@ -34,8 +34,13 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                     && o.DateOfPaid.Value.Year == DateTime.Now.Year
                     && o.DateOfPaid.Value.Month == DateTime.Now.Month)
                 .ToList().Sum(o => int.Parse(o.Amount));
-            var todayUser = 0;
+
+            var todayUser = _context.CourseEnrolls.Where(ce => ce.EnrollDate.Date == DateTime.Now.Date).Count();
+
+
             var newClient = 10;
+
+
             var newEnroll = _context.CourseEnrolls.
                 Where(o => o.EnrollDate.Year == DateTime.Now.Year
                     && o.EnrollDate.Month == DateTime.Now.Month).ToList().Count();
@@ -88,7 +93,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         List<int> getStatistic(int? courseId, int year = 2024)
         {
             var list = new List<int>();
-            if(courseId.HasValue)
+            if(courseId != null)
             {
                 for (int i= 1; i <= 12; i++)
                 {

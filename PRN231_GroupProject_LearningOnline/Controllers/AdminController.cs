@@ -85,7 +85,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
             return View("Lessons");
         }
 
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin,RoleEnum.Lecturer)]
         [HttpGet("Categories")]
         public ActionResult Categories()
         {

@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
+using PRN231_GroupProject_LearningOnline.Authorization;
+using PRN231_GroupProject_LearningOnline.Models;
 using PRN231_GroupProject_LearningOnline.Models.DTO;
 using PRN231_GroupProject_LearningOnline.Models.Entity;
 using PRN231_GroupProject_LearningOnline.temp;
@@ -113,8 +115,9 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         //    return CreatedAtAction("GetCourse", new { id = course.CourseId }, course);
         //}
 
+        [Authorize(RoleEnum.Student)]
         [HttpPost("grade")]
-        public async Task<ActionResult> Grade([FromBody] List<string> answer)
+        public async Task<ActionResult> Grade([FromBody] List<string> answer) //question-2-5-1-B =      question-courseId-lessonId-questionNo-B
         {
             if (answer == null || answer.Count ==0)
             {
@@ -125,7 +128,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             var quizes = JsonSerializer.Deserialize<List<QuizToGradeDTO>>(_mapper.Map<LessonDTO>(lessonInfo).Quiz);
             int result = 0;
             foreach (var l in answer)
-            {
+            {               
                 var temp = l.Split('-');
                 int idex = quizes.FindIndex(q => q.questionNo == Int16.Parse(temp[3]));
                 if (quizes[idex].correctAnswer.Equals(temp[4]))
@@ -135,6 +138,29 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 
             }
 
+            var user = (User)HttpContext.Items["User"];
+            var coursenroll = _context.CourseEnrolls
+                .Where(c => c.CourseId == Int16.Parse(answerInfo[1]) && c.UserId == user.UserId).SingleOrDefault();
+
+            if (String.IsNullOrEmpty(coursenroll!.Grade))
+            {
+                coursenroll.Grade = $"{result}";
+
+            }
+            else
+            {
+                coursenroll.Grade = coursenroll.Grade + $";{result}";
+            }
+            //update grade
+            _context.CourseEnrolls.Update(coursenroll);
+
+            //update course status
+            var checkLesson = _context.Lessons.Where(l => l.CourseId == Int16.Parse(answerInfo[1])).OrderBy(l => l.LessonNum).LastOrDefault();
+            if (lessonInfo.LessonId == checkLesson.LessonId)
+            {
+                coursenroll.CourseStatus = 1;
+            }
+            _context.SaveChanges();
 
             return Ok(new {result = $"{result}/10"}) ;
         }

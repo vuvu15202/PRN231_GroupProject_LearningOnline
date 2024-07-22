@@ -60,15 +60,28 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
                     UserId = response.UserId,
                     CourseId = response.CourseId,
                     EnrollDate = DateTime.Now,
+                    ExpireDate = DateTime.Now.AddMonths(3),
                     LessonCurrent = 1,
-                    CourseStatus = 1,
+                    CourseStatus = 0,
                     StudentFeeId = studentFee.StudentFeeId,
                 };
                 _context.CourseEnrolls.Add(courseEnroll);
                 _context.SaveChanges();
 
+                //update studentfee
+                studentFee.CourseEnrollId = courseEnroll.CourseEnrollId;
+                _context.StudentFees.Update(studentFee);
+                _context.SaveChanges();
+
                 var user = (User)HttpContext.Items["User"];
-                await _emailSender.SendEmailAsync(user.Email, "Notification",$"Ban vua dang ky khoa hoc thanh cong");
+                if (response.VnPayResponseCode.Equals("00"))
+                {
+                    await _emailSender.SendEmailAsync(user.Email, "Đăng ký khóa học thành công", $"Bạn vừa đăng ký khóa học thành công trên UnitCat, Hãy bắt đầu học ngay nào!");
+                }
+                else
+                {
+                    await _emailSender.SendEmailAsync(user.Email, "Đăng ký khóa học thành công", $"Bạn vừa đăng ký khóa học không thành công trên UnitCat, hãy kiểm tra lại giao dịch của bạn hoặc liên hệ với chúng tôi qua hotline hỗ trợ: .....");
+                }
             }
             catch (Exception ex)
             {

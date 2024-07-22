@@ -230,6 +230,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.Property(e => e.CourseId).HasColumnName("CourseID");
 
                 entity.Property(e => e.EnrollDate).HasColumnType("date");
+                entity.Property(e => e.ExpireDate).HasColumnType("date");
+
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
                 entity.Property(e => e.Grade).HasColumnType("nvarchar(max)");

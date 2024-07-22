@@ -36,12 +36,12 @@ async function pushDataOnLoad() {
         //const [amountData] = await Promise.all([getTotalAmountProject(projectId)]);
         $.each(notis, function (index, value) {
             $("#Noties").append(`<tr>
-                        <td style="max-width: 100px;">
+                        <td style="max-width: 150px;">
                             <div class="d-flex px-2 py-1">
                                 <div>
                                     <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
                                 </div>
-                                <div class="d-flex flex-column justify-content-center">
+                                <div style="width: 190px !important;" class="d-flex flex-column justify-content-center  text-wrap">
                                     <h6 class="mb-0 text-sm">${value.notificationTo.name}</h6>
                                     <p class="text-xs text-secondary mb-0">${value.notificationTo.email}</p>
                                 </div>
