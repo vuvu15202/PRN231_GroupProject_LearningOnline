@@ -47,7 +47,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
           {
               return NotFound();
           }
-            var courses = await _context.Courses.Include(c => c.Lessons).ToListAsync();
+            var courses = await _context.Courses.Include(e => e.CourseEnrolls).Include(c => c.Lessons).ToListAsync();
             return Ok(_mapper.Map<List<CourseDTO>>(courses));
         }
 
@@ -59,7 +59,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
           {
               return NotFound();
           }
-            var course = await _context.Courses.Include(c => c.Lessons).SingleOrDefaultAsync(c => c.CourseId== id);
+            var course = await _context.Courses.Include(e => e.CourseEnrolls).Include(c => c.Lessons).SingleOrDefaultAsync(c => c.CourseId== id);
 
             if (course == null)
             {

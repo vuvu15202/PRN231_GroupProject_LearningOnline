@@ -32,8 +32,17 @@ namespace PRN231_GroupProject_LearningOnline.Models
 
             CreateMap<CreateCategory, Category>();
             CreateMap<UpdateCategory, Category>().ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
-        
-            
+
+            CreateMap<Comment, CommentDTO>();
+            CreateMap<CreateComment, Comment>()
+                .ForMember(x => x.CreateDate, opt => opt.MapFrom(src => DateTime.Now))
+                .ForMember(x => x.IsHide, opt => opt.MapFrom(src => false));
+
+            CreateMap<CreateReply, Reply>()
+                .ForMember(x => x.CreateDate, opt => opt.MapFrom(src => DateTime.Now))
+                .ForMember(x => x.IsHide, opt => opt.MapFrom(src => false));
+
+            CreateMap<Reply, ReplyDTO>();
 
 
             CreateMap<Lesson, LessonDTO>().ForMember(dest => dest.Quiz, opt => opt.MapFrom(src => src.Quiz));
