@@ -338,7 +338,7 @@
 					return;
 				}
 				courses = await response.json();
-				courses = courses.filter(course => course.isPrivate);
+				courses = courses.filter(course => !course.isDelete);
 				renderCourses(currentPage);
 				createPaginationControls();
 			}
@@ -367,7 +367,7 @@
 				}
 
 				courses = await response.json();
-				courses = courses.filter(course => course.isPrivate);
+				courses = courses.filter(course => !course.isDelete);
 				renderCourses(currentPage);
 				createPaginationControls();
 			}
