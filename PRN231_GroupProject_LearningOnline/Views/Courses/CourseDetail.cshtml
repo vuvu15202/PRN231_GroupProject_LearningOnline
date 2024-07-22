@@ -568,5 +568,35 @@
 		});
 	</script>
 
+	@*notify*@
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/js/toastr.min.js"></script>
+	<link href="~/css/toastr.min.css" rel="stylesheet" />
+
+	<script>
+		// Lấy URL hiện tại
+		var currentUrl = window.location.href;
+		// Tạo một đối tượng URLSearchParams từ URL
+		var searchParams = new URLSearchParams(new URL(currentUrl).search);
+		var statuscode = searchParams.get('statuscode');
+		if (statuscode) {
+			switch (statuscode) {
+				case "1":
+					toastr.success("Chúc mừng bạn đã đăng ký thành công. Bắt đầu ngay!", 'Notification', { timeOut: 3000 });
+					break;
+				case "2":
+					toastr.error("Lỗi trong quá trình thực hiện giao dịch, vui lòng kiểm tra lại!", 'Notification', { timeOut: 3000 });
+					break;
+				case "3":
+					toastr.warning("Khóa học này có tính phí! Vui lòng thanh toán học phí để đăng ký khóa học!", 'Notification', { timeOut: 3000 });
+					break;
+				case "4":
+					toastr.error("Không tìm thấy khóa học!", 'Notification', { timeOut: 3000 });
+					break;
+				default:
+			}
+		}
+	</script>
+
 </body>
 </html>

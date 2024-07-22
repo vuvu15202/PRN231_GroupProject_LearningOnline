@@ -14,7 +14,7 @@ public class FileService : IFileService
         {
             var contentPath = this.environment.ContentRootPath;
             // path = "c://projects/productminiapi/wwwroot/images" ,not exactly something like that
-            var path = Path.Combine("wwwroot", "images");
+            var path = Path.Combine("wwwroot", "uploads");
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
@@ -36,7 +36,7 @@ public class FileService : IFileService
             var stream = new FileStream(fileWithPath, FileMode.Create);
             await imageFile.CopyToAsync(stream);
             stream.Close();
-            return new(1, "/images/" + newFileName);
+            return new(1, "/uploads/" + newFileName);
         }
         catch (Exception ex)
         {
@@ -47,7 +47,7 @@ public class FileService : IFileService
     public async Task DeleteImageAsync(string imageFileName)
     {
         var contentPath = this.environment.ContentRootPath;
-        var path = Path.Combine(contentPath, "wwwroot", "images", imageFileName);
+        var path = Path.Combine(contentPath, "wwwroot", "uploads", imageFileName);
         if (File.Exists(path))
             File.Delete(path);
     }

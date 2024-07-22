@@ -19,6 +19,8 @@
     <link href="~/plugins/owlcarousel2-2.2.1/owl.carousel.css" rel="stylesheet" />
     <link href="~/plugins/owlcarousel2-2.2.1/owl.theme.default.css" rel="stylesheet" />
     <link href="~/plugins/owlcarousel2-2.2.1/animate.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
 </head>
 <body>
     <div class="super_container">
@@ -44,6 +46,25 @@
                                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                             <div>UniCat@gmail.com</div>
                                         </li>
+
+                                        <li>
+                                            @* <div class="notification-bell">
+                                                <i class="fa fa-bell bell-icon"><span class="position-absolute top--5 start-100 translate-middle badge rounded-pill bg-danger">+9</span></i>
+                                            </div> *@
+                                            <a href="#" target="_blank" rel="noopener" aria-label="GitHub">
+                                                <i class="fa fa-lg fa-bell bell-icon" style="font-size:20px;"></i>
+                                                <span class="notification-badge badge badge-danger">1</span>
+                                            </a>
+                                        </li>
+                                        <style>
+                                            span.notification-badge {
+                                                position: relative;
+                                                top: -10px;
+                                                right: 10px;
+                                                border: $white 1px solid;
+                                                border-radius: 30%;
+                                            }
+                                        </style>
                                     </ul>
                                     @if (user != null)
                                     {
@@ -261,6 +282,5 @@
 
     <!-- Blog -->
     <script src="~/js/blog_single.js"></script>
-
 </body>
 </html>

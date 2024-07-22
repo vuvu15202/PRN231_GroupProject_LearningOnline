@@ -176,6 +176,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.ToTable("Category");
+                entity.HasKey(e => e.CategoryId);
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
 
@@ -197,6 +198,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
 
                 //entity.Property(e => e.UserId).HasColumnName("UserID");
                 entity.Property(e => e.IsPrivate).HasDefaultValue(true);
+                entity.HasQueryFilter(e => e.IsDelete == false);
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Courses)
@@ -268,6 +270,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.Property(e => e.VideoUrl).HasMaxLength(4000);
 
                 entity.Property(e => e.Quiz).HasColumnType("nvarchar(max)");
+
+                entity.HasQueryFilter(e => e.IsDelete == false);
 
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Lessons)

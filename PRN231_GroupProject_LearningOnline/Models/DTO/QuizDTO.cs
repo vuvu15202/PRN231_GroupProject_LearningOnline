@@ -10,7 +10,6 @@ namespace PRN231_GroupProject_LearningOnline.Models.DTO
         public string answerB { get; set; }
         public string answerC { get; set; }
         public string answerD { get; set; }
-        [JsonIgnore]
         public string correctAnswer { get; set; }
         public string answer { get; set; }
     }

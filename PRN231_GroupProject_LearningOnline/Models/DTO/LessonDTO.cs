@@ -11,6 +11,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.DTO
         public string? Name { get; set; }
         public string? Description { get; set; }
         public string? VideoUrl { get; set; }
+        public bool IsDelete { get; set; }
+
         [JsonIgnore]
         public string? Quiz { get; set; }
         public List<QuizDTO>? Quizes
