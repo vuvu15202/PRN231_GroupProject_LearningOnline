@@ -20,11 +20,15 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public string Description { get; set; } = null!;
         public bool IsPrivate { get; set; }
         public long? Price { get; set; } = null!;
+        public bool IsDelete { get; set; }
+
         [JsonIgnore]
         public virtual Category? Category { get; set; } = null!;
         [JsonIgnore]
         public virtual ICollection<Lesson>? Lessons { get; set; }
         [JsonIgnore]
         public virtual ICollection<Review>? Reviews { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<CourseEnroll>? CourseEnrolls { get; set; }
     }
 }

@@ -53,6 +53,52 @@ async function pushDataOnLoad() {
             option.textContent = category.name;
             courseSelect.appendChild(option);
         });
+
+
+        $('#courseId option:eq(1)').prop('selected', true);
+
+        //display first lesson course
+        const courseId = courses[0].courseId;
+
+        var filteredStudents = courses.find(c => c.courseId == courseId);
+        // showStudentList(filteredStudents);
+        $("#lessons").html("");
+        $.each(filteredStudents.lessons, function (index, value) {
+            $("#lessons").append(`
+                    <tr>
+                        <td class="align-middle">
+                        <span class="text-xs font-weight-bold w-25 text-wrap">${value.lessonNum}</span>
+                        </td>
+                        <td class="align-middle">
+                            <span class="text-xs font-weight-bold">${value.name}</span>
+                        </td>
+                        <td class="align-middle">
+                            <span class="text-xs font-weight-bold"> ${value.videoUrl}</span>
+                        </td>
+                        <td class="align-middle">
+                            <span class="text-xs font-weight-bold">${value.isDelete}</span>
+                        </td>
+                        <td class="align-middle">
+                            <div>
+                                <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4 viewLesson" course-id="${courseId}" lesson-num="${value.lessonNum}">
+                                    <i class="fas fa-edit" style="color: #38d100; font-size: 17px;"></i>
+                                    Sửa
+                                </button>
+                                <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4 deleteRecord" lesson-id="${value.lessonId}">
+                                    <i class="fas fa-trash-alt fa-lg" style="color: #ff0000; font-size: 17px;""></i>                                
+                                    Xóa
+                                </button>
+                                <a href="javascript:void(0)" course-id="${courseId}" lesson-num="${value.lessonNum}" class="viewprojectbills">
+                                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <i class="fas fa-file-pdf text-lg me-1"></i>
+                                        Xem
+                                    </button>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+            `);
+        });
         //$.each(courses, function (index, value) {
         //    $("#courses").append(`<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
         //            <div class="d-flex flex-column">
@@ -91,20 +137,29 @@ $('#courseId').on('change', function () {
     // showStudentList(filteredStudents);
     $("#lessons").html("");
     $.each(filteredStudents.lessons, function (index, value) {
-        $("#lessons").append(`<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                    <div class="d-flex align-items-center text-sm">
-                        <h6 class="mb-1 text-dark font-weight-bold text-sm">${value.lessonNum}:</h6>
-                    </div>
-                    <div class="d-flex align-items-center text-sm">
-                        <span class="text-xs">${value.name}</span>
-                    </div>
-                    <div class="d-flex align-items-center text-sm">
-                        url: ${value.videoUrl}
-                    </div>
+        $("#lessons").append(`
+            <tr>
+                <td class="align-middle">
+                <span class="text-xs font-weight-bold w-25 text-wrap">${value.lessonNum}</span>
+                </td>
+                <td class="align-middle">
+                    <span class="text-xs font-weight-bold">${value.name}</span>
+                </td>
+                <td class="align-middle">
+                    <span class="text-xs font-weight-bold"> ${value.videoUrl}</span>
+                </td>
+                <td class="align-middle">
+                    <span class="text-xs font-weight-bold">${value.isDelete}</span>
+                </td>
+                <td class="align-middle">
                     <div>
                         <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4 viewLesson" course-id="${courseId}" lesson-num="${value.lessonNum}">
-                                    <i class="fas fa-edit" style="color: #38d100; font-size: 20px;"></i>
-                                    Sửa
+                            <i class="fas fa-edit" style="color: #38d100; font-size: 17px;"></i>
+                            Sửa
+                        </button>
+                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4 deleteRecord" lesson-id="${value.lessonId}">
+                            <i class="fas fa-trash-alt fa-lg" style="color: #ff0000; font-size: 17px;""></i>                                
+                            Xóa
                         </button>
                         <a href="javascript:void(0)" course-id="${courseId}" lesson-num="${value.lessonNum}" class="viewprojectbills">
                             <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -113,9 +168,9 @@ $('#courseId').on('change', function () {
                             </button>
                         </a>
                     </div>
-                    
-                    </li>
-            `);
+                </td>
+            </tr>
+        `);
     });
 });
 
@@ -164,6 +219,7 @@ $(document).ready(function () {
             const videoUrl = $('#videoUrl').val();
             const quiz = $('#quiz').prop('files')[0];
             const previousLessioNum = $('#previousLessioNum').val();
+            const isDelete = $('#isDelete').prop('checked');
 
             // Tạo một đối tượng FormData để chứa các giá trị
             const formData = new FormData();
@@ -175,6 +231,8 @@ $(document).ready(function () {
             formData.append('videoUrl', videoUrl);
             formData.append('quiz', quiz);
             formData.append('previousLessioNum', previousLessioNum);
+            formData.append('isDelete', isDelete);
+
 
             // In ra console để kiểm tra (chỉ có thể in ra các giá trị text)
             console.log('Lesson ID:', lessonId);
@@ -225,8 +283,25 @@ $(document).ready(function () {
     });
 
 
+    $(document).on('click', '.deleteRecord', function () {
+        let id = $(this).attr('lesson-id');
+        if (confirm("Bạn có chắc muốn xóa khóa học này không!")) {
+            $.ajax({
+                type: "delete",
+                url: `https://localhost:5000/api/Lessons/${id}`,
+                success: function (result, status, xhr) {
+                    if (confirm('Xóa khóa học thành công!')) {
+                        location.reload();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr)
+                }
+            });
+        }
+    });
+
     $('#clearLesson').click(function () {
-        
         $('#lessonId').val('0');
         $('#lessonNum').val('1');
         $('#courseIdCreate option:first').prop('selected', true);
@@ -235,6 +310,7 @@ $(document).ready(function () {
         $('#videoUrl').val('');
         $('#previousLessioNum').val('0');
         $('#courseId').val('');
+        $('#isDelete').prop('checked', false);
     });
 
 
@@ -255,6 +331,7 @@ $(document).ready(function () {
         $('#videoUrl').val(lesson.videoUrl);
         $('#previousLessioNum').val(lesson.previousLessioNum);
         $('#courseId').val(lesson.courseId);
+        $('#isDelete').prop('checked', course.isDelete);
     });
 
 

@@ -46,10 +46,6 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
               return NotFound();
           }
             var courses = await _context.Courses.Include(c => c.Lessons).ToListAsync();
-            foreach (var course in courses)
-            {
-
-            }
             return Ok(_mapper.Map<List<CourseDTO>>(courses));
         }
 
@@ -156,8 +152,9 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             {
                 return NotFound();
             }
-
-            _context.Courses.Remove(course);
+            course.IsDelete = true;
+            _context.Courses.Update(course);
+            //_context.Courses.Remove(course);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -279,7 +276,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 return BadRequest();
             }
 
-            var checkCourse = _context.Courses.FirstOrDefault(c => c.CourseId == id);
+            var checkCourse = _context.Courses.IgnoreQueryFilters().FirstOrDefault(c => c.CourseId == id);
             if (checkCourse == null)
             {
                 return NotFound("Không tìm thấy khóa học!");
@@ -302,20 +299,17 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 }
             }
 
-            
-            var cour = new Course()
-            {
-                CategoryId = course.CategoryId,
-                Name = course.Name,
-                Image = String.IsNullOrEmpty(fileName) ? checkCourse.Image: "/uploads/" + fileName ,
-                Description = course.Description,
-                IsPrivate = course.IsPrivate,
-                Price = course.Price,
-            };
-
             try
             {
-                _context.Update(cour);
+                checkCourse.CategoryId = course.CategoryId;
+                checkCourse.Name = course.Name;
+                checkCourse.Image = String.IsNullOrEmpty(fileName) ? checkCourse.Image : "/uploads/" + fileName;
+                checkCourse.Description = course.Description;
+                checkCourse.IsPrivate = course.IsPrivate;
+                checkCourse.Price = course.Price;
+                checkCourse.IsDelete = course.IsDelete;
+
+                _context.Update(checkCourse);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -330,7 +324,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 }
             }
 
-            return Ok(cour);
+            return Ok(checkCourse);
         }
     }
 
@@ -343,5 +337,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         public string Description { get; set; } = null!;
         public bool IsPrivate { get; set; }
         public long? Price { get; set; } = null!;
+        public bool IsDelete { get; set; }
+
     }
 }

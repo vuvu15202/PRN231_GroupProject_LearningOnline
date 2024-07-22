@@ -59,11 +59,12 @@ connection.on("ReceivedNoti", function (title, content) {
 
 connection.start().then(function () {
     //document.getElementById("sendButton").disable = false;
-    var userId = getCookie("userId"); console.log(userId);
+    var userId = getCookie("userId"); 
     if (userId) {
         connection.invoke("SetUserId", userId).catch(function (err) {
             return console.error(err.toString());
         });
+        ringBell();
     }
 }
 ).catch(function (err) {
@@ -106,3 +107,13 @@ function getCookie(name) {
 //    });
 //    event.preventDefault();
 //});
+
+function ringBell() {
+    const bellIcon = document.querySelector('.bell-icon');
+    bellIcon.classList.add('ringing');
+
+    // Remove the class after animation ends to reset the state
+    bellIcon.addEventListener('animationend', () => {
+        bellIcon.classList.remove('ringing');
+    });
+}

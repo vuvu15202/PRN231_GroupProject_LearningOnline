@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PRN231_GroupProject_LearningOnline.Models.DTO;
 using PRN231_GroupProject_LearningOnline.Models.Entity;
+using PRN231_GroupProject_LearningOnline.Services;
 using PRN231_GroupProject_LearningOnline.temp;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers.API
@@ -15,10 +18,15 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
     public class CategoriesController : ControllerBase
     {
         private readonly DonationWebApp_v2Context _context;
+        private readonly IFileService _fileService;
+        private readonly IMapper _mapper;
 
-        public CategoriesController(DonationWebApp_v2Context context)
+
+        public CategoriesController(DonationWebApp_v2Context context, IFileService fileService, IMapper mapper)
         {
             _context = context;
+            _fileService = fileService;
+            _mapper = mapper;
         }
 
         // GET: api/Categories
@@ -52,13 +60,26 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
 
         // PUT: api/Categories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(int id, Category category)
+        [HttpPost("Update")]
+        public async Task<IActionResult> UpdateCategory([FromForm] UpdateCategory request)
         {
-            if (id != category.CategoryId)
+
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.CategoryId == request.categoryId);
+            if(category == null) return NotFound();
+
+            _mapper.Map(request, category);
+            if (request.ImageFile != null)
             {
-                return BadRequest();
+                var ImageFile = await _fileService.SaveImageAsync(request.ImageFile);
+                if (ImageFile.status == 0) return Conflict(ImageFile.message);
+                if (ImageFile.status == 1)
+                {
+                    await _fileService.DeleteImageAsync(category.Image);
+                    category.Image = ImageFile.message;
+                }
             }
+                
+            
 
             _context.Entry(category).State = EntityState.Modified;
 
@@ -68,7 +89,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CategoryExists(id))
+                if (!CategoryExists(request.categoryId))
                 {
                     return NotFound();
                 }
@@ -78,22 +99,31 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 }
             }
 
-            return NoContent();
+            return Ok(category);
         }
 
         // POST: api/Categories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Category>> PostCategory(Category category)
+        public async Task<IActionResult> PostCategory([FromForm] CreateCategory request)
         {
           if (_context.Categories == null)
           {
               return Problem("Entity set 'DonationWebApp_v2Context.Categories'  is null.");
           }
+            var category = _mapper.Map<Category>(request);
+            if(request.ImageFile != null)
+            {
+                var file = await _fileService.SaveImageAsync(request.ImageFile);
+                if (file.status == 0) return NotFound(file.message);
+                if (file.status == 1) category.Image = file.message;
+            }
+            
+
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
+            return Ok(category);
         }
 
         // DELETE: api/Categories/5
@@ -109,11 +139,12 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             {
                 return NotFound();
             }
+            category.IsDelete = true;
 
-            _context.Categories.Remove(category);
+            _context.Categories.Update(category);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         private bool CategoryExists(int id)

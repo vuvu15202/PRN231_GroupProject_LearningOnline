@@ -33,6 +33,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return await _context.Lessons.ToListAsync();
         }
 
+
         // GET: api/Lessons/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Lesson>> GetLesson(int id)
@@ -51,36 +52,36 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return lesson;
         }
 
-        //// PUT: api/Lessons/5
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutLesson(int id, Lesson lesson)
-        //{
-        //    if (id != lesson.LessonId)
-        //    {
-        //        return BadRequest();
-        //    }
+        // PUT: api/Lessons/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("PutLesson/{id}")]
+        public async Task<IActionResult> PutLesson(int id, Lesson lesson)
+        {
+            if (id != lesson.LessonId)
+            {
+                return BadRequest();
+            }
 
-        //    _context.Entry(lesson).State = EntityState.Modified;
+           _context.Entry(lesson).State = EntityState.Modified;
 
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!LessonExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+           try
+           {
+               await _context.SaveChangesAsync();
+           }
+           catch (DbUpdateConcurrencyException)
+           {
+               if (!LessonExists(id))
+               {
+                   return NotFound();
+               }
+               else
+               {
+                   throw;
+               }
+           }
 
-        //    return NoContent();
-        //}
+           return NoContent();
+        }
 
         // POST: api/Lessons
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -111,7 +112,9 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 return NotFound();
             }
 
-            _context.Lessons.Remove(lesson);
+            lesson.IsDelete = true;
+            _context.Lessons.Update(lesson);
+            //_context.Lessons.Remove(lesson);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -119,7 +122,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
 
         private bool LessonExists(int id)
         {
-            return (_context.Lessons?.Any(e => e.LessonId == id)).GetValueOrDefault();
+            return (_context.Lessons?.IgnoreQueryFilters().Any(e => e.LessonId == id)).GetValueOrDefault();
         }
 
         [HttpPost]
@@ -174,7 +177,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 return BadRequest();
             }
 
-            var checkLesson = _context.Lessons.SingleOrDefault(l => l.LessonId == id);
+            var checkLesson = _context.Lessons.IgnoreQueryFilters().AsNoTracking().SingleOrDefault(l => l.LessonId == id);
             if(checkLesson == null)
             {
                 return NotFound("Không tìm thấy bài giảng!");
@@ -197,21 +200,21 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                     }
                 }
             }
-            var les = new Lesson()
-            {
-                LessonId = (int)lesson.LessonId,
-                LessonNum = lesson.LessonNum,
-                CourseId = lesson.CourseId,
-                Name = lesson.Name,
-                Description = lesson.Description,
-                VideoUrl = lesson.VideoUrl,
-                Quiz = String.IsNullOrEmpty(fileContent) ? fileContent : checkLesson.Quiz,
-                PreviousLessioNum = lesson.PreviousLessioNum,
-            };
-
+            
             try
             {
-                _context.Update(les);
+                //checkLesson.LessonId = lesson.LessonId;
+                checkLesson.LessonNum = lesson.LessonNum;
+                checkLesson.CourseId = lesson.CourseId;
+                checkLesson.Name = lesson.Name;
+                checkLesson.Description = lesson.Description;
+                checkLesson.VideoUrl = lesson.VideoUrl;
+                checkLesson.Quiz = String.IsNullOrEmpty(fileContent) ? fileContent : checkLesson.Quiz;
+                checkLesson.PreviousLessioNum = lesson.PreviousLessioNum;
+                checkLesson.IsDelete = lesson.IsDelete;
+
+
+                _context.Lessons.Update(checkLesson);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -226,13 +229,13 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 }
             }
 
-            return Ok(les);
+            return Ok(checkLesson);
         }
     }
 
     public class LessonModel
     {
-        public int? LessonId { get; set; }
+        public int LessonId { get; set; }
         public int LessonNum { get; set; }
         public int CourseId { get; set; }
         public string Name { get; set; }
@@ -240,6 +243,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         public string VideoUrl { get; set; }
         public IFormFile? Quiz { get; set; }
         public int PreviousLessioNum { get; set; }
+        public bool IsDelete {  get; set; }
     }
 
 }

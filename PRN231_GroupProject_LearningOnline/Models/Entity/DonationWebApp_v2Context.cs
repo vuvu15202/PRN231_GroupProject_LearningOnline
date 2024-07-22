@@ -176,8 +176,15 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.ToTable("Category");
+                entity.HasKey(e => e.CategoryId);
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+
+                entity.Property(e => e.IsDelete).HasDefaultValue(false);
+
+                entity.HasQueryFilter(e => e.IsDelete == false);
+
+
             });
 
             modelBuilder.Entity<Course>(entity =>
@@ -191,12 +198,15 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
 
                 //entity.Property(e => e.UserId).HasColumnName("UserID");
                 entity.Property(e => e.IsPrivate).HasDefaultValue(true);
+                entity.HasQueryFilter(e => e.IsDelete == false);
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.CategoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Course_CategoryID");
+
+                entity.HasMany(d => d.CourseEnrolls).WithOne(p => p.Course);
 
                 //entity.HasOne(d => d.User)
                 //    .WithMany(p => p.Courses)
@@ -226,7 +236,7 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.Property(e => e.AverageGrade).HasColumnName("AverageGrade");
 
                 entity.HasOne(d => d.Course)
-                    .WithMany()
+                    .WithMany(p => p.CourseEnrolls)
                     .HasForeignKey(d => d.CourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CourseEnroll_CourseID");
@@ -260,6 +270,8 @@ namespace PRN231_GroupProject_LearningOnline.Models.Entity
                 entity.Property(e => e.VideoUrl).HasMaxLength(4000);
 
                 entity.Property(e => e.Quiz).HasColumnType("nvarchar(max)");
+
+                entity.HasQueryFilter(e => e.IsDelete == false);
 
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Lessons)

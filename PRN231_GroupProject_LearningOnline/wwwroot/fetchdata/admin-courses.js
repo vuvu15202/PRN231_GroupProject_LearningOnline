@@ -38,30 +38,39 @@ async function pushDataOnLoad() {
         //const [amountData] = await Promise.all([getTotalAmountProject(projectId)]);
         coursesGlobal = courses;
         $.each(courses, function (index, value) {
-            $("#courses").append(`<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                    <div class="d-flex flex-column text-wrap w-25">
-                        <h6 class="mb-1 text-dark font-weight-bold text-sm text-wrap">${value.name}</h6>
-                        <span class="text-xs">${value.courseId}</span>
-                    </div>
-                     <div class="d-flex align-items-center text-sm">
-                        ${value.price} VND
-                    </div>
-                    <div class="d-flex align-items-center text-sm">
-                        ${value.isPrivate}
-                    </div>
-                    <div>
-                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4 viewCourse" course-id="${value.courseId}">
-                            <i class="fas fa-edit" style="color: #38d100; font-size: 20px;"></i>
-                            Sửa
-                        </button>
-                        <a href="javascript:void(0)" data-id="${value.courseId}" class="viewprojectbills">
-                            <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                <i class="fas fa-file-pdf text-lg me-1"></i>
-                                Xem
+            $("#courses").append(`
+                <tr>
+                    <td class="align-middle">
+                    <span class="text-xs font-weight-bold w-25 text-wrap">${value.courseId}: ${value.name}</span>
+                    </td>
+                    <td class="align-middle">
+                        <image src="${value.image}" style="height: 50px; width: fit-content;">               
+                    </td>
+                    <td class="align-middle">
+                        <span class="text-xs font-weight-bold">${value.price} VND</span>
+                    </td>
+                    <td class="align-middle">
+                        <span class="text-xs font-weight-bold">${value.isDelete}</span>
+                    </td>
+                    <td class="align-middle">
+                        <div>
+                            <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4 viewCourse" course-id="${value.courseId}">
+                                <i class="fas fa-edit" style="color: #38d100; font-size: 17px;"></i>
+                                Sửa
                             </button>
-                        </a>
-                    </div>
-                    </li>
+                            <button class="btn btn-link text-danger text-sm mb-0 px-0 ms-4 deleteRecord" course-id="${value.courseId}">
+                                <i class="fas fa-trash-alt fa-lg" style="color: #ff0000; font-size: 17px;""></i>                                
+                                Xóa
+                            </button>
+                            <a href="javascript:void(0)" data-id="${value.courseId}" class="viewprojectbills">
+                                <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    <i class="fas fa-file-pdf text-lg me-1"></i>
+                                    Xem
+                                </button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
             `);
         });
 
@@ -90,25 +99,40 @@ $('#searchCourse').on('input', function () {
     // showStudentList(filteredStudents);
     $("#courses").html("");
     $.each(filteredStudents, function (index, value) {
-        $("#courses").append(`<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                    <div class="d-flex flex-column">
-                        <h6 class="mb-1 text-dark font-weight-bold text-sm">${value.name}</h6>
-                        <span class="text-xs">${value.courseId}</span>
-                    </div>
-                     <div class="d-flex align-items-center text-sm">
-                        ${value.price} VND
-                    </div>
-                    <div class="d-flex align-items-center text-sm">
-                        ${value.name}
-                    </div>
-                    <a href="javascript:void(0)" course-id="${value.projectId}" class="viewprojectbills">
-                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            <i class="fas fa-file-pdf text-lg me-1"></i>
-                            Xem
+        $("#courses").append(`
+            <tr>
+                <td class="align-middle">
+                <span class="text-xs font-weight-bold w-25 text-wrap">${value.courseId}: ${value.name}</span>
+                </td>
+                <td class="align-middle">
+                    <image src="${value.image}" style="height: 50px; width: fit-content;">               
+                </td>
+                <td class="align-middle">
+                    <span class="text-xs font-weight-bold">${value.price} VND</span>
+                </td>
+                <td class="align-middle">
+                    <span class="text-xs font-weight-bold">${value.isDelete}</span>
+                </td>
+                <td class="align-middle">
+                    <div>
+                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4 viewCourse" course-id="${value.courseId}">
+                            <i class="fas fa-edit" style="color: #38d100; font-size: 17px;"></i>
+                            Sửa
                         </button>
-                    </a>
-                    </li>
-            `);
+                        <button class="btn btn-link text-danger text-sm mb-0 px-0 ms-4 deleteRecord" course-id="${value.courseId}">
+                            <i class="fas fa-trash-alt fa-lg" style="color: #ff0000; font-size: 17px;""></i>                                
+                            Xóa
+                        </button>
+                        <a href="javascript:void(0)" data-id="${value.courseId}" class="viewprojectbills">
+                            <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <i class="fas fa-file-pdf text-lg me-1"></i>
+                                Xem
+                            </button>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        `);
     });
 });
 
@@ -120,6 +144,7 @@ $(document).ready(function () {
         const image = $('#image').prop('files')[0];
         const description = $('#description').val();
         const isPrivate = $('#isPrivate').prop('checked');
+        const isDelete = $('#isDelete').prop('checked');
         const price = $('#price').val();
 
 
@@ -130,6 +155,7 @@ $(document).ready(function () {
         formData.append('name', name);
         formData.append('description', description);
         formData.append('isPrivate', isPrivate);
+        formData.append('isDelete', isDelete);
         formData.append('price', price);
 
 
@@ -185,12 +211,33 @@ $(document).ready(function () {
 
 
 
+    $(document).on('click', '.deleteRecord', function () {
+        let id = $(this).attr('course-id');
+        if (confirm("Bạn có chắc muốn xóa khóa học này không!")) {
+            $.ajax({
+                type: "delete",
+                url: `https://localhost:5000/api/Courses/${id}`,
+                success: function (result, status, xhr) {
+                    if (confirm('Xóa khóa học thành công!')) {
+                        location.reload();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr)
+                }
+            });
+        }
+    });
+
+
+
     $('#clearCourse').click(function () {
 
         $('#courseId').val('0');
         $('#name').val('');
         $('#description').val('');
         $('#isPrivate').prop('checked', true);
+        $('#isDelete').prop('checked', false);
         $('#price').val('0');
         $('#categoryId option:first').prop('selected', true);
     });
@@ -206,6 +253,7 @@ $(document).ready(function () {
         $('#name').val(course.name);
         $('#description').val(course.description);
         $('#isPrivate').prop('checked', course.isPrivate);
+        $('#isDelete').prop('checked', course.isDelete);
         $('#price').val(course.price);
         $('#categoryId').val(course.categoryId);
     });
