@@ -51,11 +51,10 @@ namespace PRN231_GroupProject_LearningOnline.Authorization
                     _context.SaveChanges();
 
                     var userRole = new UserRole();
-                    userRole.RoleId = 3;
+                    userRole.RoleId = 5;
                     userRole.UserId = newUser.UserId;
                     _context.UserRoles.Add(userRole);
                     _context.SaveChanges();
-                    Console.WriteLine(userRole.RoleId);
 
                     return Ok(new AuthenticateResponse(newUser));
                 }

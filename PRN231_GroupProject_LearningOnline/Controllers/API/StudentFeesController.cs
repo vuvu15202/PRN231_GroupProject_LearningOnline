@@ -32,7 +32,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             _mapper = mapper;
         }
 
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         [HttpGet("report")]
         public IActionResult GetReport()
         {
@@ -52,7 +52,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         
 
 
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         [HttpGet("CoursesStudentFees")]
         public IActionResult GetAllProjectsAndBiling()
         {
@@ -69,7 +69,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return Ok(coursesDTO);
         }
 
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         [HttpGet("CourseStudentFees/{Id}")]
         public IActionResult GetProjectsAndBilingByProjectId(int Id)
         {
@@ -82,7 +82,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return Ok(courseDTO);
         }
 
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         [HttpGet("handlingbills")]
         public IActionResult GetAllHandingBill()
         {
@@ -104,7 +104,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return Ok(studentfeeDTOs);
         }
 
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         [HttpPost("GetStudentFeesByDate")]
         public IActionResult GetBillByDate([FromBody] filterDateOfDonation filterDate)
         {
@@ -137,7 +137,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         }
 
 
-        [Authorize(RoleEnum.Admin)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff)]
         [HttpPost("export")]
         public IActionResult GetExport([FromBody] filterDateOfDonation filterDate)
         {
