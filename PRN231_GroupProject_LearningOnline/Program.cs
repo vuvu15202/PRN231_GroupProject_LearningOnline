@@ -66,7 +66,17 @@ builder.Services.AddTransient<IEmailSender, MailService>();        // Đăng ký
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
+
 var app = builder.Build();
+
+// Ensure wwwroot/uploads directory exists
+var uploadDir = Path.Combine(builder.Environment.WebRootPath, "uploads");
+if (!Directory.Exists(uploadDir))
+{
+    Directory.CreateDirectory(uploadDir);
+}
 
 
 // Configure the HTTP request pipeline.

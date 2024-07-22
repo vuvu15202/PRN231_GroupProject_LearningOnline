@@ -15,6 +15,7 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public string Description { get; set; } = null!;
         public bool IsPrivate { get; set; }
         public long? Price { get; set; } = null!;
+        public bool IsDelete { get; set; }
 
         public int NumberEnrolled { get; set; }
         public List<LessonDTO>? Lessons { get; set; }
@@ -26,5 +27,5 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public virtual List<StudentFee>? StudentFees { get; set; } = null!;
 
 
-    }
+	}
 }

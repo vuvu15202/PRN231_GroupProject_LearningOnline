@@ -72,10 +72,12 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
             }
             catch (Exception ex)
             {
-                return Redirect("https://localhost:5000/courses/payment?courseId=" + response.CourseId + "&statuscode=2");
+                return Redirect($"/Courses/Detail?id={response.CourseId}&statuscode=2");
 
             }
-            return Redirect("https://localhost:5000/courses/payment?courseId=" + response.CourseId + "&statuscode=1");
+            //return Redirect($"/Courses/lesson?courseId={response.CourseId}&lessonNum=1&statuscode=1");
+            return Redirect($"/Courses/Detail?id={response.CourseId}&statuscode=1");
+
         }
 
         //public IActionResult PaymentCallback()
