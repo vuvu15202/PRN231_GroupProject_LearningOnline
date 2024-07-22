@@ -20,7 +20,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         {
             var student = (User)HttpContext.Items["User"];
             var courses = _context.CourseEnrolls.Include(ce => ce.StudentFee).Include(ce => ce.User).Include(ce => ce.Course).Where(ce => ce.UserId == student.UserId).Select(
-                    ce => new CourseEnrollDTOO
+                    ce => new CourseEnrollDTO
 					{
                         Id = ce.CourseEnrollId,
                         CourseId = ce.Course.CourseId,
@@ -29,6 +29,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                         EnrollDate = ce.EnrollDate.ToString("dd/MM/yyyy"),
                         EndDate = ce.EnrollDate.AddMonths(3).ToString("dd/MM/yyyy"),
                         CourseStatus = ce.CourseStatus,
+                        Grade = ce.Grade,
                         AverageGrade = ce.AverageGrade,
                         StudentFeeId = ce.StudentFeeId 
                     }
@@ -40,7 +41,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         public IActionResult GetCourseEnrollById(int courseEnrollId)
         {
             var courses = _context.CourseEnrolls.Include(ce => ce.StudentFee).Include(ce => ce.User).Include(ce => ce.Course).Where(ce => ce.CourseEnrollId == courseEnrollId).Select(
-                    ce => new CourseEnrollDTOO
+                    ce => new CourseEnrollDTO
 					{
                         Id = ce.CourseEnrollId,
                         CourseId = ce.Course.CourseId,
@@ -49,6 +50,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                         EnrollDate = ce.EnrollDate.ToString("dd/MM/yyyy"),
                         EndDate = ce.EnrollDate.AddMonths(3).ToString("dd/MM/yyyy"),
                         CourseStatus = ce.CourseStatus,
+                        Grade = ce.Grade,
                         AverageGrade = ce.AverageGrade,
                         StudentFeeId = ce.StudentFeeId
                     }
@@ -57,7 +59,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         }
     }
 
-    public class CourseEnrollDTOO
+    public class CourseEnrollDTO
     {
         public int Id { get; set; } 
         public int CourseId { get; set; }   
@@ -66,6 +68,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
         public string EnrollDate { get; set; }  
         public string EndDate { get; set; } 
         public int CourseStatus { get; set; }   
+        public string? Grade { get; set; }   
         public float? AverageGrade { get; set; }
         public string? StudentFeeId { get; set; }
     }
