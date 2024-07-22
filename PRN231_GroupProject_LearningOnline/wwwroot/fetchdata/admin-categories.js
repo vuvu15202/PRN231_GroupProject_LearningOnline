@@ -63,10 +63,45 @@ async function pushDataOnLoad() {
     
 }
 
+$('#searchCate').on('input', function () {
+    var searchText = $(this).val().toLowerCase();
+    console.log(searchText);
+    var filter = categoriesGlobal.filter(function (category) {
+        return category.name.toLowerCase().indexOf(searchText) !== -1;
+    });
+    // showStudentList(filteredStudents);
+    $("#categoryTableBody").html("");
+    $.each(filter, function (index, value) {
+        $("#categoryTableBody").append(`
+            <tr>
+                <td class="align-middle">
+                                    <span class="text-xs font-weight-bold">${value.categoryId}</span>
+                                </td>
+                                <td class="align-middle">
+                                    <image src="${value.image}" style="height: 50px; width: fit-content;">
+                                </td>
+                                <td class="align-middle">
+                                    <span class="text-xs font-weight-bold">${value.name}</span>
+                                </td>
+                                <td class="align-middle">
+                                    <a href="javascript:;" class="btn btn-primary btn-sm ms-auto edit-category" data-bs-toggle="modal" data-bs-target="#editCate" data-name="${value.name}" data-image="${value.image}" data-id = "${value.categoryId}">
+                                        Edit
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-danger delete-category" data-id="${value.categoryId}">
+                                        delete
+                                    </a>
+                                </td>
+            </tr>
+        `);
+    });
+});
 
 
 
 $(document).ready(function () {
+
+
+
     $("#createCategory").click(function () {
         const name = $('#name').val();
         const image = $('#image').prop('files')[0];

@@ -87,6 +87,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         [HttpGet("Courses/Detail")]
         public IActionResult CourseDetail(int id)
         {
+            var user = HttpContext.Items["User"] as User;
+            ViewBag.User = user;
             return View("CourseDetail");
         }
     }
