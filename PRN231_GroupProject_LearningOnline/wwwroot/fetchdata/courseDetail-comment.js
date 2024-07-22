@@ -110,9 +110,8 @@ $(document).ready(function () {
             contentType: "application/json",
 
             success: function (result, status, xhr) {
-                if (confirm('Thêm khóa học thành công!')) {
-                    location.reload();
-                }
+                location.reload();
+                
             }
         });
     });
