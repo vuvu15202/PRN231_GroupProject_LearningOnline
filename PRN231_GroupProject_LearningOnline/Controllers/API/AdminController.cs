@@ -142,6 +142,32 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.APIs
             return Ok(roleDTOs);
         }
 
+        [HttpPost]
+        public IActionResult CreateUser([FromBody] CreateUserDTO createUserDTO)
+        {
+            var user = new User();
+
+            user.UserName = createUserDTO.UserName;
+            user.FirstName = createUserDTO.FirstName;
+            user.LastName = createUserDTO.LastName;
+            user.Password = BCrypt.Net.BCrypt.HashPassword(createUserDTO.Password);
+            user.Email = createUserDTO.Email;
+            user.Phone = createUserDTO.Phone;
+            user.Address = createUserDTO.Address;
+            user.Active = createUserDTO.Active;
+
+            _context.Users.Add(user);
+            _context.SaveChanges();
+
+            var userRole = new UserRole();
+            userRole.UserId = user.UserId;
+            userRole.RoleId = createUserDTO.RoleId;
+            _context.UserRoles.Add(userRole);
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
         public class UserListDTO
         {
             public int UserId { get; set; }
@@ -170,6 +196,19 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.APIs
         {
             public int RoleId { get; set; }
             public string? RoleName { get; set; }
+        }
+
+        public class CreateUserDTO
+        {
+            public string UserName { get; set; } = null!;
+            public string FirstName { get; set; } = null!;
+            public string LastName { get; set; } = null!;
+            public string Password { get; set; } = null!;
+            public string Email { get; set; } = null!;
+            public string? Phone { get; set; }
+            public string? Address { get; set; }
+            public bool Active { get; set; }
+            public int RoleId { get; set; }
         }
     }
 }
