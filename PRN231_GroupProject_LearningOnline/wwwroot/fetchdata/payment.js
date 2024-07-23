@@ -67,6 +67,9 @@ async function pushDataOnLoad() {
                     </div>
                 `;
         document.getElementById('course-price').innerHTML = course.price + ' VND';
+        $('#AmountVNPAY').val(course.price);
+        $('#AmountMOMO').val(course.price);
+
         container.innerHTML += html;
         initTabs();
     })

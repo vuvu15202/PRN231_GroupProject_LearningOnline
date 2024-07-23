@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
-                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
+                            <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Enrolled</p>
                             <h5 class="font-weight-bolder" id="report2">
                                 2,300
                             </h5>
@@ -198,12 +198,44 @@
         <div class="card ">
             <div class="card-header pb-0 p-3">
                 <div class="d-flex justify-content-between">
-                    <h6 class="mb-2">Thanh toán lỗi</h6>
+                    <h6 class="mb-2"></h6>
                 </div>
             </div>
             <div class="table-responsive">
+                <!-- Chart 2 - Bootstrap Brain Component -->
+                <section class="">
+                  <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-10">
+                        <div class="card widget-card border-light shadow-sm">
+                          <div class="card-body p-4">
+                            <div class="d-block d-sm-flex align-items-center justify-content-between mb-3">
+                              <div class="mb-3 mb-sm-0">
+                                <h5 class="card-title widget-card-title">Số lượng hs tham gia khóa học</h5>
+                              </div>
+                              <div>
+                                <select class="form-select text-secondary border-light-subtle">                                  
+                                  <option value="3">May 2023</option>
+                                  <option value="1">March 2023</option>
+                                  <option value="2">April 2023</option>
+                                  <option value="4">June 2023</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div id="bsb-chart-2"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+                @* <script src="https://unpkg.com/bs-brain@2.0.4/components/charts/chart-2/assets/controller/chart-2.js"></script> *@
+                <script src="~/fetchdata/piechart.js"></script>
+
                 <table class="table align-items-center ">
-                    <tbody id="handlingstudentfees">
+                    <tbody id="handlingstudentfee">
+                        
                         @* <tr>
                             <td class="w-30">
                                 <div class="d-flex px-2 py-1 align-items-center">
@@ -334,7 +366,43 @@
         </div>
     </div>
     <div class="col-lg-5">
-        <div class="card">
+        <!-- Chart 8 - Bootstrap Brain Component -->
+        <section class="">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="card widget-card border-light shadow-sm">
+                  <div class="card-body p-4">
+                    <h5 class="card-title widget-card-title mb-2">Customers</h5>
+                    <div class="row gy-0">
+                      <div class="col-12">
+                        <h4>3,131</h4>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-flex align-items-center">
+                          <span class="fs-6 bsb-w-25 bsb-h-25 bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center me-2">
+                            <i class="bi bi-arrow-right-short bsb-rotate-n45"></i>
+                          </span>
+                          <div>
+                            <span class="fs-7">+19%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="bsb-chart-8" class="mt-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        @* <script src="https://unpkg.com/bs-brain@2.0.4/components/charts/chart-8/assets/controller/chart-8.js"></script> *@
+<script src="~/fetchdata/barchart.js"></script>
+
+
+        @* <div class="card">
             <div class="card-header pb-0 p-3">
                 <h6 class="mb-0">Categories</h6>
             </div>
@@ -398,7 +466,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> *@
     </div>
 </div>
 

@@ -53,7 +53,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
                         CourseId = (int)courseId,
                         EnrollDate = DateTime.Now,
                         LessonCurrent = 1,
-                        CourseStatus = 1,
+                        CourseStatus = 0,
                     };
                     _context.CourseEnrolls.Add(newCourseEnroll);
                     _context.SaveChanges();

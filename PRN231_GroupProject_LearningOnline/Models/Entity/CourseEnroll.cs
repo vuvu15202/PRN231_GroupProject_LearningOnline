@@ -11,6 +11,8 @@ namespace PRN231_GroupProject_LearningOnline.temp
         public int UserId { get; set; }
         public int CourseId { get; set; }
         public DateTime EnrollDate { get; set; }
+        public DateTime ExpireDate { get; set; }
+
         public int LessonCurrent { get; set; } = 1;
         public int CourseStatus { get; set; }
         public string? Grade { get; set; }

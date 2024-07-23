@@ -54,7 +54,24 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/notiHub").build();
 //document.getElementById("sendButton").disable = true;
 
 connection.on("ReceivedNoti", function (title, content) {
+    ringBell();
+
     toastr.success(content, title, { timeOut: 3000 });
+
+    document.getElementById("noticount").innerHTML = 1;
+    document.getElementById("ulnoti").innerHTML = 
+        `
+            <li class="border-2 bg-info opacity-10 m-2 p-2" style="border-radius:20px;">
+				<div>
+					<h5>${title}</h5>
+					<div class="ml-2" style="font-size:13px;">
+						${content}
+					</div>
+				</div>
+            </li>
+        `;
+    ringBell();
+
 });
 
 connection.start().then(function () {
@@ -64,7 +81,7 @@ connection.start().then(function () {
         connection.invoke("SetUserId", userId).catch(function (err) {
             return console.error(err.toString());
         });
-        ringBell();
+        //ringBell();
     }
 }
 ).catch(function (err) {

@@ -44,7 +44,7 @@ async function pushDataOnLoad() {
 
 			return `<div class="col-lg-4 course_col mb-5">
 						<div class="course">
-							<div class="course_image"><img src="${project.image}" alt=""></div>
+							<div class="course_image"><img style="width: 100%;" src="${project.image}" alt=""></div>
 							<div class="course_body">
 								<h3 class="course_title"><a href="/Courses/Detail?id=${project.courseId}">${project.name}</a></h3>
 								<div class="course_teacher">Mr. John Taylor</div>

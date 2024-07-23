@@ -9,13 +9,13 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
     [Route("[controller]")]
     public class AccountController : Controller
     {
-        [Authorize(RoleEnum.Admin, RoleEnum.Staff, RoleEnum.Lecturer)]
+        [Authorize(RoleEnum.Admin, RoleEnum.Staff, RoleEnum.Lecturer, RoleEnum.Student)]
         [HttpGet("userprofile")]
         public IActionResult UserProfile()
         {
             var user = HttpContext.Items["User"] as User;
             ViewBag.User = user;
-            return View("UserProfile");
+            return View(user);
         }
     }
 }

@@ -1,500 +1,297 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-	Layout = "_Layout";
-	ViewData["Title"] = "Biên Lai";
+﻿@{
+	Layout = "_LayoutTemplate";
+	ViewData["Title"] = "Home";
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Courses</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Unicat project">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="~/css/bootstrap4/bootstrap.min.css">
-	<link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="~/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-	<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-	<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
-	<link rel="stylesheet" type="text/css" href="~/css/courses.css">
-	<link rel="stylesheet" type="text/css" href="~/css/courses_responsive.css">
-</head>
-<body>
+<link href="~/css/responsive.css" rel="stylesheet" />
+<link href="~/css/main_styles.css" rel="stylesheet" />
 
-	<div class="super_container">
+<link rel="stylesheet" type="text/css" href="~/css/bootstrap4/bootstrap.min.css">
+<link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="~/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="~/css/courses.css">
+<link rel="stylesheet" type="text/css" href="~/css/courses_responsive.css">
 
-		<!-- Header -->
+<!-- Menu -->
 
-		<header class="header">
-
-			<!-- Top Bar -->
-			<div class="top_bar">
-				<div class="top_bar_container">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
-									<ul class="top_bar_contact_list">
-										<li><div class="question">Have any questions?</div></li>
-										<li>
-											<i class="fa fa-phone" aria-hidden="true"></i>
-											<div>001-1234-88888</div>
-										</li>
-										<li>
-											<i class="fa fa-envelope-o" aria-hidden="true"></i>
-											<div>info.deercreative@gmail.com</div>
-										</li>
-									</ul>
-									<div class="top_bar_login ml-auto">
-										<div class="login_button"><a href="#">Register or Login</a></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Header Content -->
-			<div class="header_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="header_content d-flex flex-row align-items-center justify-content-start">
-								<div class="logo_container">
-									<a href="#">
-										<div class="logo_text">Unic<span>at</span></div>
-									</a>
-								</div>
-								<nav class="main_nav_contaner ml-auto">
-									@await Html.PartialAsync("Partials/studentnav")
-									<div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
-
-									<!-- Hamburger -->
-
-									<div class="shopping_cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
-									<div class="hamburger menu_mm">
-										<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
-									</div>
-								</nav>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Header Search Panel -->
-			<div class="header_search_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="header_search_content d-flex flex-row align-items-center justify-content-end">
-								<form action="#" class="header_search_form">
-									<input type="search" class="search_input" placeholder="Search" required="required">
-									<button class="header_search_button d-flex flex-column align-items-center justify-content-center">
-										<i class="fa fa-search" aria-hidden="true"></i>
-									</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<!-- Menu -->
-
-		<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
-			<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-			<div class="search">
-				<form action="#" class="header_search_form menu_mm">
-					<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-					<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-						<i class="fa fa-search menu_mm" aria-hidden="true"></i>
-					</button>
-				</form>
-			</div>
-			<nav class="menu_nav">
-				<ul class="menu_mm">
-					<li class="menu_mm"><a href="index.html">Home</a></li>
-					<li class="menu_mm"><a href="#">About</a></li>
-					<li class="menu_mm"><a href="#">Courses</a></li>
-					<li class="menu_mm"><a href="#">Blog</a></li>
-					<li class="menu_mm"><a href="#">Page</a></li>
-					<li class="menu_mm"><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-
-		<!-- Home -->
-
-		<div class="home">
-			<div class="breadcrumbs_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="breadcrumbs">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li>Courses</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Courses -->
-
-		<div class="courses">
-			<div class="container">
-				<div class="row">
-
-					<!-- Courses Main Content -->
-					<div>
-						<div class="courses_search_container">
-							<form action="#" id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-end">
-								<input type="search" id="search_input" class="courses_search_input ml-2" placeholder="Search Courses">
-								<select id="courses_search_select" class="courses_search_select courses_search_input ml-2">
-									<option value="">All Categories</option>
-								</select>
-								<button type="submit" class="courses_search_button ml-2">Search Now</button>
-							</form>
-						</div>
-						<div class="courses_container">
-							<div class="row courses_row" id="courses_list">
-
-							</div>
-							<div class="row pagination_row">
-								<div class="col">
-									<div class="pagination_container d-flex flex-row align-items-center justify-content-start">
-										<ul class="pagination_list" id="pagination_list">
-											
-										</ul>
-										<div class="courses_show_container ml-auto clearfix">
-											<div class="courses_show_text">Showing <span class="courses_showing" id="courses_showing"></span> of <span class="courses_total" id="courses_total"></span> results:</div>
-										</div>	
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-		<!-- Footer -->
-
-		<footer class="footer">
-			<div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
-			<div class="container">
-				<div class="row footer_row">
-					<div class="col">
-						<div class="footer_content">
-							<div class="row">
-
-								<div class="col-lg-3 footer_col">
-
-									<!-- Footer About -->
-									<div class="footer_section footer_about">
-										<div class="footer_logo_container">
-											<a href="#">
-												<div class="footer_logo_text">Unic<span>at</span></div>
-											</a>
-										</div>
-										<div class="footer_about_text">
-											<p>Lorem ipsum dolor sit ametium, consectetur adipiscing elit.</p>
-										</div>
-										<div class="footer_social">
-											<ul>
-												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-											</ul>
-										</div>
-									</div>
-
-								</div>
-
-								<div class="col-lg-3 footer_col">
-
-									<!-- Footer Contact -->
-									<div class="footer_section footer_contact">
-										<div class="footer_title">Contact Us</div>
-										<div class="footer_contact_info">
-											<ul>
-												<li>Email: Info.deercreative@gmail.com</li>
-												<li>Phone:  +(88) 111 555 666</li>
-												<li>40 Baria Sreet 133/2 New York City, United States</li>
-											</ul>
-										</div>
-									</div>
-
-								</div>
-
-								<div class="col-lg-3 footer_col">
-
-									<!-- Footer links -->
-									<div class="footer_section footer_links">
-										<div class="footer_title">Contact Us</div>
-										<div class="footer_links_container">
-											<ul>
-												<li><a href="index.html">Home</a></li>
-												<li><a href="about.html">About</a></li>
-												<li><a href="contact.html">Contact</a></li>
-												<li><a href="#">Features</a></li>
-												<li><a href="courses.html">Courses</a></li>
-												<li><a href="#">Events</a></li>
-												<li><a href="#">Gallery</a></li>
-												<li><a href="#">FAQs</a></li>
-											</ul>
-										</div>
-									</div>
-
-								</div>
-
-								<div class="col-lg-3 footer_col clearfix">
-
-									<!-- Footer links -->
-									<div class="footer_section footer_mobile">
-										<div class="footer_title">Mobile</div>
-										<div class="footer_mobile_content">
-											<div class="footer_image"><a href="#"><img src="images/mobile_1.png" alt=""></a></div>
-											<div class="footer_image"><a href="#"><img src="images/mobile_2.png" alt=""></a></div>
-										</div>
-									</div>
-
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row copyright_row">
-					<div class="col">
-						<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
-							<div class="cr_text">
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</div>
-							<div class="ml-lg-auto cr_links">
-								<ul class="cr_list">
-									<li><a href="#">Copyright notification</a></li>
-									<li><a href="#">Terms of Use</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+	<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+	<div class="search">
+		<form action="#" class="header_search_form menu_mm">
+			<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+			<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+				<i class="fa fa-search menu_mm" aria-hidden="true"></i>
+			</button>
+		</form>
 	</div>
+	<nav class="menu_nav">
+		<ul class="menu_mm">
+			<li class="menu_mm"><a href="index.html">Home</a></li>
+			<li class="menu_mm"><a href="#">About</a></li>
+			<li class="menu_mm"><a href="#">Courses</a></li>
+			<li class="menu_mm"><a href="#">Blog</a></li>
+			<li class="menu_mm"><a href="#">Page</a></li>
+			<li class="menu_mm"><a href="contact.html">Contact</a></li>
+		</ul>
+	</nav>
+</div>
 
-	<script src="~/js/jquery-3.2.1.min.js"></script>
-	<script src="~/css/bootstrap4/popper.js"></script>
-	<script src="~/css/bootstrap4/bootstrap.min.js"></script>
-	<script src="~/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-	<script src="~/plugins/easing/easing.js"></script>
-	<script src="~/plugins/parallax-js-master/parallax.min.js"></script>
-	<script src="~/plugins/colorbox/jquery.colorbox-min.js"></script>
-	<script src="~/js/courses.js"></script>
+<!-- Home -->
 
-	<script>
-		document.addEventListener('DOMContentLoaded', async () => {
-			const searchForm = document.getElementById('courses_search_form');
-			const searchInput = document.getElementById('search_input');
-			const categorySelect = document.getElementById('courses_search_select');
-			const coursesList = document.getElementById('courses_list');
-			const paginationList = document.getElementById('pagination_list');
-			const coursesShowing = document.getElementById('courses_showing');
-			const coursesTotal = document.getElementById('courses_total');
-			const coursesPerPage = 6;
-			let currentPage = 1;
-			let courses = [];
+<div class="home">
+	<div class="breadcrumbs_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="breadcrumbs">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li>Courses</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-			// Fetch categories and populate the select dropdown
-			async function fetchCategories() {
-				const response = await fetch('https://localhost:5000/api/Categories');
-				const categories = await response.json();
-				categories.forEach(category => {
-					const option = document.createElement('option');
-					option.value = category.categoryId;
-					option.textContent = category.name;
-					categorySelect.appendChild(option);
-				});
+<!-- Courses -->
+
+<div class="courses">
+	<div class="container">
+		<div class="row">
+
+			<!-- Courses Main Content -->
+			<div>
+				<div class="courses_search_container">
+					<form action="#" id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-end">
+						<input type="search" id="search_input" class="courses_search_input ml-2" placeholder="Search Courses">
+						<select id="courses_search_select" class="courses_search_select courses_search_input ml-2">
+							<option value="">All Categories</option>
+						</select>
+						<button type="submit" class="courses_search_button ml-2">Search Now</button>
+					</form>
+				</div>
+				<div class="courses_container">
+					<div class="row courses_row" id="courses_list">
+					</div>
+					<div class="row pagination_row">
+						<div class="col">
+							<div class="pagination_container d-flex flex-row align-items-center justify-content-start">
+								<ul class="pagination_list" id="pagination_list">
+								</ul>
+								<div class="courses_show_container ml-auto clearfix">
+									<div class="courses_show_text">Showing <span class="courses_showing" id="courses_showing"></span> of <span class="courses_total" id="courses_total"></span> results:</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@* <script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/css/bootstrap4/popper.js"></script>
+<script src="~/css/bootstrap4/bootstrap.min.js"></script>
+<script src="~/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="~/plugins/easing/easing.js"></script>
+<script src="~/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="~/plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="~/js/courses.js"></script> *@
+
+<script>
+	document.addEventListener('DOMContentLoaded', async () => {
+		const searchForm = document.getElementById('courses_search_form');
+		const searchInput = document.getElementById('search_input');
+		const categorySelect = document.getElementById('courses_search_select');
+		const coursesList = document.getElementById('courses_list');
+		const paginationList = document.getElementById('pagination_list');
+		const coursesShowing = document.getElementById('courses_showing');
+		const coursesTotal = document.getElementById('courses_total');
+		const coursesPerPage = 6;
+		let currentPage = 1;
+		let courses = [];
+
+		// Fetch categories and populate the select dropdown
+		async function fetchCategories() {
+			const response = await fetch('https://localhost:5000/api/Categories');
+			const categories = await response.json();
+			categories.forEach(category => {
+				const option = document.createElement('option');
+				option.value = category.categoryId;
+				option.textContent = category.name;
+				categorySelect.appendChild(option);
+			});
+		}
+
+		// Fetch all courses
+		async function fetchAllCourses() {
+			const response = await fetch('https://localhost:5000/api/Courses');
+			if (!response.ok) {
+				console.error('Failed to fetch courses');
+				return;
+			}
+			courses = await response.json();
+			renderCourses(currentPage);
+			createPaginationControls();
+		}
+
+		// Fetch courses based on search or filter criteria
+		async function fetchCourses(searchValue, categoryId) {
+			let apiUrl = 'https://localhost:5000/api/Courses';
+
+			if (searchValue && categoryId) {
+				apiUrl += `/filter?categoryId=${categoryId}&name=${encodeURIComponent(searchValue)}`;
+			} else if (searchValue) {
+				apiUrl += `/search?name=${encodeURIComponent(searchValue)}`;
+			} else if (categoryId) {
+				apiUrl += `/filterByCategory?categoryId=${categoryId}`;
+			} else {
+				apiUrl += `/filterByCategory?categoryId=-1`;
 			}
 
-			// Fetch all courses
-			async function fetchAllCourses() {
-				const response = await fetch('https://localhost:5000/api/Courses');
-				if (!response.ok) {
-					console.error('Failed to fetch courses');
-					return;
-				}
-				courses = await response.json();
-				renderCourses(currentPage);
+			const response = await fetch(apiUrl);
+			if (!response.ok) {
+				console.error('Failed to fetch courses');
+				courses = []; // Set courses to empty array if fetch fails
+				renderCourses(currentPage); // Render empty courses list
 				createPaginationControls();
+				return;
 			}
 
-			// Fetch courses based on search or filter criteria
-			async function fetchCourses(searchValue, categoryId) {
-				let apiUrl = 'https://localhost:5000/api/Courses';
+			courses = await response.json();
+			renderCourses(currentPage);
+			createPaginationControls();
+		}
 
-				if (searchValue && categoryId) {
-					apiUrl += `/filter?categoryId=${categoryId}&name=${encodeURIComponent(searchValue)}`;
-				} else if (searchValue) {
-					apiUrl += `/search?name=${encodeURIComponent(searchValue)}`;
-				} else if (categoryId) {
-					apiUrl += `/filterByCategory?categoryId=${categoryId}`;
-				} else {
-					apiUrl += `/filterByCategory?categoryId=-1`;
-				}
+		// Render courses on the page
+		function renderCourses(page) {
+			coursesList.innerHTML = '';
+			const start = (page - 1) * coursesPerPage;
+			const end = start + coursesPerPage;
+			const coursesToDisplay = courses.slice(start, end);
 
-				const response = await fetch(apiUrl);
-				if (!response.ok) {
-					console.error('Failed to fetch courses');
-					courses = []; // Set courses to empty array if fetch fails
-					renderCourses(currentPage); // Render empty courses list
-					createPaginationControls();
-					return;
-				}
+			coursesToDisplay.forEach(course => {
 
-				courses = await response.json();
-				renderCourses(currentPage);
-				createPaginationControls();
-			}
+				const courseCol = document.createElement('div');
+				courseCol.classList.add('col-lg-4', 'course_col');
 
-			// Render courses on the page
-			function renderCourses(page) {
-				coursesList.innerHTML = '';
-				const start = (page - 1) * coursesPerPage;
-				const end = start + coursesPerPage;
-				const coursesToDisplay = courses.slice(start, end);
+				const courseDiv = document.createElement('div');
+				courseDiv.classList.add('course');
 
-				coursesToDisplay.forEach(course => {
+				const courseImageDiv = document.createElement('div');
+				courseImageDiv.classList.add('course_image');
+				const courseImage = document.createElement('img');
+				courseImage.src = course.image || 'images/default_course.jpg';
+				courseImage.alt = course.name;
+				courseImage.style.width = '100%';
+				courseImageDiv.appendChild(courseImage);
 
-					const courseCol = document.createElement('div');
-					courseCol.classList.add('col-lg-4', 'course_col');
+				const courseBodyDiv = document.createElement('div');
+				courseBodyDiv.classList.add('course_body');
 
-					const courseDiv = document.createElement('div');
-					courseDiv.classList.add('course');
+				const courseTitle = document.createElement('h3');
+				courseTitle.classList.add('course_title');
+				const courseTitleLink = document.createElement('a');
+				courseTitleLink.href = `https://localhost:5000/Courses/Detail?id=${course.courseId}`;
+				courseTitleLink.textContent = course.name;
+				courseTitle.appendChild(courseTitleLink);
+				courseBodyDiv.appendChild(courseTitle);
 
-					const courseImageDiv = document.createElement('div');
-					courseImageDiv.classList.add('course_image');
-					const courseImage = document.createElement('img');
-					courseImage.src = course.image || 'images/default_course.jpg';
-					courseImage.alt = course.name;
-					courseImage.style.width = '100%';
-					courseImageDiv.appendChild(courseImage);
+				const courseFooterDiv = document.createElement('div');
+				courseFooterDiv.classList.add('course_footer');
 
-					const courseBodyDiv = document.createElement('div');
-					courseBodyDiv.classList.add('course_body');
+				const courseFooterContentDiv = document.createElement('div');
+				courseFooterContentDiv.classList.add('course_footer_content', 'd-flex', 'flex-row', 'align-items-center', 'justify-content-start');
 
-					const courseTitle = document.createElement('h3');
-					courseTitle.classList.add('course_title');
-					const courseTitleLink = document.createElement('a');
-					courseTitleLink.href = `https://localhost:5000/Courses/Detail?id=${course.courseId}`;
-					courseTitleLink.textContent = course.name;
-					courseTitle.appendChild(courseTitleLink);
-					courseBodyDiv.appendChild(courseTitle);
+				const coursePrice = document.createElement('div');
+				coursePrice.classList.add('course_price', 'ml-auto');
+				coursePrice.textContent = course.price ? `$${course.price}` : 'Free';
+				courseFooterContentDiv.appendChild(coursePrice);
 
-					const courseFooterDiv = document.createElement('div');
-					courseFooterDiv.classList.add('course_footer');
+				courseFooterDiv.appendChild(courseFooterContentDiv);
 
-					const courseFooterContentDiv = document.createElement('div');
-					courseFooterContentDiv.classList.add('course_footer_content', 'd-flex', 'flex-row', 'align-items-center', 'justify-content-start');
+				courseDiv.appendChild(courseImageDiv);
+				courseDiv.appendChild(courseBodyDiv);
+				courseDiv.appendChild(courseFooterDiv);
 
-					const coursePrice = document.createElement('div');
-					coursePrice.classList.add('course_price', 'ml-auto');
-					coursePrice.textContent = course.price ? `$${course.price}` : 'Free';
-					courseFooterContentDiv.appendChild(coursePrice);
-
-					courseFooterDiv.appendChild(courseFooterContentDiv);
-
-					courseDiv.appendChild(courseImageDiv);
-					courseDiv.appendChild(courseBodyDiv);
-					courseDiv.appendChild(courseFooterDiv);
-
-					courseCol.appendChild(courseDiv);
-					coursesList.appendChild(courseCol);
-				});
-
-				const totalResults = courses.length;
-				coursesShowing.textContent = `${start + 1}-${Math.min(end, totalResults)}`;
-				coursesTotal.textContent = totalResults;
-			}
-
-			// Create pagination controls
-			function createPaginationControls() {
-				paginationList.innerHTML = '';
-				const totalPages = Math.ceil(courses.length / coursesPerPage);
-
-				for (let i = 1; i <= totalPages; i++) {
-					const pageItem = document.createElement('li');
-					if (i === currentPage) {
-						pageItem.classList.add('active');
-					}
-					const pageLink = document.createElement('a');
-					pageLink.href = '#';
-					pageLink.textContent = i;
-					pageLink.addEventListener('click', (event) => {
-						event.preventDefault();
-						currentPage = i;
-						renderCourses(currentPage);
-						createPaginationControls();
-					});
-					pageItem.appendChild(pageLink);
-					paginationList.appendChild(pageItem);
-				}
-
-				if (currentPage < totalPages) {
-					const nextItem = document.createElement('li');
-					const nextLink = document.createElement('a');
-					nextLink.href = '#';
-					nextLink.innerHTML = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
-					nextLink.addEventListener('click', (event) => {
-						event.preventDefault();
-						currentPage++;
-						renderCourses(currentPage);
-						createPaginationControls();
-					});
-					nextItem.appendChild(nextLink);
-					paginationList.appendChild(nextItem);
-				}
-			}
-
-			// Form submit event
-			searchForm.addEventListener('submit', async (event) => {
-				event.preventDefault();
-				currentPage = 1;
-				const searchValue = searchInput.value.trim();
-				const categoryId = categorySelect.value;
-				if (searchValue || categoryId) {
-					await fetchCourses(searchValue, categoryId);
-				} else {
-					await fetchAllCourses();
-				}
+				courseCol.appendChild(courseDiv);
+				coursesList.appendChild(courseCol);
 			});
 
-			await fetchCategories(); // Populate categories on page load
-			await fetchAllCourses(); // Fetch all courses on page load
+			const totalResults = courses.length;
+			coursesShowing.textContent = `${start + 1}-${Math.min(end, totalResults)}`;
+			coursesTotal.textContent = totalResults;
+		}
+
+		// Create pagination controls
+		function createPaginationControls() {
+			paginationList.innerHTML = '';
+			const totalPages = Math.ceil(courses.length / coursesPerPage);
+
+			for (let i = 1; i <= totalPages; i++) {
+				const pageItem = document.createElement('li');
+				if (i === currentPage) {
+					pageItem.classList.add('active');
+				}
+				const pageLink = document.createElement('a');
+				pageLink.href = '#';
+				pageLink.textContent = i;
+				pageLink.addEventListener('click', (event) => {
+					event.preventDefault();
+					currentPage = i;
+					renderCourses(currentPage);
+					createPaginationControls();
+				});
+				pageItem.appendChild(pageLink);
+				paginationList.appendChild(pageItem);
+			}
+
+			if (currentPage < totalPages) {
+				const nextItem = document.createElement('li');
+				const nextLink = document.createElement('a');
+				nextLink.href = '#';
+				nextLink.innerHTML = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
+				nextLink.addEventListener('click', (event) => {
+					event.preventDefault();
+					currentPage++;
+					renderCourses(currentPage);
+					createPaginationControls();
+				});
+				nextItem.appendChild(nextLink);
+				paginationList.appendChild(nextItem);
+			}
+		}
+
+		// Form submit event
+		searchForm.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			currentPage = 1;
+			const searchValue = searchInput.value.trim();
+			const categoryId = categorySelect.value;
+			if (searchValue || categoryId) {
+				await fetchCourses(searchValue, categoryId);
+			} else {
+				await fetchAllCourses();
+			}
 		});
-	</script>
+
+		await fetchCategories(); // Populate categories on page load
+		await fetchAllCourses(); // Fetch all courses on page load
+	});
+</script>
 
 
-	<script src="~/lib/jquery/dist/jquery.min.js"></script>
-	@*notify*@
-	<script src="~/js/toastr.min.js"></script>
-	<link href="~/css/toastr.min.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@*notify*@
+<script src="~/js/toastr.min.js"></script>
+<link href="~/css/toastr.min.css" rel="stylesheet" />
 
-	<script src="~/microsoft-signalr/signalr.js"></script>
-	<script src="~/microsoft-signalr/signalr.min.js"></script>
-	<script src="~/js/notification.js"></script>
-</body>
-</html>
+<script src="~/microsoft-signalr/signalr.js"></script>
+<script src="~/microsoft-signalr/signalr.min.js"></script>
+<script src="~/js/notification.js"></script>
+
+

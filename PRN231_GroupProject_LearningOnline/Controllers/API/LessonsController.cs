@@ -209,7 +209,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 checkLesson.Name = lesson.Name;
                 checkLesson.Description = lesson.Description;
                 checkLesson.VideoUrl = lesson.VideoUrl;
-                checkLesson.Quiz = String.IsNullOrEmpty(fileContent) ? fileContent : checkLesson.Quiz;
+                checkLesson.Quiz = String.IsNullOrEmpty(fileContent) ? checkLesson.Quiz : fileContent;
                 checkLesson.PreviousLessioNum = lesson.PreviousLessioNum;
                 checkLesson.IsDelete = lesson.IsDelete;
 

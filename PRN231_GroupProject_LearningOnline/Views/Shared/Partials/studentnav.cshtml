@@ -1,6 +1,61 @@
 ﻿<ul class="main_nav">
-	<li class="active"><a href="/">Trang chủ</a></li>
+	@* <li class="active"><a href="/">Trang chủ</a></li> *@
+	<li><a href="/">Trang chủ</a></li>
 	<li><a href="/">Về chúng tôi</a></li>
 	<li><a href="/courses/list">Các khóa học</a></li>
 	<li><a href="/Home/contact">Liên hệ</a></li>
+	<li>
+		<div class="dropdown">
+			<div class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-user text-sm text-dark" style="font-size:25px;"></i>
+			</div>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="/Account/Userprofile">Hồ sơ của tôi</a>
+				<a class="dropdown-item" href="/Student/Enroll">Khóa học của tôi</a>
+			</div>
+		</div>
+	</li>
+	<li>
+		@* <div class="notification-bell">
+		<i class="fa fa-bell bell-icon"><span class="position-absolute top--5 start-100 translate-middle badge rounded-pill bg-danger">+9</span></i>
+		</div> *@
+		
+		<div class="dropdown">
+			<div class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a href="javascript:;">
+					<i class="fa fa-lg fa-bell bell-icon" style="font-size:20px;"></i>
+					<span class="notification-badge badge badge-danger" id="noticount">0</span>
+				</a>
+			</div>
+			<div class="dropdown-menu p-1" style="width: 270px !important; border-radius:20px;" aria-labelledby="dropdownMenuButton">
+				<ul id="ulnoti">
+					@* <li class="border-2 bg-info opacity-10 m-2 p-2" style="border-radius:20px;">
+						<div class="">
+							<h5>Hello</h5>
+							<div class="ml-2" style="font-size:13px;">
+								sdfjhsidbifjdvbv kxbvkdbv skdfj sdfbksd lssdf ahf èhalfah
+							</div>
+						</div>
+					</li> *@
+					<li class="border-2 bg-info opacity-10 m-2 p-2" style="border-radius:20px;">
+						<div class="">
+							<h5></h5>
+							<div class="ml-2" style="font-size:13px;">
+								Không có thông báo
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</li>
+	<style>
+		span.notification-badge {
+			position: relative;
+			top: -10px;
+			right: 10px;
+			border: $white 1px solid;
+			border-radius: 30%;
+		}
+	</style>
 </ul>

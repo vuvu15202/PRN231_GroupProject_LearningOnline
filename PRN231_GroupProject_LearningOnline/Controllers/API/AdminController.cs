@@ -7,10 +7,6 @@ using PRN231_GroupProject_LearningOnline.Models.Entity;
 using PRN231_GroupProject_LearningOnline.Models.SearchModels;
 using PRN231_GroupProject_LearningOnline.Models;
 using PRN231_GroupProject_LearningOnline.Authorization;
-using PRN231_GroupProject_LearningOnline.Models;
-using PRN231_GroupProject_LearningOnline.Models.DTO;
-using PRN231_GroupProject_LearningOnline.Models.Entity;
-using PRN231_GroupProject_LearningOnline.Models.SearchModels;
 using X.PagedList;
 
 namespace PRN231_GroupProject_LearningOnline.Controllers.APIs

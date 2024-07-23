@@ -46,25 +46,7 @@
                                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                             <div>UniCat@gmail.com</div>
                                         </li>
-
-                                        <li>
-                                            @* <div class="notification-bell">
-                                                <i class="fa fa-bell bell-icon"><span class="position-absolute top--5 start-100 translate-middle badge rounded-pill bg-danger">+9</span></i>
-                                            </div> *@
-                                            <a href="#" target="_blank" rel="noopener" aria-label="GitHub">
-                                                <i class="fa fa-lg fa-bell bell-icon" style="font-size:20px;"></i>
-                                                <span class="notification-badge badge badge-danger">1</span>
-                                            </a>
-                                        </li>
-                                        <style>
-                                            span.notification-badge {
-                                                position: relative;
-                                                top: -10px;
-                                                right: 10px;
-                                                border: $white 1px solid;
-                                                border-radius: 30%;
-                                            }
-                                        </style>
+                                        
                                     </ul>
                                     @if (user != null)
                                     {
@@ -93,7 +75,7 @@
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo_container">
-                                    <a href="/home">
+                                    <a href="/">
                                         <div class="logo_text">Uni<span>Cat</span></div>
                                     </a>
                                 </div>
@@ -126,26 +108,7 @@
             </div>
         </header>
 
-        <!-- Menu -->
-
-        <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
-            <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-            <div class="search">
-                <form action="#" class="header_search_form menu_mm">
-                    <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
-                    </button>
-                </form>
-            </div>
-            <nav class="menu_nav">
-                <ul class="menu_mm">
-                    <li class="menu_mm"><a href="/home">Trang chủ</a></li>
-                    <li class="menu_mm"><a href="/projects">Các hoàn cảnh quyên góp</a></li>
-                    @* <li class="menu_mm"><a href="/news">Tin tức cộng đồng</a></li> *@
-                </ul>
-            </nav>
-        </div>
+        
         @RenderBody()
 
         <!-- Footer -->
@@ -204,7 +167,7 @@
                                         <div class="footer_title">Contact Us</div>
                                         <div class="footer_links_container">
                                             <ul>
-                                                <li><a href="/home">Trang chủ</a></li>
+                                                <li><a href="/">Trang chủ</a></li>
                                                 <li><a href="/news">Tin tức cộng đồng</a></li>
                                                 <li><a href="/projects">Các hoàn cảnh quyên góp</a></li>
                                             </ul>
@@ -271,9 +234,6 @@
 
     <!-- Courses -->
     <script src="~/js/courses.js"></script>
-
-    <!-- Course -->
-    <script src="~/js/course.js"></script>
 
     <!-- Blogs -->
     <script src="~/plugins/masonry/masonry.js"></script>
