@@ -57,6 +57,22 @@
                         <span class="nav-link-text ms-1">Quản lý Danh Mục</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Courses", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-graduation-cap fa-lg text-sm" style="color: #2bc700;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý Khóa học</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Lessons", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-chalkboard-teacher fa-lg text-sm" style="color: #ee00ff; width:60px;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý bài giảng</span>
+                    </a>
+                </li>
             }
             else if (user.UserName.Contains("staff"))
             {

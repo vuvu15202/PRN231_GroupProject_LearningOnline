@@ -67,7 +67,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
             return View("Temp");
         }
 
-        [Authorize(RoleEnum.Lecturer)]
+        [Authorize(RoleEnum.Lecturer, RoleEnum.Admin)]
         [HttpGet("Courses")]
         public ActionResult Courses()
         {
@@ -76,7 +76,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
             return View("Courses");
         }
 
-        [Authorize(RoleEnum.Lecturer)]
+        [Authorize(RoleEnum.Lecturer, RoleEnum.Admin)]
         [HttpGet("Lessons")]
         public ActionResult Lessons()
         {

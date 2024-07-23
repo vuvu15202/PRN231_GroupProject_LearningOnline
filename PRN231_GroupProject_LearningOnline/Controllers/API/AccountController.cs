@@ -22,7 +22,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             _context = context;
         }
 
-        [HttpGet]
+		[Authorize(RoleEnum.Admin, RoleEnum.Staff, RoleEnum.Lecturer, RoleEnum.Student)]
+		[HttpGet]
         public IActionResult GetUserProfile()
         {
             var u = (User)HttpContext.Items["User"];
@@ -38,7 +39,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
             return Ok(user);
         }
 
-        [HttpPut]
+		[Authorize(RoleEnum.Admin, RoleEnum.Staff, RoleEnum.Lecturer, RoleEnum.Student)]
+		[HttpPut]
         public IActionResult UpdateProfile([FromBody] UserProfileDTO model)
         {
             var user = (User)HttpContext.Items["User"];
@@ -69,8 +71,8 @@ namespace PRN231_GroupProject_LearningOnline.Controllers.API
                 return StatusCode(500, new { message = $"Internal server error: {ex.Message}" });
             }
         }
-
-        [HttpPut]
+		[Authorize(RoleEnum.Admin, RoleEnum.Staff, RoleEnum.Lecturer, RoleEnum.Student)]
+		[HttpPut]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDTO model)
         {
             var user = (User)HttpContext.Items["User"];

@@ -15,7 +15,7 @@ namespace PRN231_GroupProject_LearningOnline.Controllers
         {
             var user = HttpContext.Items["User"] as User;
             ViewBag.User = user;
-            return View("UserProfile");
+            return View(user);
         }
     }
 }
